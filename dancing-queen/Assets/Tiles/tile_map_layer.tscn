@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://03g35hljx7nw"]
+
+[ext_resource type="Script" uid="uid://kjhxq25puqff" path="res://generate_map.gd" id="1_ib3k8"]
+
+[sub_resource type="TileSet" id="TileSet_ruj66"]
+tile_shape = 3
+
+[node name="TileMapLayer" type="TileMapLayer"]
+tile_set = SubResource("TileSet_ruj66")
+script = ExtResource("1_ib3k8")
