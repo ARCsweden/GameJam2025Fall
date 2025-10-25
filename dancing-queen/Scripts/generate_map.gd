@@ -1,16 +1,7 @@
 @tool
 extends HexagonTileMapLayer
 
-@export var noise_tex : NoiseTexture2D
 @export var hive_pos : Vector3 = Vector3(0,0,0)
-
-var grass_atlas = Vector2i(2,0)
-var flower_atlas = Vector2i(0,0)
-var danger_atlas = Vector2i(1,0)
-var noise : Noise
-var width : int = 32
-var height : int = 32
-var source_id = 0
 
 var hovering_tile: Vector3i = Vector3i.ZERO
 signal hovering_changed
@@ -19,22 +10,7 @@ signal hovering_changed
 func _ready() -> void:
 	super._ready()
 	# Enable pathfinding
-	pathfinding_enabled = true
-	generate_world()
-	pass
-
-func generate_world():
-	noise = noise_tex.noise
-	noise.seed = randi() % 500
-	for x in range(-width/2, width /2):
-		for y in range(-height/2, height/2):
-			var noise_val :float = noise.get_noise_2d(x,y)
-			# placing ground
-			if noise_val >= -0.2:
-				set_cell(Vector2i(x,y), source_id, grass_atlas)
-			else:
-				set_cell(Vector2i(x,y), source_id,flower_atlas)
-				
+	pathfinding_enabled = true				
 				
 func get_dance_sequence(lineToTarget:Array[Vector3i], objectFound: int) -> Array[Array]:
 	
