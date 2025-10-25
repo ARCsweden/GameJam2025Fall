@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://d1exxolsljrsr"]
+[gd_scene load_steps=5 format=3 uid="uid://d1exxolsljrsr"]
 
 [ext_resource type="PackedScene" uid="uid://cmo44rk3t4wbk" path="res://Scenes/World.tscn" id="1_q24h2"]
 [ext_resource type="PackedScene" uid="uid://cyd273blrwvj6" path="res://Scenes/user_interface.tscn" id="1_ro750"]
+[ext_resource type="Script" uid="uid://dgc2eq1wqietw" path="res://Scenes/button_light_up.gd" id="2_ro750"]
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_ro750"]
 allow_unpress = true
@@ -11,6 +12,9 @@ allow_unpress = true
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="UserInterface" parent="UI" instance=ExtResource("1_ro750")]
+
+[node name="TileChoosingButtons" parent="UI/UserInterface/HBox/RightScreen/Buttons" index="0"]
+script = ExtResource("2_ro750")
 
 [node name="FlowerTile" parent="UI/UserInterface/HBox/RightScreen/Buttons/TileChoosingButtons" index="0"]
 button_group = SubResource("ButtonGroup_ro750")
