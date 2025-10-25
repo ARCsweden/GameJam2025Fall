@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dly6m3q5oa8vh"]
+
+[ext_resource type="PackedScene" uid="uid://cmm06sdmm73ay" path="res://Objects/pile.tscn" id="1_eri0g"]
+[ext_resource type="Texture2D" uid="uid://qee676qcx4nq" path="res://icon.svg" id="2_dmjfj"]
+[ext_resource type="Texture2D" uid="uid://caypy5mq3kn13" path="res://icon_green.svg" id="3_ntl8h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dmjfj"]
+size = Vector2(128, 128)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Map" type="Area2D" parent="."]
+
+[node name="MapInside" type="CollisionShape2D" parent="Map"]
+position = Vector2(513.99994, 325.00003)
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_dmjfj")
+
+[node name="MapTexture" type="Sprite2D" parent="Map/MapInside"]
+z_index = -1
+texture = ExtResource("2_dmjfj")
+
+[node name="Pile" parent="Map" instance=ExtResource("1_eri0g")]
+position = Vector2(68, 74)
+
+[node name="Pile2" parent="Map" instance=ExtResource("1_eri0g")]
+position = Vector2(68, 217)
+metadata/Texture = ExtResource("3_ntl8h")

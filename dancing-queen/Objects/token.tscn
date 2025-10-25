@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpa5ygvus6bxl"]
+
+[ext_resource type="Script" uid="uid://domwjlerdq2ag" path="res://token.gd" id="1_snkyh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ntl8h"]
+size = Vector2(128, 128)
+
+[node name="Token" type="Area2D"]
+script = ExtResource("1_snkyh")
+
+[node name="Shape" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ntl8h")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://cmm06sdmm73ay"]
+
+[ext_resource type="Script" uid="uid://dn8jm6vf6kmwm" path="res://pile.gd" id="1_gyasu"]
+[ext_resource type="PackedScene" uid="uid://bpa5ygvus6bxl" path="res://Objects/token.tscn" id="2_ok1gu"]
+[ext_resource type="Texture2D" uid="uid://qee676qcx4nq" path="res://icon.svg" id="3_xreeg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1c07y"]
+size = Vector2(128, 128)
+
+[node name="Pile" type="StaticBody2D"]
+input_pickable = true
+script = ExtResource("1_gyasu")
+metadata/Texture = ExtResource("3_xreeg")
+metadata/Tokens = ExtResource("2_ok1gu")
+
+[node name="Shape" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1c07y")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_xreeg")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
