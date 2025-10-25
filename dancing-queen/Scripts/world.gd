@@ -54,6 +54,10 @@ func fill_player_world():
 			tileMapLayerPlayer.set_cell(Vector2i(x,y), source_id, unexplored_atlas)
 	tileMapLayerPlayer.set_cell(Vector2i(0,0),source_id,hive_atlas)
 
+func get_world_tile(tile_coords : Vector2i) -> WorldTile:
+	if world_tiles.has(tile_coords):
+		return world_tiles[tile_coords]
+	return null
 
 func _on_check_button_toggled(toggled_on: bool) -> void:
 	tileMapLayerDebug.visible = toggled_on
