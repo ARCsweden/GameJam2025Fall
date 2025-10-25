@@ -1,4 +1,4 @@
-
+extends Node
 # Movement directions
 const DIR_NONE = 0
 const DIR_E = 1
