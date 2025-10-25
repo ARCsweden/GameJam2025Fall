@@ -8,11 +8,11 @@
 [node name="World" parent="." instance=ExtResource("1_q24h2")]
 
 [node name="Ui" parent="." instance=ExtResource("2_ro750")]
-visible = false
 offset_left = -576.0
 offset_top = -324.0
 offset_right = -576.0
 offset_bottom = -324.0
+mouse_filter = 1
 
 [node name="CheckButton" type="CheckButton" parent="Ui"]
 layout_mode = 0
