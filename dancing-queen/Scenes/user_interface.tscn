@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://cyd273blrwvj6"]
+
+[node name="UserInterface" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBox" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 1
+
+[node name="TheClub" type="VBoxContainer" parent="HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="DancingFloor" type="ColorRect" parent="HBox/TheClub"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+color = Color(1, 0, 1, 1)
+
+[node name="DanceControls" type="ColorRect" parent="HBox/TheClub"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.83585006, 0.3823731, 7.70092e-07, 1)
+
+[node name="WorldMap" type="ColorRect" parent="HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+color = Color(0, 0.5358119, 0.9992501, 1)
