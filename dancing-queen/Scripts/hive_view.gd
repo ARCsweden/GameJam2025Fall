@@ -6,9 +6,11 @@ extends Control
 
 var queen_present = true
 var minions = false
+var beesInQueue : Array[Beegroup] = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	SignalBuss.connect("bee_idle",_on_bee_idle)
 	for child in $QueenBee/Minions.get_children():
 		child.set_flying(true)
 
@@ -36,7 +38,7 @@ var feedback_queue_index : int = 0
 
 func set_dancer_feedback(cmd_queue : Array[Command]) -> void:
 	feedback_queue = cmd_queue.duplicate()
-	# TODO: REMOVE
+	
 	var dummy_start = Command.new()
 	dummy_start.duration = 1.0
 	feedback_queue.push_front(dummy_start)
@@ -94,8 +96,10 @@ func _process(delta: float) -> void:
 			for cmd in command_queue:
 				print("Command: %d, %f" % [cmd.dir, cmd.duration])
 			anim.play("dismiss_minions")
-			# TODO: Finalize command_queue and execute
-			set_dancer_feedback(command_queue)
+			
+			
+			command_bee(command_queue)
+			
 		else:
 			for child in $QueenBee/Minions.get_children():
 				child.set_direction(Constants.DIR_NONE)
@@ -104,3 +108,51 @@ func _process(delta: float) -> void:
 		minions = !minions
 
 	update_dancer_feedback(delta)
+	
+func command_bee(queue : Array[Command]):
+	var queueCOPY = queue.duplicate()
+	var q :int #See plugin docs
+	var r :int #See plugin docs
+	var s :int #See plugin docs
+	
+	#Quick and Stinky custom cordinate convertor
+	for com in queueCOPY:
+		if com.dir==Constants.DIR_E : 
+			q=q+1
+			r=r-1
+		elif com.dir==Constants.DIR_SE:
+			r=r+1
+			s=s-1
+		elif com.dir==Constants.DIR_SW:
+			q=q-1
+			s=s+1
+		elif com.dir==Constants.DIR_W:
+			q=q-1
+			r=r+1
+		elif com.dir==Constants.DIR_NW:
+			r=r-1
+			s=s+1
+		elif com.dir==Constants.DIR_NE:
+			q=q+1
+			s=s-1
+	var cords = Vector3i(q,r,s)
+	beesInQueue.pop_at(0)
+	if len(beesInQueue) < 0:
+		set_dancer_feedback(convert_dance_to_command(beesInQueue[0]))
+	SignalBuss.send_bee.emit(cords)
+	
+func _on_bee_idle(new_bee : Beegroup):
+	beesInQueue.append(new_bee)
+	if len(beesInQueue) == 1:
+		set_dancer_feedback(convert_dance_to_command(beesInQueue[0]))
+		
+		
+func convert_dance_to_command(bee1 : Beegroup) -> Array[Command]:
+	var commandlist : Array[Command] = []
+	for move in bee1.currentDance:
+		var newCommand = Command.new()
+		newCommand.dir = move[0]
+		newCommand.duration = move[1]
+		commandlist.append(newCommand)
+	if len(commandlist) > 1 : commandlist.pop_front()
+	return commandlist
