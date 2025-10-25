@@ -2,6 +2,15 @@ extends Node2D
 
 @onready var anim_tree = $AnimationTree
 
+# Movement directions
+const DIR_NONE = 0
+const DIR_E = 1
+const DIR_SE = 2
+const DIR_SW = 3
+const DIR_W = 4
+const DIR_NW = 5
+const DIR_NE = 6
+
 const HEAD_IDLE = 0
 const HEAD_SHAKE = 1
 const HEAD_ANGRY = 2
@@ -75,6 +84,35 @@ func set_butt(state: int) -> void:
 	else:
 		anim_tree.set("parameters/Butt/transition_request", "idle")
 
+
+func set_direction(dir: int) -> void:
+	if dir == DIR_NONE:
+		set_legs(LEGS_IDLE)
+		set_butt(BUTT_IDLE)
+		set_arm_top(ARM_TOP_IDLE)
+		set_arm_mid(ARM_MID_IDLE)
+	else:
+		# Set Left/Right
+		if dir == DIR_E or dir == DIR_NE or dir == DIR_SE:
+			set_legs(LEGS_RAISE_RIGHT)
+		else:
+			set_legs(LEGS_RAISE_LEFT)
+		# Set Up
+		if dir == DIR_NE or dir == DIR_NW:
+			set_arm_top(ARM_TOP_PUMP)
+		else:
+			set_arm_top(ARM_TOP_IDLE)
+		# Set Down
+		if dir == DIR_SE or dir == DIR_SW:
+			set_butt(BUTT_WIGGLE)
+		else:
+			set_butt(BUTT_IDLE)
+		# Set Sides
+		if dir == DIR_E or dir == DIR_W:
+			set_arm_mid(ARM_MID_STRETCH)
+		else:
+			set_arm_mid(ARM_MID_IDLE)
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	
@@ -82,6 +120,26 @@ func _process(_delta: float) -> void:
 		set_wings(WINGS_FLAP)
 	else:
 		set_wings(WINGS_IDLE)
+	
+	var dir_vec = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+
+	var dir = DIR_NONE
+	if dir_vec.x > 0.0: # right
+		if dir_vec.y > 0: # down
+			dir = DIR_SE
+		elif dir_vec.y < 0: # up
+			dir = DIR_NE
+		else:
+			dir = DIR_E
+	elif dir_vec.x < 0.0: # left
+		if dir_vec.y > 0: # down
+			dir = DIR_SW
+		elif dir_vec.y < 0: # up
+			dir = DIR_NW
+		else:
+			dir = DIR_W
+
+	set_direction(dir)
 	
 	#if Input.is_action_pressed("ui_down"):
 		#set_head(HEAD_SHAKE)
@@ -103,18 +161,18 @@ func _process(_delta: float) -> void:
 		#set_arm_top(ARM_TOP_PUMP)
 	#else:
 		#set_arm_top(ARM_TOP_IDLE)
-
-	if Input.is_action_pressed("ui_left"):
-		set_legs(LEGS_RAISE_LEFT)
-	elif Input.is_action_pressed("ui_right"):
-		set_legs(LEGS_RAISE_RIGHT)
-	else:
-		set_legs(LEGS_IDLE)
-
-	if Input.is_action_pressed("ui_down"):
-		set_arm_mid(ARM_MID_ELBOW)
-	elif Input.is_action_pressed("ui_up"):
-		set_arm_mid(ARM_MID_STRETCH)
-	else:
-		set_arm_mid(ARM_MID_IDLE)
 #
+	#if Input.is_action_pressed("ui_left"):
+		#set_legs(LEGS_RAISE_LEFT)
+	#elif Input.is_action_pressed("ui_right"):
+		#set_legs(LEGS_RAISE_RIGHT)
+	#else:
+		#set_legs(LEGS_IDLE)
+#
+	#if Input.is_action_pressed("ui_down"):
+		#set_arm_mid(ARM_MID_ELBOW)
+	#elif Input.is_action_pressed("ui_up"):
+		#set_arm_mid(ARM_MID_STRETCH)
+	#else:
+		#set_arm_mid(ARM_MID_IDLE)
+##
