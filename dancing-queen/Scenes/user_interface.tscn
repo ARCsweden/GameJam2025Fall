@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cyd273blrwvj6"]
+[gd_scene load_steps=23 format=3 uid="uid://cyd273blrwvj6"]
 
 [ext_resource type="StyleBox" uid="uid://dokg5hcv2e0km" path="res://resources/button_left_right.tres" id="1_7jfck"]
 [ext_resource type="PackedScene" uid="uid://birg8lypi8eb2" path="res://Scenes/hive_view.tscn" id="1_m3woj"]
@@ -35,6 +35,12 @@ bg_color = Color(0.7944067, 0, 0.11294835, 1)
 bg_color = Color(7.7731165e-06, 0.59024537, 0.11758796, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iuuak"]
+bg_color = Color(0.56078434, 0.26666668, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_osvio"]
+bg_color = Color(0.56078434, 0.26666668, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5hmjc"]
 bg_color = Color(0.56078434, 0.26666668, 0, 1)
 
 [node name="UserInterface" type="Control"]
@@ -346,6 +352,8 @@ stretch_mode = 3
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/outline_size = 5
+theme_override_styles/background = SubResource("StyleBoxFlat_osvio")
+theme_override_styles/fill = SubResource("StyleBoxFlat_5hmjc")
 
 [node name="Label" type="Label" parent="HBox/RightScreen/Panel/Buttons/HoneyDisplay/VBoxContainer"]
 visible = false
