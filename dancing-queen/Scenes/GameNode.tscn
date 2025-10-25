@@ -36,15 +36,21 @@ button_group = SubResource("ButtonGroup_q24h2")
 
 [node name="World" parent="." instance=ExtResource("1_q24h2")]
 
+[node name="Camera2D" parent="World" index="0"]
+position = Vector2(-49.011, 23.075)
+zoom = Vector2(4.06, 4.06)
+
 [node name="PlayerTileMapLayer" parent="World" index="1" node_paths=PackedStringArray("danger_layer", "flag_layer")]
 danger_layer = NodePath("../DangerTileMapLayer")
 flag_layer = NodePath("../FlagTileMapLayer")
 
 [connection signal="toggled" from="UI/UserInterface/HBox/RightScreen/Panel/Buttons/TileChoosingButtons/FlowerTile" to="World/PlayerTileMapLayer" method="_on_flower_tile_toggled"]
 [connection signal="toggled" from="UI/UserInterface/HBox/RightScreen/Panel/Buttons/TileChoosingButtons/GrassTile" to="World/PlayerTileMapLayer" method="_on_grass_tile_toggled"]
+[connection signal="toggled" from="UI/UserInterface/HBox/RightScreen/Panel/Buttons/TileChoosingButtons/FlowerTile3" to="World/PlayerTileMapLayer" method="_on_flower_tile_toggled"]
 [connection signal="toggled" from="UI/UserInterface/HBox/RightScreen/Panel/Buttons/TileChoosingButtons/DangerTile" to="World/PlayerTileMapLayer" method="_on_danger_tile_toggled"]
 [connection signal="toggled" from="UI/UserInterface/HBox/RightScreen/Panel/Buttons/TileChoosingButtons/BlankTile" to="World/PlayerTileMapLayer" method="_on_blank_tile_toggled"]
 [connection signal="toggled" from="UI/UserInterface/HBox/RightScreen/Panel/Buttons/TileChoosingButtons/FlagTile" to="World/PlayerTileMapLayer" method="_on_flag_tile_toggled"]
+[connection signal="toggled" from="UI/UserInterface/HBox/RightScreen/Panel/Buttons/Debug" to="World" method="_on_debug_toggled"]
 
 [editable path="UI/UserInterface"]
 [editable path="World"]
