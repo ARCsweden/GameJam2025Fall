@@ -6,12 +6,12 @@
 
 [node name="BeeDancer" parent="." instance=ExtResource("1_0rity")]
 position = Vector2(550, 500)
-scale = Vector2(0.16437435, 0.16437435)
+scale = Vector2(0.3, 0.3)
 
 [node name="BeeDancer2" parent="." instance=ExtResource("1_0rity")]
-position = Vector2(750, 500)
-scale = Vector2(0.16437435, 0.16437435)
+position = Vector2(800, 500)
+scale = Vector2(0.3, 0.3)
 
 [node name="BeeDancer3" parent="." instance=ExtResource("1_0rity")]
-position = Vector2(350, 500)
-scale = Vector2(0.16437435, 0.16437435)
+position = Vector2(300, 500)
+scale = Vector2(0.3, 0.3)
