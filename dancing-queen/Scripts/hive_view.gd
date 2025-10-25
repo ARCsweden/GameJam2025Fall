@@ -2,6 +2,7 @@ extends Control
 
 @onready var anim = $AnimationPlayer
 @onready var queen = $QueenBee
+@onready var bee = $bees/BeeDancer
 
 var queen_present = true
 var minions = false
@@ -9,7 +10,7 @@ var minions = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	for child in $QueenBee/Minions.get_children():
-		child.set_flying()
+		child.set_flying(true)
 
 class Command:
 	var dir : int
@@ -28,6 +29,40 @@ func append_command() -> void:
 		print("Appended command: %d, %f" % [cur_command.dir, cur_command.duration])
 		command_queue.append(cur_command)
 	cur_command = Command.new()
+
+var feedback_queue : Array[Command] = []
+var feedback_queue_timer : float = 0.0
+var feedback_queue_index : int = 0
+
+func set_dancer_feedback(cmd_queue : Array[Command]) -> void:
+	feedback_queue = cmd_queue.duplicate()
+	# TODO: REMOVE
+	var dummy_start = Command.new()
+	dummy_start.duration = 1.0
+	feedback_queue.push_front(dummy_start)
+
+	feedback_queue_timer = 0.0
+	feedback_queue_index = 0
+	bee.set_direction(Constants.DIR_NONE)
+	bee.set_flying(true)
+
+func update_dancer_feedback(delta : float) -> void:
+	if feedback_queue:
+		feedback_queue_timer += delta
+		var cmd = feedback_queue[feedback_queue_index]
+		if feedback_queue_timer >= cmd.duration:
+			feedback_queue_timer = 0.0
+			feedback_queue_index += 1
+			if feedback_queue_index >= feedback_queue.size():
+				feedback_queue_index = 0
+			cmd = feedback_queue[feedback_queue_index]
+			# Set new command animation
+			if feedback_queue_index == 0:
+				bee.set_direction(Constants.DIR_NONE)
+				bee.set_flying(true)
+			else:
+				bee.set_direction(cmd.dir)
+				bee.set_flying(false)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -55,14 +90,17 @@ func _process(delta: float) -> void:
 			anim.play("dancers")
 	if Input.is_action_just_pressed("flap") and queen_present and !anim.is_playing():
 		if minions:
-			# TODO: Finalize command_queue and execute
 			print("Execute command queue: ")
 			for cmd in command_queue:
 				print("Command: %d, %f" % [cmd.dir, cmd.duration])
 			anim.play("dismiss_minions")
+			# TODO: Finalize command_queue and execute
+			set_dancer_feedback(command_queue)
 		else:
 			for child in $QueenBee/Minions.get_children():
 				child.set_direction(Constants.DIR_NONE)
 			command_queue.clear()
 			anim.play("summon_minions")
 		minions = !minions
+
+	update_dancer_feedback(delta)

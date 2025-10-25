@@ -28,8 +28,11 @@ const LEGS_RAISE_RIGHT = 2
 func do_a_wiggle() -> void:
 	anim_tree.set("parameters/Wiggle/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
 
-func set_flying() -> void:
-	set_wings(WINGS_FLAP)
+func set_flying(value: bool) -> void:
+	if value:
+		set_wings(WINGS_FLAP)
+	else:
+		set_wings(WINGS_IDLE)
 
 func set_wings(state: int) -> void:
 	if state == WINGS_FLAP:
