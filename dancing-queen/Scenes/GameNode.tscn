@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cmo44rk3t4wbk" path="res://Scenes/World.tscn" id="1_q24h2"]
 [ext_resource type="PackedScene" uid="uid://cyd273blrwvj6" path="res://Scenes/user_interface.tscn" id="1_ro750"]
-[ext_resource type="Script" uid="uid://dgc2eq1wqietw" path="res://Scenes/button_light_up.gd" id="2_ro750"]
+[ext_resource type="Script" path="res://Scenes/button_light_up.gd" id="2_ro750"]
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_ro750"]
 allow_unpress = true
@@ -36,6 +36,17 @@ button_group = SubResource("ButtonGroup_ro750")
 
 [node name="World" parent="." instance=ExtResource("1_q24h2")]
 
+[node name="PlayerTileMapLayer" parent="World" index="1" node_paths=PackedStringArray("danger_layer", "flag_layer")]
+danger_layer = NodePath("../DangerTileMapLayer")
+flag_layer = NodePath("../FlagTileMapLayer")
+
+[connection signal="toggled" from="UI/UserInterface/HBox/RightScreen/Buttons/TileChoosingButtons/FlowerTile" to="World/PlayerTileMapLayer" method="_on_flower_tile_toggled"]
+[connection signal="toggled" from="UI/UserInterface/HBox/RightScreen/Buttons/TileChoosingButtons/GrassTile" to="World/PlayerTileMapLayer" method="_on_grass_tile_toggled"]
+[connection signal="toggled" from="UI/UserInterface/HBox/RightScreen/Buttons/TileChoosingButtons/FlowerTile3" to="World/PlayerTileMapLayer" method="_on_flower_tile_toggled"]
+[connection signal="toggled" from="UI/UserInterface/HBox/RightScreen/Buttons/TileChoosingButtons/DangerTile" to="World/PlayerTileMapLayer" method="_on_danger_tile_toggled"]
+[connection signal="toggled" from="UI/UserInterface/HBox/RightScreen/Buttons/TileChoosingButtons/BlankTile" to="World/PlayerTileMapLayer" method="_on_blank_tile_toggled"]
+[connection signal="toggled" from="UI/UserInterface/HBox/RightScreen/Buttons/TileChoosingButtons/FlagTile" to="World/PlayerTileMapLayer" method="_on_flag_tile_toggled"]
 [connection signal="toggled" from="UI/UserInterface/HBox/RightScreen/Buttons/Debug" to="World" method="_on_debug_toggled"]
 
 [editable path="UI/UserInterface"]
+[editable path="World"]

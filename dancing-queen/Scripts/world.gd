@@ -33,6 +33,7 @@ func _ready() -> void:
 
 func generate_world():
 	noise = nectar_noise_tex.noise
+	noise.seed = randi() % 500
 	for x in range(-map_width/2, map_width /2):
 		for y in range(-map_height/2, map_height/2):
 			if x == 0 and y == 0:
