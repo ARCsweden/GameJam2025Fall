@@ -1,14 +1,32 @@
-[gd_scene load_steps=4 format=3 uid="uid://d1exxolsljrsr"]
+[gd_scene load_steps=6 format=3 uid="uid://d1exxolsljrsr"]
 
 [ext_resource type="PackedScene" uid="uid://cmo44rk3t4wbk" path="res://Scenes/World.tscn" id="1_q24h2"]
 [ext_resource type="PackedScene" uid="uid://cyd273blrwvj6" path="res://Scenes/user_interface.tscn" id="1_ro750"]
 [ext_resource type="PackedScene" uid="uid://sqmc2bdnet7a" path="res://Scenes/UI.tscn" id="2_ro750"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_ro750"]
+allow_unpress = true
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_hg0ag"]
+allow_unpress = true
 
 [node name="GameNode" type="Node"]
 
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="UserInterface" parent="UI" instance=ExtResource("1_ro750")]
+
+[node name="FlowerTile" parent="UI/UserInterface/HBox/RightScreen/Buttons/TileChoosingButtons" index="0"]
+button_group = SubResource("ButtonGroup_ro750")
+
+[node name="DangerTile" parent="UI/UserInterface/HBox/RightScreen/Buttons/TileChoosingButtons" index="1"]
+button_group = SubResource("ButtonGroup_ro750")
+
+[node name="BlankTile" parent="UI/UserInterface/HBox/RightScreen/Buttons/TileChoosingButtons" index="2"]
+button_group = SubResource("ButtonGroup_ro750")
+
+[node name="FlagTile" parent="UI/UserInterface/HBox/RightScreen/Buttons/TileChoosingButtons" index="3"]
+button_group = SubResource("ButtonGroup_hg0ag")
 
 [node name="World" parent="." instance=ExtResource("1_q24h2")]
 
@@ -24,4 +42,11 @@ layout_mode = 0
 offset_right = 44.0
 offset_bottom = 24.0
 
+[connection signal="toggled" from="UI/UserInterface/HBox/RightScreen/Buttons/TileChoosingButtons/FlowerTile" to="World/PlayerTileMapLayer" method="_on_flower_tile_toggled"]
+[connection signal="toggled" from="UI/UserInterface/HBox/RightScreen/Buttons/TileChoosingButtons/DangerTile" to="World/PlayerTileMapLayer" method="_on_danger_tile_toggled"]
+[connection signal="toggled" from="UI/UserInterface/HBox/RightScreen/Buttons/TileChoosingButtons/BlankTile" to="World/PlayerTileMapLayer" method="_on_blank_tile_toggled"]
+[connection signal="toggled" from="UI/UserInterface/HBox/RightScreen/Buttons/TileChoosingButtons/FlagTile" to="World/PlayerTileMapLayer" method="_on_flag_tile_toggled"]
 [connection signal="toggled" from="Ui/CheckButton" to="World" method="_on_check_button_toggled"]
+
+[editable path="UI/UserInterface"]
+[editable path="World"]
