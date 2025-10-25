@@ -33,7 +33,8 @@ func _ready() -> void:
 
 func generate_world():
 	noise = nectar_noise_tex.noise
-	
+
+	noise.seed = randi() % 500
 	for x in range(-map_width/2, map_width /2):
 		for y in range(-map_height/2, map_height/2):
 			if x == 0 and y == 0:
@@ -66,6 +67,5 @@ func empty_nectar(tile_coords : Vector2i):
 		world_tiles[tile_coords].honey_volume = 0
 	return null
 
-func _on_check_button_toggled(toggled_on: bool) -> void:
+func _on_debug_toggled(toggled_on: bool) -> void:
 	tileMapLayerDebug.visible = toggled_on
-	pass # Replace with function body.

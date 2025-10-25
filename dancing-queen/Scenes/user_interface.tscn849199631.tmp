@@ -1,23 +1,17 @@
-[gd_scene load_steps=23 format=3 uid="uid://cyd273blrwvj6"]
+[gd_scene load_steps=16 format=3 uid="uid://cyd273blrwvj6"]
 
 [ext_resource type="StyleBox" uid="uid://dokg5hcv2e0km" path="res://resources/button_left_right.tres" id="1_7jfck"]
-[ext_resource type="PackedScene" uid="uid://birg8lypi8eb2" path="res://Scenes/hive_view.tscn" id="1_m3woj"]
 [ext_resource type="Texture2D" uid="uid://v2205yjviyay" path="res://Assets/Art/png/flower_tile.png" id="1_v7dfl"]
 [ext_resource type="Texture2D" uid="uid://5otedv0rbqjb" path="res://Assets/Art/png/enemy_tile.png" id="2_4d574"]
 [ext_resource type="StyleBox" uid="uid://b41er46jirnl4" path="res://resources/base_button.tres" id="2_7jfck"]
-[ext_resource type="Script" uid="uid://uw2d736o4j0n" path="res://Scenes/buttons_handling.gd" id="2_doevo"]
+[ext_resource type="Script" uid="uid://dgc2eq1wqietw" path="res://Scenes/button_light_up.gd" id="2_doevo"]
 [ext_resource type="ButtonGroup" uid="uid://dkie4oyfhwcrp" path="res://resources/tile_buttons.tres" id="2_uf5wx"]
 [ext_resource type="Texture2D" uid="uid://d32jnsvpajsuy" path="res://Assets/Art/png/unexplored_tile.png" id="3_uf5wx"]
 [ext_resource type="Texture2D" uid="uid://26h73byjc5s" path="res://Assets/Art/png/grass_tile.png" id="5_1648f"]
 [ext_resource type="Texture2D" uid="uid://3y7p3nuo7wix" path="res://Assets/Art/png/flag_tile.png" id="7_xap2s"]
-[ext_resource type="Texture2D" uid="uid://c6h2tc1207wda" path="res://Assets/Art/png/honey.png" id="10_m3woj"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m3woj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xap2s"]
 bg_color = Color(0.6718929, 0.32470697, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_piynm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4d574"]
 bg_color = Color(0, 0.52694565, 0.1954858, 1)
@@ -33,15 +27,6 @@ bg_color = Color(0.7944067, 0, 0.11294835, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_doevo"]
 bg_color = Color(7.7731165e-06, 0.59024537, 0.11758796, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iuuak"]
-bg_color = Color(0.56078434, 0.26666668, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_osvio"]
-bg_color = Color(0.56078434, 0.26666668, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5hmjc"]
-bg_color = Color(0.56078434, 0.26666668, 0, 1)
 
 [node name="UserInterface" type="Control"]
 layout_mode = 3
@@ -60,38 +45,23 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 0
+theme_override_constants/separation = 10
 
 [node name="TheClub" type="VBoxContainer" parent="HBox"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/separation = 0
 
 [node name="DancingFloor" type="BoxContainer" parent="HBox/TheClub"]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 5.0
 
-[node name="HiveView" parent="HBox/TheClub/DancingFloor" instance=ExtResource("1_m3woj")]
-custom_minimum_size = Vector2(500, 500)
+[node name="BeeControls" type="GridContainer" parent="HBox/TheClub"]
 layout_mode = 2
-
-[node name="Panel" type="Panel" parent="HBox/TheClub"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_m3woj")
-
-[node name="BeeControls" type="GridContainer" parent="HBox/TheClub/Panel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 size_flags_vertical = 3
 columns = 2
 
-[node name="LeftBeeSelect" type="Button" parent="HBox/TheClub/Panel/BeeControls"]
+[node name="LeftBeeSelect" type="Button" parent="HBox/TheClub/BeeControls"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -103,7 +73,7 @@ theme_override_styles/pressed = ExtResource("1_7jfck")
 theme_override_styles/hover = SubResource("StyleBoxFlat_xap2s")
 text = "<"
 
-[node name="RightBeeSelect" type="Button" parent="HBox/TheClub/Panel/BeeControls"]
+[node name="RightBeeSelect" type="Button" parent="HBox/TheClub/BeeControls"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -115,7 +85,7 @@ theme_override_styles/pressed = ExtResource("1_7jfck")
 theme_override_styles/hover = SubResource("StyleBoxFlat_xap2s")
 text = ">"
 
-[node name="Watch" type="Button" parent="HBox/TheClub/Panel/BeeControls"]
+[node name="Watch" type="Button" parent="HBox/TheClub/BeeControls"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -124,7 +94,7 @@ theme_override_constants/h_separation = 0
 theme_override_font_sizes/font_size = 32
 text = "Watch"
 
-[node name="Order" type="Button" parent="HBox/TheClub/Panel/BeeControls"]
+[node name="Order" type="Button" parent="HBox/TheClub/BeeControls"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -143,32 +113,19 @@ layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 5.0
 
-[node name="Panel" type="Panel" parent="HBox/RightScreen"]
+[node name="Buttons" type="GridContainer" parent="HBox/RightScreen"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_piynm")
-
-[node name="Buttons" type="HBoxContainer" parent="HBox/RightScreen/Panel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_vertical = 3
-theme_override_constants/separation = 4
+columns = 9
 script = ExtResource("2_doevo")
 
-[node name="TileChoosingButtons" type="GridContainer" parent="HBox/RightScreen/Panel/Buttons"]
+[node name="TileChoosingButtons" type="GridContainer" parent="HBox/RightScreen/Buttons"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-size_flags_stretch_ratio = 0.5
-theme_override_constants/h_separation = 5
-theme_override_constants/v_separation = 5
 columns = 2
 
-[node name="FlowerTile" type="Button" parent="HBox/RightScreen/Panel/Buttons/TileChoosingButtons"]
+[node name="FlowerTile" type="Button" parent="HBox/RightScreen/Buttons/TileChoosingButtons"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -181,7 +138,7 @@ toggle_mode = true
 button_group = ExtResource("2_uf5wx")
 icon_alignment = 1
 
-[node name="GrassTile" type="Button" parent="HBox/RightScreen/Panel/Buttons/TileChoosingButtons"]
+[node name="GrassTile" type="Button" parent="HBox/RightScreen/Buttons/TileChoosingButtons"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -194,7 +151,7 @@ toggle_mode = true
 button_group = ExtResource("2_uf5wx")
 icon_alignment = 1
 
-[node name="FlowerTile3" type="Button" parent="HBox/RightScreen/Panel/Buttons/TileChoosingButtons"]
+[node name="FlowerTile3" type="Button" parent="HBox/RightScreen/Buttons/TileChoosingButtons"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -207,7 +164,7 @@ toggle_mode = true
 button_group = ExtResource("2_uf5wx")
 icon_alignment = 1
 
-[node name="DangerTile" type="Button" parent="HBox/RightScreen/Panel/Buttons/TileChoosingButtons"]
+[node name="DangerTile" type="Button" parent="HBox/RightScreen/Buttons/TileChoosingButtons"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -220,7 +177,7 @@ toggle_mode = true
 button_group = ExtResource("2_uf5wx")
 icon_alignment = 1
 
-[node name="BlankTile" type="Button" parent="HBox/RightScreen/Panel/Buttons/TileChoosingButtons"]
+[node name="BlankTile" type="Button" parent="HBox/RightScreen/Buttons/TileChoosingButtons"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -233,7 +190,7 @@ toggle_mode = true
 button_group = ExtResource("2_uf5wx")
 icon_alignment = 1
 
-[node name="FlagTile" type="Button" parent="HBox/RightScreen/Panel/Buttons/TileChoosingButtons"]
+[node name="FlagTile" type="Button" parent="HBox/RightScreen/Buttons/TileChoosingButtons"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -246,77 +203,56 @@ toggle_mode = true
 button_group = ExtResource("2_uf5wx")
 icon_alignment = 1
 
-[node name="DanceButtons" type="GridContainer" parent="HBox/RightScreen/Panel/Buttons"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-size_flags_stretch_ratio = 5.0
-columns = 9
-
-[node name="left" type="ColorRect" parent="HBox/RightScreen/Panel/Buttons/DanceButtons"]
+[node name="Dance1" type="ColorRect" parent="HBox/RightScreen/Buttons"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color(0.79607844, 0, 0.18431373, 1)
 
-[node name="right" type="ColorRect" parent="HBox/RightScreen/Panel/Buttons/DanceButtons"]
+[node name="Dance2" type="ColorRect" parent="HBox/RightScreen/Buttons"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color(0.79607844, 0, 0.18431373, 1)
 
-[node name="up" type="ColorRect" parent="HBox/RightScreen/Panel/Buttons/DanceButtons"]
+[node name="Dance3" type="ColorRect" parent="HBox/RightScreen/Buttons"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color(0.79607844, 0, 0.18431373, 1)
 
-[node name="down" type="ColorRect" parent="HBox/RightScreen/Panel/Buttons/DanceButtons"]
+[node name="Dance4" type="ColorRect" parent="HBox/RightScreen/Buttons"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color(0.79607844, 0, 0.18431373, 1)
 
-[node name="flap" type="ColorRect" parent="HBox/RightScreen/Panel/Buttons/DanceButtons"]
+[node name="Dance5" type="ColorRect" parent="HBox/RightScreen/Buttons"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color(0.79607844, 0, 0.18431373, 1)
 
-[node name="shake" type="ColorRect" parent="HBox/RightScreen/Panel/Buttons/DanceButtons"]
+[node name="Dance6" type="ColorRect" parent="HBox/RightScreen/Buttons"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color(0.79607844, 0, 0.18431373, 1)
 
-[node name="antenna" type="ColorRect" parent="HBox/RightScreen/Panel/Buttons/DanceButtons"]
+[node name="Dance7" type="ColorRect" parent="HBox/RightScreen/Buttons"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color(0.79607844, 0, 0.18431373, 1)
 
-[node name="comb" type="ColorRect" parent="HBox/RightScreen/Panel/Buttons/DanceButtons"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.79607844, 0, 0.18431373, 1)
-
-[node name="elbow" type="ColorRect" parent="HBox/RightScreen/Panel/Buttons/DanceButtons"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.79607844, 0, 0.18431373, 1)
-
-[node name="Debug" type="Button" parent="HBox/RightScreen/Panel/Buttons"]
+[node name="Debug" type="Button" parent="HBox/RightScreen/Buttons"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -324,41 +260,3 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_1648f")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_doevo")
 toggle_mode = true
 text = "DEBUG!"
-
-[node name="HoneyDisplay" type="Panel" parent="HBox/RightScreen/Panel/Buttons"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_iuuak")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="HBox/RightScreen/Panel/Buttons/HoneyDisplay"]
-layout_mode = 1
-anchors_preset = 13
-anchor_left = 0.5
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -25.0
-offset_right = 25.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="TextureRect" type="TextureRect" parent="HBox/RightScreen/Panel/Buttons/HoneyDisplay/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-texture = ExtResource("10_m3woj")
-expand_mode = 5
-stretch_mode = 3
-
-[node name="ProgressBar" type="ProgressBar" parent="HBox/RightScreen/Panel/Buttons/HoneyDisplay/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/outline_size = 5
-theme_override_styles/background = SubResource("StyleBoxFlat_osvio")
-theme_override_styles/fill = SubResource("StyleBoxFlat_5hmjc")
-
-[node name="Label" type="Label" parent="HBox/RightScreen/Panel/Buttons/HoneyDisplay/VBoxContainer"]
-visible = false
-layout_mode = 2
-size_flags_vertical = 3
-text = "Honey"
-horizontal_alignment = 1
-vertical_alignment = 1
