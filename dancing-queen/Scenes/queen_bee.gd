@@ -1,11 +1,13 @@
 extends "res://Scripts/bee_dancer.gd"
 
+var dir = Constants.DIR_NONE
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	
 	var dir_vec = Input.get_vector("left", "right", "up", "down")
 
-	var dir = Constants.DIR_NONE
+	dir = Constants.DIR_NONE
 	if dir_vec.x > 0.0: # right
 		if dir_vec.y > 0: # down
 			dir = Constants.DIR_SE
