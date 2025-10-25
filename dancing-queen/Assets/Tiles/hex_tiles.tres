@@ -10,4 +10,5 @@ texture = ExtResource("1_hrkeu")
 
 [resource]
 tile_shape = 3
+tile_size = Vector2i(21, 26)
 sources/1 = SubResource("TileSetAtlasSource_1xu14")

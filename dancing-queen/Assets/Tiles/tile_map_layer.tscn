@@ -1,10 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://03g35hljx7nw"]
+[gd_scene load_steps=5 format=3 uid="uid://03g35hljx7nw"]
 
 [ext_resource type="Script" uid="uid://kjhxq25puqff" path="res://generate_map.gd" id="1_ib3k8"]
+[ext_resource type="TileSet" uid="uid://hd1rspuns4n8" path="res://Assets/Tiles/hex_tiles.tres" id="1_ruj66"]
 
-[sub_resource type="TileSet" id="TileSet_ruj66"]
-tile_shape = 3
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_s41pq"]
+frequency = 0.0864
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_0sdh8"]
+width = 32
+height = 32
+noise = SubResource("FastNoiseLite_s41pq")
 
 [node name="TileMapLayer" type="TileMapLayer"]
-tile_set = SubResource("TileSet_ruj66")
+tile_set = ExtResource("1_ruj66")
 script = ExtResource("1_ib3k8")
+noise_tex = SubResource("NoiseTexture2D_0sdh8")
