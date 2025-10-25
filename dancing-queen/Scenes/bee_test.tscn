@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://qi2rac84uo38"]
+
+[ext_resource type="PackedScene" uid="uid://4wyirpe2y2vd" path="res://Scenes/bee_dancer.tscn" id="1_0rity"]
+
+[node name="BeeTest" type="Node2D"]
+
+[node name="BeeDancer" parent="." instance=ExtResource("1_0rity")]
+position = Vector2(550, 500)
+scale = Vector2(0.16437435, 0.16437435)
+
+[node name="BeeDancer2" parent="." instance=ExtResource("1_0rity")]
+position = Vector2(750, 500)
+scale = Vector2(0.16437435, 0.16437435)
+
+[node name="BeeDancer3" parent="." instance=ExtResource("1_0rity")]
+position = Vector2(350, 500)
+scale = Vector2(0.16437435, 0.16437435)
