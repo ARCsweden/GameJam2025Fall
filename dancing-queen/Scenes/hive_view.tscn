@@ -121,6 +121,21 @@ tracks/3/keys = {
 "values": [Vector2(0.28451276, 0.28451276)]
 }
 
+[sub_resource type="Animation" id="Animation_32wx0"]
+resource_name = "dismiss_minions"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("QueenBee/Minions:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Vector2(0, -80.839966), Vector2(0, -1919.0703)]
+}
+
 [sub_resource type="Animation" id="Animation_a83n1"]
 resource_name = "queen"
 length = 0.5
@@ -164,21 +179,6 @@ tracks/0/keys = {
 "values": [Vector2(0, -1919.0703), Vector2(0, -80.839966)]
 }
 
-[sub_resource type="Animation" id="Animation_32wx0"]
-resource_name = "dismiss_minions"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("QueenBee/Minions:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(2, 1),
-"update": 0,
-"values": [Vector2(0, -80.839966), Vector2(0, -1919.0703)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_82udu"]
 _data = {
 &"RESET": SubResource("Animation_82udu"),
@@ -189,25 +189,28 @@ _data = {
 }
 
 [node name="HiveView" type="Control"]
+custom_minimum_size = Vector2(500, 800)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("1_m3fw5")
 
 [node name="BG" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
-offset_left = -92.0
-offset_top = -21.0
-offset_right = 490.0
-offset_bottom = 12.898071
+offset_left = -67.0
+offset_top = -22.0
+offset_right = 506.0
+offset_bottom = 1.3532104
 grow_vertical = 2
 texture = ExtResource("1_a83n1")
-expand_mode = 1
+expand_mode = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

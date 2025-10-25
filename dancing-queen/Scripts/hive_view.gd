@@ -61,6 +61,8 @@ func _process(delta: float) -> void:
 				print("Command: %d, %f" % [cmd.dir, cmd.duration])
 			anim.play("dismiss_minions")
 		else:
+			for child in $QueenBee/Minions.get_children():
+				child.set_direction(Constants.DIR_NONE)
 			command_queue.clear()
 			anim.play("summon_minions")
 		minions = !minions
