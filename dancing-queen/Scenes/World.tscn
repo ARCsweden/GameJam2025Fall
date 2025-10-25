@@ -31,6 +31,7 @@ nectar_noise_tex = ExtResource("2_kkxwm")
 threat_noise_tex = SubResource("NoiseTexture2D_p70al")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-240, 65)
 limit_enabled = false
 script = ExtResource("3_p70al")
 
