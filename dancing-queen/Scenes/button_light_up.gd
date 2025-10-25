@@ -19,7 +19,7 @@ var dance_actions = {
 	Dance.ANTENNA: "antenna",
 }
 
-var dance_tiles = {
+@onready var dance_tiles = {
 	Dance.LEFT: %Dance1,
 	Dance.RIGHT: %Dance2,
 	Dance.UP: %Dance3,
@@ -29,15 +29,10 @@ var dance_tiles = {
 	Dance.ANTENNA: %Dance7,
 }
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-func _process(delta):
+func _process(_delta):
 	for dance in Dance.values():
 		var tile = dance_tiles.get(dance, null)
 		if tile == null:
-			push_error("Tile for " + str(dance) + " is null!")
 			continue
 		
 		if Input.is_action_pressed(dance_actions[dance]):
