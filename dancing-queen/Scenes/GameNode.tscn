@@ -1,22 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://d1exxolsljrsr"]
+[gd_scene load_steps=4 format=3 uid="uid://d1exxolsljrsr"]
 
 [ext_resource type="PackedScene" uid="uid://cmo44rk3t4wbk" path="res://Scenes/World.tscn" id="1_q24h2"]
 [ext_resource type="PackedScene" uid="uid://cyd273blrwvj6" path="res://Scenes/user_interface.tscn" id="1_ro750"]
-[ext_resource type="Texture2D" uid="uid://3y7p3nuo7wix" path="res://Assets/Art/png/flag_tile.png" id="2_djosc"]
-[ext_resource type="PackedScene" uid="uid://sqmc2bdnet7a" path="res://Scenes/UI.tscn" id="2_ro750"]
-[ext_resource type="StyleBox" uid="uid://b41er46jirnl4" path="res://resources/base_button.tres" id="3_b6i6a"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4d574"]
-bg_color = Color(0, 0.52694565, 0.1954858, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uf5wx"]
-bg_color = Color(0.9487085, 0.21745047, 1.92523e-07, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7jfck"]
-bg_color = Color(1.6364455e-06, 0.6430421, 0.24692357, 1)
-
-[sub_resource type="ButtonGroup" id="ButtonGroup_hg0ag"]
-allow_unpress = true
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_ro750"]
 allow_unpress = true
@@ -27,65 +12,26 @@ allow_unpress = true
 
 [node name="UserInterface" parent="UI" instance=ExtResource("1_ro750")]
 
-[node name="GrassTile" type="Button" parent="UI/UserInterface/HBox/RightScreen/Buttons/TileChoosingButtons" index="0"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_icons/icon = ExtResource("2_djosc")
-theme_override_styles/normal = ExtResource("3_b6i6a")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_4d574")
-theme_override_styles/hover = SubResource("StyleBoxFlat_uf5wx")
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_7jfck")
-toggle_mode = true
-button_group = SubResource("ButtonGroup_hg0ag")
-icon_alignment = 1
-
-[node name="FlowerTile" parent="UI/UserInterface/HBox/RightScreen/Buttons/TileChoosingButtons" index="1"]
+[node name="FlowerTile" parent="UI/UserInterface/HBox/RightScreen/Buttons/TileChoosingButtons" index="0"]
 button_group = SubResource("ButtonGroup_ro750")
 
-[node name="DangerTile" parent="UI/UserInterface/HBox/RightScreen/Buttons/TileChoosingButtons" index="2"]
+[node name="GrassTile" parent="UI/UserInterface/HBox/RightScreen/Buttons/TileChoosingButtons" index="1"]
 button_group = SubResource("ButtonGroup_ro750")
 
-[node name="BlankTile" parent="UI/UserInterface/HBox/RightScreen/Buttons/TileChoosingButtons" index="3"]
+[node name="FlowerTile3" parent="UI/UserInterface/HBox/RightScreen/Buttons/TileChoosingButtons" index="2"]
 button_group = SubResource("ButtonGroup_ro750")
 
-[node name="FlagTile" parent="UI/UserInterface/HBox/RightScreen/Buttons/TileChoosingButtons" index="4"]
-button_group = SubResource("ButtonGroup_hg0ag")
+[node name="DangerTile" parent="UI/UserInterface/HBox/RightScreen/Buttons/TileChoosingButtons" index="3"]
+button_group = SubResource("ButtonGroup_ro750")
 
-[node name="FlagTile3" type="Button" parent="UI/UserInterface/HBox/RightScreen/Buttons/TileChoosingButtons" index="5"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_icons/icon = ExtResource("2_djosc")
-theme_override_styles/normal = ExtResource("3_b6i6a")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_4d574")
-theme_override_styles/hover = SubResource("StyleBoxFlat_uf5wx")
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_7jfck")
-toggle_mode = true
-button_group = SubResource("ButtonGroup_hg0ag")
-icon_alignment = 1
+[node name="BlankTile" parent="UI/UserInterface/HBox/RightScreen/Buttons/TileChoosingButtons" index="4"]
+button_group = SubResource("ButtonGroup_ro750")
+
+[node name="FlagTile" parent="UI/UserInterface/HBox/RightScreen/Buttons/TileChoosingButtons" index="5"]
+button_group = SubResource("ButtonGroup_ro750")
 
 [node name="World" parent="." instance=ExtResource("1_q24h2")]
 
-[node name="Ui" parent="." instance=ExtResource("2_ro750")]
-offset_left = -576.0
-offset_top = -324.0
-offset_right = -576.0
-offset_bottom = -324.0
-mouse_filter = 1
-
-[node name="CheckButton" type="CheckButton" parent="Ui"]
-layout_mode = 0
-offset_right = 44.0
-offset_bottom = 24.0
-
-[connection signal="toggled" from="UI/UserInterface/HBox/RightScreen/Buttons/TileChoosingButtons/GrassTile" to="World/PlayerTileMapLayer" method="_on_flag_tile_toggled"]
-[connection signal="toggled" from="UI/UserInterface/HBox/RightScreen/Buttons/TileChoosingButtons/FlowerTile" to="World/PlayerTileMapLayer" method="_on_flower_tile_toggled"]
-[connection signal="toggled" from="UI/UserInterface/HBox/RightScreen/Buttons/TileChoosingButtons/DangerTile" to="World/PlayerTileMapLayer" method="_on_danger_tile_toggled"]
-[connection signal="toggled" from="UI/UserInterface/HBox/RightScreen/Buttons/TileChoosingButtons/BlankTile" to="World/PlayerTileMapLayer" method="_on_blank_tile_toggled"]
-[connection signal="toggled" from="UI/UserInterface/HBox/RightScreen/Buttons/TileChoosingButtons/FlagTile" to="World/PlayerTileMapLayer" method="_on_flag_tile_toggled"]
-[connection signal="toggled" from="UI/UserInterface/HBox/RightScreen/Buttons/TileChoosingButtons/FlagTile3" to="World/PlayerTileMapLayer" method="_on_flag_tile_toggled"]
-[connection signal="toggled" from="Ui/CheckButton" to="World" method="_on_check_button_toggled"]
+[connection signal="toggled" from="UI/UserInterface/HBox/RightScreen/Buttons/Debug" to="World" method="_on_debug_toggled"]
 
 [editable path="UI/UserInterface"]
-[editable path="World"]

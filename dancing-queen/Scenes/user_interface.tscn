@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cyd273blrwvj6"]
+[gd_scene load_steps=15 format=3 uid="uid://cyd273blrwvj6"]
 
 [ext_resource type="StyleBox" uid="uid://dokg5hcv2e0km" path="res://resources/button_left_right.tres" id="1_7jfck"]
 [ext_resource type="Texture2D" uid="uid://v2205yjviyay" path="res://Assets/Art/png/flower_tile.png" id="1_v7dfl"]
@@ -20,6 +20,12 @@ bg_color = Color(0.9487085, 0.21745047, 1.92523e-07, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7jfck"]
 bg_color = Color(1.6364455e-06, 0.6430421, 0.24692357, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1648f"]
+bg_color = Color(0.7944067, 0, 0.11294835, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_doevo"]
+bg_color = Color(7.7731165e-06, 0.59024537, 0.11758796, 1)
 
 [node name="UserInterface" type="Control"]
 layout_mode = 3
@@ -109,7 +115,7 @@ size_flags_stretch_ratio = 5.0
 [node name="Buttons" type="GridContainer" parent="HBox/RightScreen"]
 layout_mode = 2
 size_flags_vertical = 3
-columns = 7
+columns = 8
 
 [node name="TileChoosingButtons" type="GridContainer" parent="HBox/RightScreen/Buttons"]
 layout_mode = 2
@@ -224,3 +230,12 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[node name="Debug" type="Button" parent="HBox/RightScreen/Buttons"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_1648f")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_doevo")
+toggle_mode = true
+text = "DEBUG!"
