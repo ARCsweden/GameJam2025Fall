@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://4wyirpe2y2vd"]
+[gd_scene load_steps=61 format=3 uid="uid://4wyirpe2y2vd"]
 
 [ext_resource type="Script" uid="uid://bnrlb830qr02r" path="res://Scripts/bee_dancer.gd" id="1_ucuxe"]
 [ext_resource type="Texture2D" uid="uid://n7pgnackvoio" path="res://Assets/BeeDancer/butt.png" id="1_xybo6"]
@@ -22,7 +22,7 @@ tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath("Sprite/Head/Eyes/EyeL:position")
-tracks/0/interp = 1
+tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
@@ -34,7 +34,7 @@ tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/path = NodePath("Sprite/Head/Eyes/EyeR:position")
-tracks/1/interp = 1
+tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
@@ -46,7 +46,7 @@ tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/path = NodePath("Sprite/Head/Eyes:position")
-tracks/2/interp = 1
+tracks/2/interp = 2
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
@@ -58,7 +58,7 @@ tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/path = NodePath("Sprite/Head/Antennas/AntennaL:position")
-tracks/3/interp = 1
+tracks/3/interp = 2
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
@@ -70,7 +70,7 @@ tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/path = NodePath("Sprite/Head/Antennas/AntennaR:position")
-tracks/4/interp = 1
+tracks/4/interp = 2
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
@@ -82,7 +82,7 @@ tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/path = NodePath("Sprite/Head/Antennas:position")
-tracks/5/interp = 1
+tracks/5/interp = 2
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0),
@@ -94,7 +94,7 @@ tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/path = NodePath("Sprite/Head:position")
-tracks/6/interp = 1
+tracks/6/interp = 2
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(0),
@@ -106,7 +106,7 @@ tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/path = NodePath("Sprite/Bod/ArmTop1StL/ArmTop2Nd:position")
-tracks/7/interp = 1
+tracks/7/interp = 2
 tracks/7/loop_wrap = true
 tracks/7/keys = {
 "times": PackedFloat32Array(0),
@@ -118,7 +118,7 @@ tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
 tracks/8/path = NodePath("Sprite/Bod/ArmTop1StL:position")
-tracks/8/interp = 1
+tracks/8/interp = 2
 tracks/8/loop_wrap = true
 tracks/8/keys = {
 "times": PackedFloat32Array(0),
@@ -130,7 +130,7 @@ tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
 tracks/9/path = NodePath("Sprite/Bod/ArmTop1StR/ArmTop2Nd:position")
-tracks/9/interp = 1
+tracks/9/interp = 2
 tracks/9/loop_wrap = true
 tracks/9/keys = {
 "times": PackedFloat32Array(0),
@@ -142,7 +142,7 @@ tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
 tracks/10/path = NodePath("Sprite/Bod/ArmTop1StR:position")
-tracks/10/interp = 1
+tracks/10/interp = 2
 tracks/10/loop_wrap = true
 tracks/10/keys = {
 "times": PackedFloat32Array(0),
@@ -154,7 +154,7 @@ tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
 tracks/11/path = NodePath("Sprite/Bod/ArmMid1StL/ArmMid2Nd:position")
-tracks/11/interp = 1
+tracks/11/interp = 2
 tracks/11/loop_wrap = true
 tracks/11/keys = {
 "times": PackedFloat32Array(0),
@@ -166,7 +166,7 @@ tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
 tracks/12/path = NodePath("Sprite/Bod/ArmMid1StL:position")
-tracks/12/interp = 1
+tracks/12/interp = 2
 tracks/12/loop_wrap = true
 tracks/12/keys = {
 "times": PackedFloat32Array(0),
@@ -178,7 +178,7 @@ tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
 tracks/13/path = NodePath("Sprite/Bod/ArmMid1StR/ArmMid2Nd:position")
-tracks/13/interp = 1
+tracks/13/interp = 2
 tracks/13/loop_wrap = true
 tracks/13/keys = {
 "times": PackedFloat32Array(0),
@@ -190,7 +190,7 @@ tracks/14/type = "value"
 tracks/14/imported = false
 tracks/14/enabled = true
 tracks/14/path = NodePath("Sprite/Bod/ArmMid1StR:position")
-tracks/14/interp = 1
+tracks/14/interp = 2
 tracks/14/loop_wrap = true
 tracks/14/keys = {
 "times": PackedFloat32Array(0),
@@ -202,7 +202,7 @@ tracks/15/type = "value"
 tracks/15/imported = false
 tracks/15/enabled = true
 tracks/15/path = NodePath("Sprite/Bod/ArmBot1StL/ArmBot2Nd/ArmBot3Rd/ArmBot4Th:position")
-tracks/15/interp = 1
+tracks/15/interp = 2
 tracks/15/loop_wrap = true
 tracks/15/keys = {
 "times": PackedFloat32Array(0),
@@ -214,7 +214,7 @@ tracks/16/type = "value"
 tracks/16/imported = false
 tracks/16/enabled = true
 tracks/16/path = NodePath("Sprite/Bod/ArmBot1StL/ArmBot2Nd/ArmBot3Rd:position")
-tracks/16/interp = 1
+tracks/16/interp = 2
 tracks/16/loop_wrap = true
 tracks/16/keys = {
 "times": PackedFloat32Array(0),
@@ -226,7 +226,7 @@ tracks/17/type = "value"
 tracks/17/imported = false
 tracks/17/enabled = true
 tracks/17/path = NodePath("Sprite/Bod/ArmBot1StL/ArmBot2Nd:position")
-tracks/17/interp = 1
+tracks/17/interp = 2
 tracks/17/loop_wrap = true
 tracks/17/keys = {
 "times": PackedFloat32Array(0),
@@ -238,7 +238,7 @@ tracks/18/type = "value"
 tracks/18/imported = false
 tracks/18/enabled = true
 tracks/18/path = NodePath("Sprite/Bod/ArmBot1StL:position")
-tracks/18/interp = 1
+tracks/18/interp = 2
 tracks/18/loop_wrap = true
 tracks/18/keys = {
 "times": PackedFloat32Array(0),
@@ -250,7 +250,7 @@ tracks/19/type = "value"
 tracks/19/imported = false
 tracks/19/enabled = true
 tracks/19/path = NodePath("Sprite/Bod/ArmBot1StR/ArmBot2Nd/ArmBot3Rd/ArmBot4Th:position")
-tracks/19/interp = 1
+tracks/19/interp = 2
 tracks/19/loop_wrap = true
 tracks/19/keys = {
 "times": PackedFloat32Array(0),
@@ -262,7 +262,7 @@ tracks/20/type = "value"
 tracks/20/imported = false
 tracks/20/enabled = true
 tracks/20/path = NodePath("Sprite/Bod/ArmBot1StR/ArmBot2Nd/ArmBot3Rd:position")
-tracks/20/interp = 1
+tracks/20/interp = 2
 tracks/20/loop_wrap = true
 tracks/20/keys = {
 "times": PackedFloat32Array(0),
@@ -274,7 +274,7 @@ tracks/21/type = "value"
 tracks/21/imported = false
 tracks/21/enabled = true
 tracks/21/path = NodePath("Sprite/Bod/ArmBot1StR/ArmBot2Nd:position")
-tracks/21/interp = 1
+tracks/21/interp = 2
 tracks/21/loop_wrap = true
 tracks/21/keys = {
 "times": PackedFloat32Array(0),
@@ -286,7 +286,7 @@ tracks/22/type = "value"
 tracks/22/imported = false
 tracks/22/enabled = true
 tracks/22/path = NodePath("Sprite/Bod/ArmBot1StR:position")
-tracks/22/interp = 1
+tracks/22/interp = 2
 tracks/22/loop_wrap = true
 tracks/22/keys = {
 "times": PackedFloat32Array(0),
@@ -298,7 +298,7 @@ tracks/23/type = "value"
 tracks/23/imported = false
 tracks/23/enabled = true
 tracks/23/path = NodePath("Sprite/Bod:position")
-tracks/23/interp = 1
+tracks/23/interp = 2
 tracks/23/loop_wrap = true
 tracks/23/keys = {
 "times": PackedFloat32Array(0),
@@ -310,7 +310,7 @@ tracks/24/type = "value"
 tracks/24/imported = false
 tracks/24/enabled = true
 tracks/24/path = NodePath("Sprite/Butt:position")
-tracks/24/interp = 1
+tracks/24/interp = 2
 tracks/24/loop_wrap = true
 tracks/24/keys = {
 "times": PackedFloat32Array(0),
@@ -322,7 +322,7 @@ tracks/25/type = "value"
 tracks/25/imported = false
 tracks/25/enabled = true
 tracks/25/path = NodePath("Sprite/WingL:position")
-tracks/25/interp = 1
+tracks/25/interp = 2
 tracks/25/loop_wrap = true
 tracks/25/keys = {
 "times": PackedFloat32Array(0),
@@ -334,7 +334,7 @@ tracks/26/type = "value"
 tracks/26/imported = false
 tracks/26/enabled = true
 tracks/26/path = NodePath("Sprite/WingR:position")
-tracks/26/interp = 1
+tracks/26/interp = 2
 tracks/26/loop_wrap = true
 tracks/26/keys = {
 "times": PackedFloat32Array(0),
@@ -346,7 +346,7 @@ tracks/27/type = "value"
 tracks/27/imported = false
 tracks/27/enabled = true
 tracks/27/path = NodePath("Sprite:position")
-tracks/27/interp = 1
+tracks/27/interp = 2
 tracks/27/loop_wrap = true
 tracks/27/keys = {
 "times": PackedFloat32Array(0),
@@ -358,7 +358,7 @@ tracks/28/type = "value"
 tracks/28/imported = false
 tracks/28/enabled = true
 tracks/28/path = NodePath("Sprite/Head/Eyes/EyeL:rotation")
-tracks/28/interp = 1
+tracks/28/interp = 2
 tracks/28/loop_wrap = true
 tracks/28/keys = {
 "times": PackedFloat32Array(0),
@@ -370,7 +370,7 @@ tracks/29/type = "value"
 tracks/29/imported = false
 tracks/29/enabled = true
 tracks/29/path = NodePath("Sprite/Head/Eyes/EyeR:rotation")
-tracks/29/interp = 1
+tracks/29/interp = 2
 tracks/29/loop_wrap = true
 tracks/29/keys = {
 "times": PackedFloat32Array(0),
@@ -382,7 +382,7 @@ tracks/30/type = "value"
 tracks/30/imported = false
 tracks/30/enabled = true
 tracks/30/path = NodePath("Sprite/Head/Eyes:rotation")
-tracks/30/interp = 1
+tracks/30/interp = 2
 tracks/30/loop_wrap = true
 tracks/30/keys = {
 "times": PackedFloat32Array(0),
@@ -394,7 +394,7 @@ tracks/31/type = "value"
 tracks/31/imported = false
 tracks/31/enabled = true
 tracks/31/path = NodePath("Sprite/Head/Antennas/AntennaL:rotation")
-tracks/31/interp = 1
+tracks/31/interp = 2
 tracks/31/loop_wrap = true
 tracks/31/keys = {
 "times": PackedFloat32Array(0),
@@ -406,7 +406,7 @@ tracks/32/type = "value"
 tracks/32/imported = false
 tracks/32/enabled = true
 tracks/32/path = NodePath("Sprite/Head/Antennas/AntennaR:rotation")
-tracks/32/interp = 1
+tracks/32/interp = 2
 tracks/32/loop_wrap = true
 tracks/32/keys = {
 "times": PackedFloat32Array(0),
@@ -418,7 +418,7 @@ tracks/33/type = "value"
 tracks/33/imported = false
 tracks/33/enabled = true
 tracks/33/path = NodePath("Sprite/Head/Antennas:rotation")
-tracks/33/interp = 1
+tracks/33/interp = 2
 tracks/33/loop_wrap = true
 tracks/33/keys = {
 "times": PackedFloat32Array(0),
@@ -430,7 +430,7 @@ tracks/34/type = "value"
 tracks/34/imported = false
 tracks/34/enabled = true
 tracks/34/path = NodePath("Sprite/Head:rotation")
-tracks/34/interp = 1
+tracks/34/interp = 2
 tracks/34/loop_wrap = true
 tracks/34/keys = {
 "times": PackedFloat32Array(0),
@@ -442,7 +442,7 @@ tracks/35/type = "value"
 tracks/35/imported = false
 tracks/35/enabled = true
 tracks/35/path = NodePath("Sprite/Bod/ArmTop1StL/ArmTop2Nd:rotation")
-tracks/35/interp = 1
+tracks/35/interp = 2
 tracks/35/loop_wrap = true
 tracks/35/keys = {
 "times": PackedFloat32Array(0),
@@ -454,7 +454,7 @@ tracks/36/type = "value"
 tracks/36/imported = false
 tracks/36/enabled = true
 tracks/36/path = NodePath("Sprite/Bod/ArmTop1StL:rotation")
-tracks/36/interp = 1
+tracks/36/interp = 2
 tracks/36/loop_wrap = true
 tracks/36/keys = {
 "times": PackedFloat32Array(0),
@@ -466,7 +466,7 @@ tracks/37/type = "value"
 tracks/37/imported = false
 tracks/37/enabled = true
 tracks/37/path = NodePath("Sprite/Bod/ArmTop1StR/ArmTop2Nd:rotation")
-tracks/37/interp = 1
+tracks/37/interp = 2
 tracks/37/loop_wrap = true
 tracks/37/keys = {
 "times": PackedFloat32Array(0),
@@ -478,7 +478,7 @@ tracks/38/type = "value"
 tracks/38/imported = false
 tracks/38/enabled = true
 tracks/38/path = NodePath("Sprite/Bod/ArmTop1StR:rotation")
-tracks/38/interp = 1
+tracks/38/interp = 2
 tracks/38/loop_wrap = true
 tracks/38/keys = {
 "times": PackedFloat32Array(0),
@@ -490,7 +490,7 @@ tracks/39/type = "value"
 tracks/39/imported = false
 tracks/39/enabled = true
 tracks/39/path = NodePath("Sprite/Bod/ArmMid1StL/ArmMid2Nd:rotation")
-tracks/39/interp = 1
+tracks/39/interp = 2
 tracks/39/loop_wrap = true
 tracks/39/keys = {
 "times": PackedFloat32Array(0),
@@ -502,7 +502,7 @@ tracks/40/type = "value"
 tracks/40/imported = false
 tracks/40/enabled = true
 tracks/40/path = NodePath("Sprite/Bod/ArmMid1StL:rotation")
-tracks/40/interp = 1
+tracks/40/interp = 2
 tracks/40/loop_wrap = true
 tracks/40/keys = {
 "times": PackedFloat32Array(0),
@@ -514,7 +514,7 @@ tracks/41/type = "value"
 tracks/41/imported = false
 tracks/41/enabled = true
 tracks/41/path = NodePath("Sprite/Bod/ArmMid1StR/ArmMid2Nd:rotation")
-tracks/41/interp = 1
+tracks/41/interp = 2
 tracks/41/loop_wrap = true
 tracks/41/keys = {
 "times": PackedFloat32Array(0),
@@ -526,7 +526,7 @@ tracks/42/type = "value"
 tracks/42/imported = false
 tracks/42/enabled = true
 tracks/42/path = NodePath("Sprite/Bod/ArmMid1StR:rotation")
-tracks/42/interp = 1
+tracks/42/interp = 2
 tracks/42/loop_wrap = true
 tracks/42/keys = {
 "times": PackedFloat32Array(0),
@@ -538,7 +538,7 @@ tracks/43/type = "value"
 tracks/43/imported = false
 tracks/43/enabled = true
 tracks/43/path = NodePath("Sprite/Bod/ArmBot1StL/ArmBot2Nd/ArmBot3Rd/ArmBot4Th:rotation")
-tracks/43/interp = 1
+tracks/43/interp = 2
 tracks/43/loop_wrap = true
 tracks/43/keys = {
 "times": PackedFloat32Array(0),
@@ -550,7 +550,7 @@ tracks/44/type = "value"
 tracks/44/imported = false
 tracks/44/enabled = true
 tracks/44/path = NodePath("Sprite/Bod/ArmBot1StL/ArmBot2Nd/ArmBot3Rd:rotation")
-tracks/44/interp = 1
+tracks/44/interp = 2
 tracks/44/loop_wrap = true
 tracks/44/keys = {
 "times": PackedFloat32Array(0),
@@ -562,7 +562,7 @@ tracks/45/type = "value"
 tracks/45/imported = false
 tracks/45/enabled = true
 tracks/45/path = NodePath("Sprite/Bod/ArmBot1StL/ArmBot2Nd:rotation")
-tracks/45/interp = 1
+tracks/45/interp = 2
 tracks/45/loop_wrap = true
 tracks/45/keys = {
 "times": PackedFloat32Array(0),
@@ -574,7 +574,7 @@ tracks/46/type = "value"
 tracks/46/imported = false
 tracks/46/enabled = true
 tracks/46/path = NodePath("Sprite/Bod/ArmBot1StL:rotation")
-tracks/46/interp = 1
+tracks/46/interp = 2
 tracks/46/loop_wrap = true
 tracks/46/keys = {
 "times": PackedFloat32Array(0),
@@ -586,7 +586,7 @@ tracks/47/type = "value"
 tracks/47/imported = false
 tracks/47/enabled = true
 tracks/47/path = NodePath("Sprite/Bod/ArmBot1StR/ArmBot2Nd/ArmBot3Rd/ArmBot4Th:rotation")
-tracks/47/interp = 1
+tracks/47/interp = 2
 tracks/47/loop_wrap = true
 tracks/47/keys = {
 "times": PackedFloat32Array(0),
@@ -598,7 +598,7 @@ tracks/48/type = "value"
 tracks/48/imported = false
 tracks/48/enabled = true
 tracks/48/path = NodePath("Sprite/Bod/ArmBot1StR/ArmBot2Nd/ArmBot3Rd:rotation")
-tracks/48/interp = 1
+tracks/48/interp = 2
 tracks/48/loop_wrap = true
 tracks/48/keys = {
 "times": PackedFloat32Array(0),
@@ -610,7 +610,7 @@ tracks/49/type = "value"
 tracks/49/imported = false
 tracks/49/enabled = true
 tracks/49/path = NodePath("Sprite/Bod/ArmBot1StR/ArmBot2Nd:rotation")
-tracks/49/interp = 1
+tracks/49/interp = 2
 tracks/49/loop_wrap = true
 tracks/49/keys = {
 "times": PackedFloat32Array(0),
@@ -622,7 +622,7 @@ tracks/50/type = "value"
 tracks/50/imported = false
 tracks/50/enabled = true
 tracks/50/path = NodePath("Sprite/Bod/ArmBot1StR:rotation")
-tracks/50/interp = 1
+tracks/50/interp = 2
 tracks/50/loop_wrap = true
 tracks/50/keys = {
 "times": PackedFloat32Array(0),
@@ -634,7 +634,7 @@ tracks/51/type = "value"
 tracks/51/imported = false
 tracks/51/enabled = true
 tracks/51/path = NodePath("Sprite/Bod:rotation")
-tracks/51/interp = 1
+tracks/51/interp = 2
 tracks/51/loop_wrap = true
 tracks/51/keys = {
 "times": PackedFloat32Array(0),
@@ -646,7 +646,7 @@ tracks/52/type = "value"
 tracks/52/imported = false
 tracks/52/enabled = true
 tracks/52/path = NodePath("Sprite/Butt:rotation")
-tracks/52/interp = 1
+tracks/52/interp = 2
 tracks/52/loop_wrap = true
 tracks/52/keys = {
 "times": PackedFloat32Array(0),
@@ -658,7 +658,7 @@ tracks/53/type = "value"
 tracks/53/imported = false
 tracks/53/enabled = true
 tracks/53/path = NodePath("Sprite/WingL:rotation")
-tracks/53/interp = 1
+tracks/53/interp = 2
 tracks/53/loop_wrap = true
 tracks/53/keys = {
 "times": PackedFloat32Array(0),
@@ -670,7 +670,7 @@ tracks/54/type = "value"
 tracks/54/imported = false
 tracks/54/enabled = true
 tracks/54/path = NodePath("Sprite/WingR:rotation")
-tracks/54/interp = 1
+tracks/54/interp = 2
 tracks/54/loop_wrap = true
 tracks/54/keys = {
 "times": PackedFloat32Array(0),
@@ -682,7 +682,7 @@ tracks/55/type = "value"
 tracks/55/imported = false
 tracks/55/enabled = true
 tracks/55/path = NodePath("Sprite:rotation")
-tracks/55/interp = 1
+tracks/55/interp = 2
 tracks/55/loop_wrap = true
 tracks/55/keys = {
 "times": PackedFloat32Array(0),
@@ -694,7 +694,7 @@ tracks/56/type = "value"
 tracks/56/imported = false
 tracks/56/enabled = true
 tracks/56/path = NodePath("Sprite/Head/Eyes/EyeL:scale")
-tracks/56/interp = 1
+tracks/56/interp = 2
 tracks/56/loop_wrap = true
 tracks/56/keys = {
 "times": PackedFloat32Array(0),
@@ -706,7 +706,7 @@ tracks/57/type = "value"
 tracks/57/imported = false
 tracks/57/enabled = true
 tracks/57/path = NodePath("Sprite/Head/Eyes/EyeR:scale")
-tracks/57/interp = 1
+tracks/57/interp = 2
 tracks/57/loop_wrap = true
 tracks/57/keys = {
 "times": PackedFloat32Array(0),
@@ -718,7 +718,7 @@ tracks/58/type = "value"
 tracks/58/imported = false
 tracks/58/enabled = true
 tracks/58/path = NodePath("Sprite/Head/Eyes:scale")
-tracks/58/interp = 1
+tracks/58/interp = 2
 tracks/58/loop_wrap = true
 tracks/58/keys = {
 "times": PackedFloat32Array(0),
@@ -730,7 +730,7 @@ tracks/59/type = "value"
 tracks/59/imported = false
 tracks/59/enabled = true
 tracks/59/path = NodePath("Sprite/Head/Antennas/AntennaL:scale")
-tracks/59/interp = 1
+tracks/59/interp = 2
 tracks/59/loop_wrap = true
 tracks/59/keys = {
 "times": PackedFloat32Array(0),
@@ -742,7 +742,7 @@ tracks/60/type = "value"
 tracks/60/imported = false
 tracks/60/enabled = true
 tracks/60/path = NodePath("Sprite/Head/Antennas/AntennaR:scale")
-tracks/60/interp = 1
+tracks/60/interp = 2
 tracks/60/loop_wrap = true
 tracks/60/keys = {
 "times": PackedFloat32Array(0),
@@ -754,7 +754,7 @@ tracks/61/type = "value"
 tracks/61/imported = false
 tracks/61/enabled = true
 tracks/61/path = NodePath("Sprite/Head/Antennas:scale")
-tracks/61/interp = 1
+tracks/61/interp = 2
 tracks/61/loop_wrap = true
 tracks/61/keys = {
 "times": PackedFloat32Array(0),
@@ -766,7 +766,7 @@ tracks/62/type = "value"
 tracks/62/imported = false
 tracks/62/enabled = true
 tracks/62/path = NodePath("Sprite/Head:scale")
-tracks/62/interp = 1
+tracks/62/interp = 2
 tracks/62/loop_wrap = true
 tracks/62/keys = {
 "times": PackedFloat32Array(0),
@@ -778,7 +778,7 @@ tracks/63/type = "value"
 tracks/63/imported = false
 tracks/63/enabled = true
 tracks/63/path = NodePath("Sprite/Bod/ArmTop1StL/ArmTop2Nd:scale")
-tracks/63/interp = 1
+tracks/63/interp = 2
 tracks/63/loop_wrap = true
 tracks/63/keys = {
 "times": PackedFloat32Array(0),
@@ -790,7 +790,7 @@ tracks/64/type = "value"
 tracks/64/imported = false
 tracks/64/enabled = true
 tracks/64/path = NodePath("Sprite/Bod/ArmTop1StL:scale")
-tracks/64/interp = 1
+tracks/64/interp = 2
 tracks/64/loop_wrap = true
 tracks/64/keys = {
 "times": PackedFloat32Array(0),
@@ -802,7 +802,7 @@ tracks/65/type = "value"
 tracks/65/imported = false
 tracks/65/enabled = true
 tracks/65/path = NodePath("Sprite/Bod/ArmTop1StR/ArmTop2Nd:scale")
-tracks/65/interp = 1
+tracks/65/interp = 2
 tracks/65/loop_wrap = true
 tracks/65/keys = {
 "times": PackedFloat32Array(0),
@@ -814,7 +814,7 @@ tracks/66/type = "value"
 tracks/66/imported = false
 tracks/66/enabled = true
 tracks/66/path = NodePath("Sprite/Bod/ArmTop1StR:scale")
-tracks/66/interp = 1
+tracks/66/interp = 2
 tracks/66/loop_wrap = true
 tracks/66/keys = {
 "times": PackedFloat32Array(0),
@@ -826,7 +826,7 @@ tracks/67/type = "value"
 tracks/67/imported = false
 tracks/67/enabled = true
 tracks/67/path = NodePath("Sprite/Bod/ArmMid1StL/ArmMid2Nd:scale")
-tracks/67/interp = 1
+tracks/67/interp = 2
 tracks/67/loop_wrap = true
 tracks/67/keys = {
 "times": PackedFloat32Array(0),
@@ -838,7 +838,7 @@ tracks/68/type = "value"
 tracks/68/imported = false
 tracks/68/enabled = true
 tracks/68/path = NodePath("Sprite/Bod/ArmMid1StL:scale")
-tracks/68/interp = 1
+tracks/68/interp = 2
 tracks/68/loop_wrap = true
 tracks/68/keys = {
 "times": PackedFloat32Array(0),
@@ -850,7 +850,7 @@ tracks/69/type = "value"
 tracks/69/imported = false
 tracks/69/enabled = true
 tracks/69/path = NodePath("Sprite/Bod/ArmMid1StR/ArmMid2Nd:scale")
-tracks/69/interp = 1
+tracks/69/interp = 2
 tracks/69/loop_wrap = true
 tracks/69/keys = {
 "times": PackedFloat32Array(0),
@@ -862,7 +862,7 @@ tracks/70/type = "value"
 tracks/70/imported = false
 tracks/70/enabled = true
 tracks/70/path = NodePath("Sprite/Bod/ArmMid1StR:scale")
-tracks/70/interp = 1
+tracks/70/interp = 2
 tracks/70/loop_wrap = true
 tracks/70/keys = {
 "times": PackedFloat32Array(0),
@@ -874,7 +874,7 @@ tracks/71/type = "value"
 tracks/71/imported = false
 tracks/71/enabled = true
 tracks/71/path = NodePath("Sprite/Bod/ArmBot1StL/ArmBot2Nd/ArmBot3Rd/ArmBot4Th:scale")
-tracks/71/interp = 1
+tracks/71/interp = 2
 tracks/71/loop_wrap = true
 tracks/71/keys = {
 "times": PackedFloat32Array(0),
@@ -886,7 +886,7 @@ tracks/72/type = "value"
 tracks/72/imported = false
 tracks/72/enabled = true
 tracks/72/path = NodePath("Sprite/Bod/ArmBot1StL/ArmBot2Nd/ArmBot3Rd:scale")
-tracks/72/interp = 1
+tracks/72/interp = 2
 tracks/72/loop_wrap = true
 tracks/72/keys = {
 "times": PackedFloat32Array(0),
@@ -898,7 +898,7 @@ tracks/73/type = "value"
 tracks/73/imported = false
 tracks/73/enabled = true
 tracks/73/path = NodePath("Sprite/Bod/ArmBot1StL/ArmBot2Nd:scale")
-tracks/73/interp = 1
+tracks/73/interp = 2
 tracks/73/loop_wrap = true
 tracks/73/keys = {
 "times": PackedFloat32Array(0),
@@ -910,7 +910,7 @@ tracks/74/type = "value"
 tracks/74/imported = false
 tracks/74/enabled = true
 tracks/74/path = NodePath("Sprite/Bod/ArmBot1StL:scale")
-tracks/74/interp = 1
+tracks/74/interp = 2
 tracks/74/loop_wrap = true
 tracks/74/keys = {
 "times": PackedFloat32Array(0),
@@ -922,7 +922,7 @@ tracks/75/type = "value"
 tracks/75/imported = false
 tracks/75/enabled = true
 tracks/75/path = NodePath("Sprite/Bod/ArmBot1StR/ArmBot2Nd/ArmBot3Rd/ArmBot4Th:scale")
-tracks/75/interp = 1
+tracks/75/interp = 2
 tracks/75/loop_wrap = true
 tracks/75/keys = {
 "times": PackedFloat32Array(0),
@@ -934,7 +934,7 @@ tracks/76/type = "value"
 tracks/76/imported = false
 tracks/76/enabled = true
 tracks/76/path = NodePath("Sprite/Bod/ArmBot1StR/ArmBot2Nd/ArmBot3Rd:scale")
-tracks/76/interp = 1
+tracks/76/interp = 2
 tracks/76/loop_wrap = true
 tracks/76/keys = {
 "times": PackedFloat32Array(0),
@@ -946,7 +946,7 @@ tracks/77/type = "value"
 tracks/77/imported = false
 tracks/77/enabled = true
 tracks/77/path = NodePath("Sprite/Bod/ArmBot1StR/ArmBot2Nd:scale")
-tracks/77/interp = 1
+tracks/77/interp = 2
 tracks/77/loop_wrap = true
 tracks/77/keys = {
 "times": PackedFloat32Array(0),
@@ -958,7 +958,7 @@ tracks/78/type = "value"
 tracks/78/imported = false
 tracks/78/enabled = true
 tracks/78/path = NodePath("Sprite/Bod/ArmBot1StR:scale")
-tracks/78/interp = 1
+tracks/78/interp = 2
 tracks/78/loop_wrap = true
 tracks/78/keys = {
 "times": PackedFloat32Array(0),
@@ -970,7 +970,7 @@ tracks/79/type = "value"
 tracks/79/imported = false
 tracks/79/enabled = true
 tracks/79/path = NodePath("Sprite/Bod:scale")
-tracks/79/interp = 1
+tracks/79/interp = 2
 tracks/79/loop_wrap = true
 tracks/79/keys = {
 "times": PackedFloat32Array(0),
@@ -982,7 +982,7 @@ tracks/80/type = "value"
 tracks/80/imported = false
 tracks/80/enabled = true
 tracks/80/path = NodePath("Sprite/Butt:scale")
-tracks/80/interp = 1
+tracks/80/interp = 2
 tracks/80/loop_wrap = true
 tracks/80/keys = {
 "times": PackedFloat32Array(0),
@@ -994,7 +994,7 @@ tracks/81/type = "value"
 tracks/81/imported = false
 tracks/81/enabled = true
 tracks/81/path = NodePath("Sprite/WingL:scale")
-tracks/81/interp = 1
+tracks/81/interp = 2
 tracks/81/loop_wrap = true
 tracks/81/keys = {
 "times": PackedFloat32Array(0),
@@ -1006,7 +1006,7 @@ tracks/82/type = "value"
 tracks/82/imported = false
 tracks/82/enabled = true
 tracks/82/path = NodePath("Sprite/WingR:scale")
-tracks/82/interp = 1
+tracks/82/interp = 2
 tracks/82/loop_wrap = true
 tracks/82/keys = {
 "times": PackedFloat32Array(0),
@@ -1018,7 +1018,7 @@ tracks/83/type = "value"
 tracks/83/imported = false
 tracks/83/enabled = true
 tracks/83/path = NodePath("Sprite:scale")
-tracks/83/interp = 1
+tracks/83/interp = 2
 tracks/83/loop_wrap = true
 tracks/83/keys = {
 "times": PackedFloat32Array(0),
@@ -1239,26 +1239,668 @@ tracks/0/keys = {
 "values": [0.5235988, -0.5235988, 0.5235988, -0.5235988, 0.5235988, -0.5235988, 0.5235988, -0.5235988, 0.5235988, -0.5235988]
 }
 
+[sub_resource type="Animation" id="Animation_djvqg"]
+resource_name = "head_angry"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite/Head:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, -66)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite/Head:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.23333333, 0.5, 0.76666665),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.05235987755982989, -0.05235987755982989, 0.05235987755982989, -0.05235987755982989]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite/Head/Antennas/AntennaR:rotation")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.10000001, 0.20000002, 0.3, 0.40000004, 0.50000006, 0.6, 0.70000005, 0.8000001, 0.9000001),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.3490658503988659, -0.3490658503988659, 0.3490658503988659, -0.3490658503988659, 0.3490658503988659, -0.3490658503988659, 0.3490658503988659, -0.3490658503988659, 0.3490658503988659, -0.3490658503988659]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite/Head/Antennas/AntennaL:rotation")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.10000001, 0.20000002, 0.3, 0.40000004, 0.50000006, 0.6, 0.70000005, 0.8000001, 0.9000001),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [3.490658503988659, 2.792526803190927, 3.490658503988659, 2.792526803190927, 3.490658503988659, 2.792526803190927, 3.490658503988659, 2.792526803190927, 3.490658503988659, 2.792526803190927]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite/Head/Antennas:position")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(46, -80)]
+}
+
+[sub_resource type="Animation" id="Animation_v5g3p"]
+resource_name = "wing_flap"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite/WingR:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.10000001, 0.20000002, 0.3, 0.40000004, 0.50000006, 0.6, 0.70000005, 0.8000001, 0.9000001),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [-2.117039, -0.23686141, -2.117039, -0.23686141, -2.117039, -0.23686141, -2.117039, -0.23686141, -2.117039, -0.23686141]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite/WingL:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.10000001, 0.20000002, 0.3, 0.40000004, 0.50000006, 0.6, 0.70000005, 0.8000001, 0.9000001),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [-1.0208663, -2.8518453, -1.0208663, -2.8518453, -1.0208663, -2.8518453, -1.0208663, -2.8518453, -1.0208663, -2.8518453]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -783)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite/Bod/ArmBot1StR/ArmBot2Nd/ArmBot3Rd/ArmBot4Th:rotation")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.45442426]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite/Bod/ArmBot1StL/ArmBot2Nd/ArmBot3Rd/ArmBot4Th:rotation")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.5137058]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprite/Bod/ArmBot1StL/ArmBot2Nd/ArmBot3Rd:rotation")
+tracks/5/interp = 2
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.5021418),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.085618615, 0.18839955]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Sprite/Bod/ArmBot1StR/ArmBot2Nd/ArmBot3Rd:rotation")
+tracks/6/interp = 2
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.19789721, -0.131155]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Sprite/Bod/ArmBot1StR:rotation")
+tracks/7/interp = 2
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.032611858, -0.044693384]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Sprite/Bod/ArmBot1StL:rotation")
+tracks/8/interp = 2
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [3.1925175, 3.117525]
+}
+
+[sub_resource type="Animation" id="Animation_7wri0"]
+resource_name = "butt_twerk"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite/Butt:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.46666667, 0.5, 0.96666664),
+"transitions": PackedFloat32Array(0.5, 0.5, 0.5, 0.5),
+"update": 0,
+"values": [-0.3490658503988659, 0.5235987755982988, 0.34906584, -0.5235987755982988]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite/Bod:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.4, 0.9),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [0.034906585, -0.034906585]
+}
+
+[sub_resource type="Animation" id="Animation_kmny2"]
+resource_name = "butt_wiggle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite/Butt:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.10000001, 0.20000002, 0.3, 0.40000004, 0.50000006, 0.6, 0.70000005, 0.8000001, 0.9000001),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [-0.17453292, 0.17453292, -0.17453292, 0.17453292, -0.17453292, 0.17453292, -0.17453292, 0.17453292, -0.17453292, 0.17453292]
+}
+
+[sub_resource type="Animation" id="Animation_ptpe4"]
+resource_name = "arm_top_pump"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite/Bod/ArmTop1StR/ArmTop2Nd:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.10511216, 0.10511216),
+"update": 0,
+"values": [1.2322705, -0.2675519]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite/Bod/ArmTop1StR:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.10511216, 0.10511216),
+"update": 0,
+"values": [-0.87266463, 0.66759783]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite/Bod/ArmTop1StL:rotation")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.10511216, 0.10511216),
+"update": 0,
+"values": [-0.61043787, 0.7921295]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite/Bod/ArmTop1StL/ArmTop2Nd:rotation")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.10511216, 0.10511216),
+"update": 0,
+"values": [-0.19596721, 1.184144]
+}
+
+[sub_resource type="Animation" id="Animation_01mvk"]
+resource_name = "arm_top_comb"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite/Bod/ArmTop1StR/ArmTop2Nd:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.32631055, -0.17500219, 0.32631055, -0.17500219]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite/Bod/ArmTop1StR:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [-1.1208646, -1.227765, -1.1208646, -1.227765]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite/Bod/ArmTop1StL:rotation")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [1.2320502, 1.0838478, 1.2320502, 1.0838478]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite/Bod/ArmTop1StL/ArmTop2Nd:rotation")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [-0.21959476, 0.34052408, -0.21959476, 0.34052408]
+}
+
+[sub_resource type="Animation" id="Animation_spe8g"]
+resource_name = "arm_mid_elbow"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite/Bod/ArmMid1StR:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.25881642, 0.25881642),
+"update": 0,
+"values": [0.7532725, -0.43150717]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite/Bod/ArmMid1StR/ArmMid2Nd:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.25881642, 0.25881642),
+"update": 0,
+"values": [-0.4343707, 0.41300184]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite/Bod/ArmMid1StL:rotation")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.25881642, 0.25881642),
+"update": 0,
+"values": [3.549788, 2.3432393]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite/Bod/ArmMid1StL/ArmMid2Nd:rotation")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.25881642, 0.25881642),
+"update": 0,
+"values": [0.4086544, -0.46193975]
+}
+
+[sub_resource type="Animation" id="Animation_g0m7l"]
+resource_name = "arm_mid_stretch"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite/Bod/ArmMid1StL:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.20000002, 0.3, 0.4013986, 0.5013986, 0.6, 0.70000005, 0.8000001, 0.9000001),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [3.457261, 3.2628925, 3.457261, 3.2628925, 3.457261, 3.2628925, 3.457261, 3.2628925, 3.457261, 3.2628925]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite/Bod/ArmMid1StL/ArmMid2Nd:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.20000002, 0.3, 0.4013986, 0.5013986, 0.6, 0.70000005, 0.8000001, 0.9000001),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [-2.6248684, -2.352875, -2.6248684, -2.352875, -2.6248684, -2.352875, -2.6248684, -2.352875, -2.6248684, -2.352875]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite/Bod/ArmMid1StR:rotation")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.10000001, 0.20000002, 0.3, 0.4013986, 0.5013986, 0.6, 0.70000005, 0.8000001, 0.9000001),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [-0.12022019, -0.32101417, -0.12022019, -0.32101417, -0.12022019, -0.32101417, -0.12022019, -0.32101417, -0.12022019, -0.32101417]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite/Bod/ArmMid1StR/ArmMid2Nd:rotation")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.10000001, 0.20000002, 0.3, 0.4013986, 0.5013986, 0.6, 0.70000005, 0.8000001, 0.9000001),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [-2.3971562, -2.632947, -2.3971562, -2.632947, -2.3971562, -2.632947, -2.3971562, -2.632947, -2.3971562, -2.632947]
+}
+
+[sub_resource type="Animation" id="Animation_xjgkt"]
+resource_name = "leg_left_raise"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite/Bod/ArmBot1StL:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.10000001, 0.20000002, 0.3, 0.40000004, 0.50000006, 0.6, 0.70000005, 0.8000001, 0.9000001),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [4.216644, 4.2692766, 4.216644, 4.2692766, 4.216644, 4.2692766, 4.216644, 4.2692766, 4.216644, 4.2692766]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite/Bod/ArmBot1StL/ArmBot2Nd:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.10000001, 0.20000002, 0.3, 0.40000004, 0.50000006, 0.6, 0.70000005, 0.8000001, 0.9000001),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [1.1024301, 1.1352298, 1.1024301, 1.1352298, 1.1024301, 1.1352298, 1.1024301, 1.1352298, 1.1024301, 1.1352298]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite/Bod/ArmBot1StL/ArmBot2Nd/ArmBot3Rd:rotation")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.10000001, 0.20000002, 0.3, 0.40000004, 0.50000006, 0.6, 0.70000005, 0.8000001, 0.9000001),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [1.6998461, 1.7270619, 1.6998461, 1.7270619, 1.6998461, 1.7270619, 1.6998461, 1.7270619, 1.6998461, 1.7270619]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite/Bod/ArmBot1StL/ArmBot2Nd/ArmBot3Rd/ArmBot4Th:rotation")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.10000001, 0.20000002, 0.3, 0.40000004, 0.50000006, 0.6, 0.70000005, 0.8000001, 0.9000001),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [-0.24373297, -0.34752363, -0.24373297, -0.34752363, -0.24373297, -0.34752363, -0.24373297, -0.34752363, -0.24373297, -0.34752363]
+}
+
+[sub_resource type="Animation" id="Animation_3s1nc"]
+resource_name = "leg_right_raise"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite/Bod/ArmBot1StR:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.10000001, 0.20000002, 0.3, 0.40000004, 0.50000006, 0.6, 0.70000005, 0.8000001, 0.9000001),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [-1.1828545, -1.145588, -1.1828545, -1.145588, -1.1828545, -1.145588, -1.1828545, -1.145588, -1.1828545, -1.145588]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite/Bod/ArmBot1StR/ArmBot2Nd:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.10000001, 0.20000002, 0.3, 0.40000004, 0.50000006, 0.6, 0.70000005, 0.8000001, 0.9000001),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [1.1472172, 1.0917983, 1.1472172, 1.0917983, 1.1472172, 1.0917983, 1.1472172, 1.0917983, 1.1472172, 1.0917983]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite/Bod/ArmBot1StR/ArmBot2Nd/ArmBot3Rd:rotation")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.10000001, 0.20000002, 0.3, 0.40000004, 0.50000006, 0.6, 0.70000005, 0.8000001, 0.9000001),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [1.763651, 1.817624, 1.763651, 1.817624, 1.763651, 1.817624, 1.763651, 1.817624, 1.763651, 1.817624]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite/Bod/ArmBot1StR/ArmBot2Nd/ArmBot3Rd/ArmBot4Th:rotation")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.10000001, 0.20000002, 0.3, 0.40000004, 0.50000006, 0.6, 0.70000005, 0.8000001, 0.9000001),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [-0.35186535, -0.4182526, -0.35186535, -0.4182526, -0.35186535, -0.4182526, -0.35186535, -0.4182526, -0.35186535, -0.4182526]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_sarwc"]
 _data = {
 &"RESET": SubResource("Animation_di1y5"),
+&"arm_mid_elbow": SubResource("Animation_spe8g"),
+&"arm_mid_stretch": SubResource("Animation_g0m7l"),
+&"arm_top_comb": SubResource("Animation_01mvk"),
+&"arm_top_pump": SubResource("Animation_ptpe4"),
+&"butt_twerk": SubResource("Animation_7wri0"),
+&"butt_wiggle": SubResource("Animation_kmny2"),
+&"head_angry": SubResource("Animation_djvqg"),
 &"head_bob": SubResource("Animation_ucuxe"),
-&"head_shake": SubResource("Animation_sarwc")
+&"head_shake": SubResource("Animation_sarwc"),
+&"leg_left_raise": SubResource("Animation_xjgkt"),
+&"leg_right_raise": SubResource("Animation_3s1nc"),
+&"wing_flap": SubResource("Animation_v5g3p")
 }
 
-[sub_resource type="AnimationNodeAdd2" id="AnimationNodeAdd2_di1y5"]
+[sub_resource type="AnimationNodeAdd2" id="AnimationNodeAdd2_sarwc"]
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_di1y5"]
-animation = &"head_bob"
+[sub_resource type="AnimationNodeAdd2" id="AnimationNodeAdd2_djvqg"]
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_sarwc"]
+[sub_resource type="AnimationNodeAdd2" id="AnimationNodeAdd2_v5g3p"]
+
+[sub_resource type="AnimationNodeAdd2" id="AnimationNodeAdd2_7wri0"]
+
+[sub_resource type="AnimationNodeAdd2" id="AnimationNodeAdd2_kmny2"]
+
+[sub_resource type="AnimationNodeAdd2" id="AnimationNodeAdd2_ucuxe"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_g0m7l"]
 animation = &"RESET"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xjgkt"]
+animation = &"arm_top_comb"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3s1nc"]
+animation = &"arm_top_pump"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_lqcl7"]
+animation = &"RESET"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_e40px"]
+animation = &"arm_mid_elbow"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_nltps"]
+animation = &"arm_mid_stretch"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_er454"]
+animation = &"RESET"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_nmmtr"]
+animation = &"leg_left_raise"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_b8rgd"]
+animation = &"leg_right_raise"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ucuxe"]
 animation = &"head_shake"
 
-[sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_djvqg"]
-xfade_time = 0.1
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_sarwc"]
+animation = &"head_angry"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_v5g3p"]
+animation = &"head_bob"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7wri0"]
+animation = &"RESET"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kmny2"]
+animation = &"wing_flap"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ptpe4"]
+animation = &"RESET"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_01mvk"]
+animation = &"butt_wiggle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_spe8g"]
+animation = &"butt_twerk"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_djvqg"]
+animation = &"RESET"
+
+[sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_er454"]
+xfade_time = 0.3
+input_0/name = "idle"
+input_0/auto_advance = false
+input_0/break_loop_at_end = false
+input_0/reset = true
+input_1/name = "elbow"
+input_1/auto_advance = false
+input_1/break_loop_at_end = false
+input_1/reset = true
+input_2/name = "stretch"
+input_2/auto_advance = false
+input_2/break_loop_at_end = false
+input_2/reset = true
+
+[sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_lqcl7"]
+xfade_time = 0.3
+input_0/name = "idle"
+input_0/auto_advance = false
+input_0/break_loop_at_end = false
+input_0/reset = true
+input_1/name = "comb"
+input_1/auto_advance = false
+input_1/break_loop_at_end = false
+input_1/reset = true
+input_2/name = "pump"
+input_2/auto_advance = false
+input_2/break_loop_at_end = false
+input_2/reset = true
+
+[sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_g0m7l"]
+xfade_time = 0.3
+input_0/name = "idle"
+input_0/auto_advance = false
+input_0/break_loop_at_end = false
+input_0/reset = true
+input_1/name = "wiggle"
+input_1/auto_advance = false
+input_1/break_loop_at_end = false
+input_1/reset = true
+input_2/name = "twerk"
+input_2/auto_advance = false
+input_2/break_loop_at_end = false
+input_2/reset = true
+
+[sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_v5g3p"]
+xfade_time = 0.3
 input_0/name = "idle"
 input_0/auto_advance = false
 input_0/break_loop_at_end = false
@@ -1267,21 +1909,101 @@ input_1/name = "shake"
 input_1/auto_advance = false
 input_1/break_loop_at_end = false
 input_1/reset = true
+input_2/name = "angry"
+input_2/auto_advance = false
+input_2/break_loop_at_end = false
+input_2/reset = true
+
+[sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_aqk55"]
+xfade_time = 0.1
+input_0/name = "idle"
+input_0/auto_advance = false
+input_0/break_loop_at_end = false
+input_0/reset = true
+input_1/name = "raise_left"
+input_1/auto_advance = false
+input_1/break_loop_at_end = false
+input_1/reset = true
+input_2/name = "raise_right"
+input_2/auto_advance = false
+input_2/break_loop_at_end = false
+input_2/reset = true
+
+[sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_ptpe4"]
+xfade_time = 0.3
+input_0/name = "idle"
+input_0/auto_advance = false
+input_0/break_loop_at_end = false
+input_0/reset = true
+input_1/name = "flap"
+input_1/auto_advance = false
+input_1/break_loop_at_end = false
+input_1/reset = true
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_ucuxe"]
-graph_offset = Vector2(-191.11252, -43.35058)
-nodes/output/position = Vector2(880, 80)
-nodes/HeadBob/node = SubResource("AnimationNodeAnimation_di1y5")
-nodes/HeadBob/position = Vector2(460, 320)
-nodes/AddHeadBob/node = SubResource("AnimationNodeAdd2_di1y5")
-nodes/AddHeadBob/position = Vector2(660, 80)
-nodes/Shake/node = SubResource("AnimationNodeAnimation_ucuxe")
-nodes/Shake/position = Vector2(220, 220)
-nodes/Transition/node = SubResource("AnimationNodeTransition_djvqg")
-nodes/Transition/position = Vector2(460, 80)
-nodes/IDLE/node = SubResource("AnimationNodeAnimation_sarwc")
-nodes/IDLE/position = Vector2(220, 40)
-node_connections = [&"output", 0, &"AddHeadBob", &"AddHeadBob", 0, &"Transition", &"AddHeadBob", 1, &"HeadBob", &"Transition", 0, &"IDLE", &"Transition", 1, &"Shake"]
+graph_offset = Vector2(-331.21814, 3265.9954)
+nodes/output/position = Vector2(1780, 2440)
+"nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_ucuxe")
+"nodes/Animation 2/position" = Vector2(-100, 2700)
+"nodes/Animation 3/node" = SubResource("AnimationNodeAnimation_sarwc")
+"nodes/Animation 3/position" = Vector2(-100, 2960)
+nodes/Head/node = SubResource("AnimationNodeTransition_v5g3p")
+nodes/Head/position = Vector2(180, 2640)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_djvqg")
+nodes/Animation/position = Vector2(-100, 120)
+"nodes/Animation 4/node" = SubResource("AnimationNodeAnimation_v5g3p")
+"nodes/Animation 4/position" = Vector2(-100, 3220)
+nodes/Add2/node = SubResource("AnimationNodeAdd2_ucuxe")
+nodes/Add2/position = Vector2(1540, 2420)
+nodes/Wings/node = SubResource("AnimationNodeTransition_ptpe4")
+nodes/Wings/position = Vector2(180, 3440)
+"nodes/Animation 5/node" = SubResource("AnimationNodeAnimation_7wri0")
+"nodes/Animation 5/position" = Vector2(-100, 3480)
+"nodes/Animation 6/node" = SubResource("AnimationNodeAnimation_kmny2")
+"nodes/Animation 6/position" = Vector2(-100, 3740)
+"nodes/Add2 2/node" = SubResource("AnimationNodeAdd2_sarwc")
+"nodes/Add2 2/position" = Vector2(400, 2600)
+nodes/Butt/node = SubResource("AnimationNodeTransition_g0m7l")
+nodes/Butt/position = Vector2(180, 4180)
+"nodes/Animation 7/node" = SubResource("AnimationNodeAnimation_ptpe4")
+"nodes/Animation 7/position" = Vector2(-100, 4000)
+"nodes/Animation 8/node" = SubResource("AnimationNodeAnimation_01mvk")
+"nodes/Animation 8/position" = Vector2(-100, 4240)
+"nodes/Animation 9/node" = SubResource("AnimationNodeAnimation_spe8g")
+"nodes/Animation 9/position" = Vector2(-100, 4500)
+"nodes/Add2 3/node" = SubResource("AnimationNodeAdd2_djvqg")
+"nodes/Add2 3/position" = Vector2(620, 2560)
+nodes/ArmTop/node = SubResource("AnimationNodeTransition_lqcl7")
+nodes/ArmTop/position = Vector2(180, 1700)
+"nodes/Animation 10/node" = SubResource("AnimationNodeAnimation_g0m7l")
+"nodes/Animation 10/position" = Vector2(-100, 380)
+"nodes/Animation 11/node" = SubResource("AnimationNodeAnimation_xjgkt")
+"nodes/Animation 11/position" = Vector2(-100, 640)
+"nodes/Animation 12/node" = SubResource("AnimationNodeAnimation_3s1nc")
+"nodes/Animation 12/position" = Vector2(-100, 900)
+"nodes/Add2 4/node" = SubResource("AnimationNodeAdd2_v5g3p")
+"nodes/Add2 4/position" = Vector2(860, 2540)
+nodes/ArmMid/node = SubResource("AnimationNodeTransition_er454")
+nodes/ArmMid/position = Vector2(180, 1340)
+"nodes/Animation 13/node" = SubResource("AnimationNodeAnimation_lqcl7")
+"nodes/Animation 13/position" = Vector2(-100, 1160)
+"nodes/Animation 14/node" = SubResource("AnimationNodeAnimation_e40px")
+"nodes/Animation 14/position" = Vector2(-100, 1420)
+"nodes/Animation 15/node" = SubResource("AnimationNodeAnimation_nltps")
+"nodes/Animation 15/position" = Vector2(-100, 1660)
+"nodes/Add2 5/node" = SubResource("AnimationNodeAdd2_7wri0")
+"nodes/Add2 5/position" = Vector2(1080, 2500)
+nodes/Legs/node = SubResource("AnimationNodeTransition_aqk55")
+nodes/Legs/position = Vector2(180, 3000)
+"nodes/Animation 16/node" = SubResource("AnimationNodeAnimation_er454")
+"nodes/Animation 16/position" = Vector2(-100, 1920)
+"nodes/Animation 17/node" = SubResource("AnimationNodeAnimation_nmmtr")
+"nodes/Animation 17/position" = Vector2(-100, 2180)
+"nodes/Animation 18/node" = SubResource("AnimationNodeAnimation_b8rgd")
+"nodes/Animation 18/position" = Vector2(-100, 2440)
+"nodes/Add2 6/node" = SubResource("AnimationNodeAdd2_kmny2")
+"nodes/Add2 6/position" = Vector2(1320, 2460)
+node_connections = [&"output", 0, &"Add2", &"Head", 0, &"Animation", &"Head", 1, &"Animation 2", &"Head", 2, &"Animation 3", &"Add2", 0, &"Add2 6", &"Add2", 1, &"Animation 4", &"Wings", 0, &"Animation 5", &"Wings", 1, &"Animation 6", &"Add2 2", 0, &"Head", &"Add2 2", 1, &"Wings", &"Butt", 0, &"Animation 7", &"Butt", 1, &"Animation 8", &"Butt", 2, &"Animation 9", &"Add2 3", 0, &"Add2 2", &"Add2 3", 1, &"Butt", &"ArmTop", 0, &"Animation 10", &"ArmTop", 1, &"Animation 11", &"ArmTop", 2, &"Animation 12", &"Add2 4", 0, &"Add2 3", &"Add2 4", 1, &"ArmTop", &"ArmMid", 0, &"Animation 13", &"ArmMid", 1, &"Animation 14", &"ArmMid", 2, &"Animation 15", &"Add2 5", 0, &"Add2 4", &"Add2 5", 1, &"ArmMid", &"Legs", 0, &"Animation 16", &"Legs", 1, &"Animation 17", &"Legs", 2, &"Animation 18", &"Add2 6", 0, &"Add2 5", &"Add2 6", 1, &"Legs"]
 
 [node name="BeeDancer" type="Node2D"]
 script = ExtResource("1_ucuxe")
@@ -1456,7 +2178,27 @@ libraries = {
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeBlendTree_ucuxe")
 anim_player = NodePath("../AnimationPlayer")
-parameters/AddHeadBob/add_amount = 1.0
-parameters/Transition/current_state = "idle"
-parameters/Transition/transition_request = ""
-parameters/Transition/current_index = 0
+parameters/Head/current_state = "idle"
+parameters/Head/transition_request = ""
+parameters/Head/current_index = 0
+parameters/Add2/add_amount = 1.0
+parameters/Wings/current_state = "idle"
+parameters/Wings/transition_request = ""
+parameters/Wings/current_index = 0
+"parameters/Add2 2/add_amount" = 1.0
+parameters/Butt/current_state = "idle"
+parameters/Butt/transition_request = ""
+parameters/Butt/current_index = 0
+"parameters/Add2 3/add_amount" = 1.0
+parameters/ArmTop/current_state = "idle"
+parameters/ArmTop/transition_request = ""
+parameters/ArmTop/current_index = 0
+"parameters/Add2 4/add_amount" = 1.0
+parameters/ArmMid/current_state = "idle"
+parameters/ArmMid/transition_request = ""
+parameters/ArmMid/current_index = 0
+"parameters/Add2 5/add_amount" = 1.0
+parameters/Legs/current_state = "idle"
+parameters/Legs/transition_request = ""
+parameters/Legs/current_index = 0
+"parameters/Add2 6/add_amount" = 1.0
