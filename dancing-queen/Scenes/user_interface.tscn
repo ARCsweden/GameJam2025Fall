@@ -1,6 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://cyd273blrwvj6"]
+[gd_scene load_steps=19 format=3 uid="uid://cyd273blrwvj6"]
 
 [ext_resource type="StyleBox" uid="uid://dokg5hcv2e0km" path="res://resources/button_left_right.tres" id="1_7jfck"]
+[ext_resource type="PackedScene" uid="uid://birg8lypi8eb2" path="res://Scenes/hive_view.tscn" id="1_m3woj"]
 [ext_resource type="Texture2D" uid="uid://v2205yjviyay" path="res://Assets/Art/png/flower_tile.png" id="1_v7dfl"]
 [ext_resource type="Texture2D" uid="uid://5otedv0rbqjb" path="res://Assets/Art/png/enemy_tile.png" id="2_4d574"]
 [ext_resource type="StyleBox" uid="uid://b41er46jirnl4" path="res://resources/base_button.tres" id="2_7jfck"]
@@ -54,11 +55,16 @@ theme_override_constants/separation = 0
 [node name="TheClub" type="VBoxContainer" parent="HBox"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_constants/separation = 0
 
 [node name="DancingFloor" type="BoxContainer" parent="HBox/TheClub"]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 5.0
+
+[node name="HiveView" parent="HBox/TheClub/DancingFloor" instance=ExtResource("1_m3woj")]
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 2
 
 [node name="Panel" type="Panel" parent="HBox/TheClub"]
 layout_mode = 2
