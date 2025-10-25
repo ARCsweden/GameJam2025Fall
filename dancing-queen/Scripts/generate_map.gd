@@ -84,6 +84,7 @@ func get_hovering_tile_cube() -> Vector3i:
 
 
 func _on_hovering_changed() -> void:
-	#var test : WorldTile = $"..".world_tiles[cube_to_map(hovering_tile)]
-	#print(hovering_tile, " ", test.honey_volume)
-	pass 
+	var test : WorldTile = $"..".get_world_tile(cube_to_map(hovering_tile))
+	if test != null:
+		print(hovering_tile, " ", test.honey_volume)
+		pass 
