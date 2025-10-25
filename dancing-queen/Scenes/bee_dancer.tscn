@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://4wyirpe2y2vd"]
+[gd_scene load_steps=64 format=3 uid="uid://4wyirpe2y2vd"]
 
 [ext_resource type="Script" uid="uid://bnrlb830qr02r" path="res://Scripts/bee_dancer.gd" id="1_ucuxe"]
 [ext_resource type="Texture2D" uid="uid://n7pgnackvoio" path="res://Assets/BeeDancer/butt.png" id="1_xybo6"]
@@ -1771,6 +1771,34 @@ tracks/8/keys = {
 "values": [3.1925175, 3.117525]
 }
 
+[sub_resource type="Animation" id="Animation_lqcl7"]
+resource_name = "wiggle"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.10000001, 0.20000002, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.43633232, 0.43633232, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1212647, 1.1212647), Vector2(1, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_sarwc"]
 _data = {
 &"RESET": SubResource("Animation_di1y5"),
@@ -1785,6 +1813,7 @@ _data = {
 &"head_shake": SubResource("Animation_sarwc"),
 &"leg_left_raise": SubResource("Animation_xjgkt"),
 &"leg_right_raise": SubResource("Animation_3s1nc"),
+&"wiggle": SubResource("Animation_lqcl7"),
 &"wing_flap": SubResource("Animation_v5g3p")
 }
 
@@ -1826,6 +1855,9 @@ animation = &"leg_left_raise"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_b8rgd"]
 animation = &"leg_right_raise"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_aqk55"]
+animation = &"wiggle"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ucuxe"]
 animation = &"head_shake"
@@ -1929,6 +1961,9 @@ input_2/auto_advance = false
 input_2/break_loop_at_end = false
 input_2/reset = true
 
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_bjxce"]
+mix_mode = 1
+
 [sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_ptpe4"]
 xfade_time = 0.3
 input_0/name = "idle"
@@ -1941,7 +1976,7 @@ input_1/break_loop_at_end = false
 input_1/reset = true
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_ucuxe"]
-graph_offset = Vector2(-331.21814, 3265.9954)
+graph_offset = Vector2(547.1616, 1750.6592)
 nodes/output/position = Vector2(1780, 2440)
 "nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_ucuxe")
 "nodes/Animation 2/position" = Vector2(-100, 2700)
@@ -1954,7 +1989,7 @@ nodes/Animation/position = Vector2(-100, 120)
 "nodes/Animation 4/node" = SubResource("AnimationNodeAnimation_v5g3p")
 "nodes/Animation 4/position" = Vector2(-100, 3220)
 nodes/Add2/node = SubResource("AnimationNodeAdd2_ucuxe")
-nodes/Add2/position = Vector2(1540, 2420)
+nodes/Add2/position = Vector2(1800, 2600)
 nodes/Wings/node = SubResource("AnimationNodeTransition_ptpe4")
 nodes/Wings/position = Vector2(180, 3440)
 "nodes/Animation 5/node" = SubResource("AnimationNodeAnimation_7wri0")
@@ -2003,7 +2038,11 @@ nodes/Legs/position = Vector2(180, 3000)
 "nodes/Animation 18/position" = Vector2(-100, 2440)
 "nodes/Add2 6/node" = SubResource("AnimationNodeAdd2_kmny2")
 "nodes/Add2 6/position" = Vector2(1320, 2460)
-node_connections = [&"output", 0, &"Add2", &"Head", 0, &"Animation", &"Head", 1, &"Animation 2", &"Head", 2, &"Animation 3", &"Add2", 0, &"Add2 6", &"Add2", 1, &"Animation 4", &"Wings", 0, &"Animation 5", &"Wings", 1, &"Animation 6", &"Add2 2", 0, &"Head", &"Add2 2", 1, &"Wings", &"Butt", 0, &"Animation 7", &"Butt", 1, &"Animation 8", &"Butt", 2, &"Animation 9", &"Add2 3", 0, &"Add2 2", &"Add2 3", 1, &"Butt", &"ArmTop", 0, &"Animation 10", &"ArmTop", 1, &"Animation 11", &"ArmTop", 2, &"Animation 12", &"Add2 4", 0, &"Add2 3", &"Add2 4", 1, &"ArmTop", &"ArmMid", 0, &"Animation 13", &"ArmMid", 1, &"Animation 14", &"ArmMid", 2, &"Animation 15", &"Add2 5", 0, &"Add2 4", &"Add2 5", 1, &"ArmMid", &"Legs", 0, &"Animation 16", &"Legs", 1, &"Animation 17", &"Legs", 2, &"Animation 18", &"Add2 6", 0, &"Add2 5", &"Add2 6", 1, &"Legs"]
+nodes/Wiggle/node = SubResource("AnimationNodeOneShot_bjxce")
+nodes/Wiggle/position = Vector2(1520, 2460)
+"nodes/Animation 19/node" = SubResource("AnimationNodeAnimation_aqk55")
+"nodes/Animation 19/position" = Vector2(1320, 2760)
+node_connections = [&"output", 0, &"Add2", &"Head", 0, &"Animation", &"Head", 1, &"Animation 2", &"Head", 2, &"Animation 3", &"Add2", 0, &"Wiggle", &"Add2", 1, &"Animation 4", &"Wings", 0, &"Animation 5", &"Wings", 1, &"Animation 6", &"Add2 2", 0, &"Head", &"Add2 2", 1, &"Wings", &"Butt", 0, &"Animation 7", &"Butt", 1, &"Animation 8", &"Butt", 2, &"Animation 9", &"Add2 3", 0, &"Add2 2", &"Add2 3", 1, &"Butt", &"ArmTop", 0, &"Animation 10", &"ArmTop", 1, &"Animation 11", &"ArmTop", 2, &"Animation 12", &"Add2 4", 0, &"Add2 3", &"Add2 4", 1, &"ArmTop", &"ArmMid", 0, &"Animation 13", &"ArmMid", 1, &"Animation 14", &"ArmMid", 2, &"Animation 15", &"Add2 5", 0, &"Add2 4", &"Add2 5", 1, &"ArmMid", &"Legs", 0, &"Animation 16", &"Legs", 1, &"Animation 17", &"Legs", 2, &"Animation 18", &"Add2 6", 0, &"Add2 5", &"Add2 6", 1, &"Legs", &"Wiggle", 0, &"Add2 6", &"Wiggle", 1, &"Animation 19"]
 
 [node name="BeeDancer" type="Node2D"]
 script = ExtResource("1_ucuxe")
@@ -2202,3 +2241,6 @@ parameters/Legs/current_state = "idle"
 parameters/Legs/transition_request = ""
 parameters/Legs/current_index = 0
 "parameters/Add2 6/add_amount" = 1.0
+parameters/Wiggle/active = false
+parameters/Wiggle/internal_active = false
+parameters/Wiggle/request = 0
