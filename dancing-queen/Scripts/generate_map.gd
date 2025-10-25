@@ -2,10 +2,13 @@
 extends HexagonTileMapLayer
 
 @export var hive_pos : Vector3i = Vector3i(0,0,0)
+
+var current_atlas : Vector2i
 var grass_atlas = Vector2i(3,0)
 var flower_atlas = Vector2i(2,0)
 var hive_atlas = Vector2i(0,0)
 var unexplored_atlas = Vector2i(4,0)
+var no_atlas = Vector2i(-1,-1)
 
 var hovering_tile: Vector3i = Vector3i.ZERO
 signal hovering_changed
@@ -95,7 +98,8 @@ func _on_hovering_changed() -> void:
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		if cube_to_map(hovering_tile) == Vector2i(0,0):
 				return
-		set_cell(cube_to_map(hovering_tile),0,grass_atlas)
+		if current_atlas != no_atlas: 
+			set_cell(cube_to_map(hovering_tile),0,current_atlas)
 	 
 		
 func _input(event: InputEvent):
@@ -103,7 +107,35 @@ func _input(event: InputEvent):
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			if cube_to_map(hovering_tile) == Vector2i(0,0):
 				return
-			set_cell(cube_to_map(hovering_tile),0,grass_atlas)
+			if current_atlas != no_atlas: 
+				set_cell(cube_to_map(hovering_tile),0,current_atlas)
 			
 			
-	
+
+
+func _on_flower_tile_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		current_atlas = flower_atlas
+	elif current_atlas == flower_atlas:
+		current_atlas = no_atlas
+
+
+func _on_danger_tile_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		current_atlas = grass_atlas
+	elif current_atlas == grass_atlas:
+		current_atlas = no_atlas
+
+
+func _on_blank_tile_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		current_atlas = unexplored_atlas
+	elif current_atlas == unexplored_atlas:
+		current_atlas = no_atlas
+
+
+func _on_flag_tile_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		current_atlas = grass_atlas
+	elif current_atlas == grass_atlas:
+		current_atlas = no_atlas
