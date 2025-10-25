@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://d1exxolsljrsr"]
+[gd_scene load_steps=7 format=3 uid="uid://d1exxolsljrsr"]
 
 [ext_resource type="PackedScene" uid="uid://cmo44rk3t4wbk" path="res://Scenes/World.tscn" id="1_q24h2"]
 [ext_resource type="PackedScene" uid="uid://cyd273blrwvj6" path="res://Scenes/user_interface.tscn" id="1_ro750"]
 [ext_resource type="PackedScene" uid="uid://sqmc2bdnet7a" path="res://Scenes/UI.tscn" id="2_ro750"]
+[ext_resource type="TileSet" uid="uid://hd1rspuns4n8" path="res://Assets/Tiles/hex_tiles.tres" id="3_hg0ag"]
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_ro750"]
 allow_unpress = true
@@ -29,6 +30,16 @@ button_group = SubResource("ButtonGroup_ro750")
 button_group = SubResource("ButtonGroup_hg0ag")
 
 [node name="World" parent="." instance=ExtResource("1_q24h2")]
+
+[node name="PlayerTileMapLayer" parent="World" index="1" node_paths=PackedStringArray("danger_layer", "flag_layer")]
+danger_layer = NodePath("../DangerTileMapLayer")
+flag_layer = NodePath("../FlagTileMapLayer")
+
+[node name="DangerTileMapLayer" type="TileMapLayer" parent="World"]
+tile_set = ExtResource("3_hg0ag")
+
+[node name="FlagTileMapLayer" type="TileMapLayer" parent="World"]
+tile_set = ExtResource("3_hg0ag")
 
 [node name="Ui" parent="." instance=ExtResource("2_ro750")]
 offset_left = -576.0
