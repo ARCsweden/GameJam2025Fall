@@ -45,4 +45,10 @@ visible = false
 z_index = 1
 script = null
 
+[node name="DangerTileMapLayer" type="TileMapLayer" parent="."]
+tile_set = ExtResource("4_uqhvw")
+
+[node name="FlagTileMapLayer" type="TileMapLayer" parent="."]
+tile_set = ExtResource("4_uqhvw")
+
 [connection signal="hovering_changed" from="PlayerTileMapLayer" to="PlayerTileMapLayer" method="_on_hovering_changed"]

@@ -80,11 +80,14 @@ func _unhandled_input(event: InputEvent):
 			hovering_changed.emit()
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT:
-			if cube_to_map(hovering_tile) == Vector2i(0,0):
-				return
-			if current_atlas != no_atlas && $"..".get_world_tile(cube_to_map(hovering_tile)) != null: 
-				set_cell(cube_to_map(hovering_tile),0,current_atlas)
-			
+				if cube_to_map(hovering_tile) == Vector2i(0,0):
+					return
+				if current_atlas != no_atlas && $"..".get_world_tile(cube_to_map(hovering_tile)) != null: 
+					current_paint_layer.set_cell(cube_to_map(hovering_tile),0,current_atlas)
+					if current_atlas == unexplored_atlas:
+						danger_layer.set_cell(cube_to_map(hovering_tile),0,no_atlas)
+						flag_layer.set_cell(cube_to_map(hovering_tile),0,no_atlas)		
+
 
 func get_hovering_tile_Vec2() -> Vector2i:
 	return cube_to_map(hovering_tile)
@@ -109,22 +112,12 @@ func _on_hovering_changed() -> void:
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		if cube_to_map(hovering_tile) == Vector2i(0,0):
 				return
-		if current_atlas != no_atlas: 
+		if current_atlas != no_atlas && currentTileData != null: 
 			current_paint_layer.set_cell(cube_to_map(hovering_tile),0,current_atlas)
 			if current_atlas == unexplored_atlas:
 				danger_layer.set_cell(cube_to_map(hovering_tile),0,no_atlas)
 				flag_layer.set_cell(cube_to_map(hovering_tile),0,no_atlas)
 
-func _input(event: InputEvent):
-	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT:
-			if cube_to_map(hovering_tile) == Vector2i(0,0):
-				return
-			if current_atlas != no_atlas: 
-				current_paint_layer.set_cell(cube_to_map(hovering_tile),0,current_atlas)
-				if current_atlas == unexplored_atlas:
-					danger_layer.set_cell(cube_to_map(hovering_tile),0,no_atlas)
-					flag_layer.set_cell(cube_to_map(hovering_tile),0,no_atlas)
 
 
 func _on_flower_tile_toggled(toggled_on: bool) -> void:
@@ -157,4 +150,12 @@ func _on_flag_tile_toggled(toggled_on: bool) -> void:
 		current_paint_layer = flag_layer
 		
 	elif current_atlas == flag_atlas:
+		current_atlas = no_atlas
+
+func _on_grass_tile_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		current_atlas = grass_atlas
+		current_paint_layer = background_layer
+		
+	elif current_atlas == grass_atlas:
 		current_atlas = no_atlas
