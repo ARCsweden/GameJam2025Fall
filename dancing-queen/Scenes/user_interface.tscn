@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://cyd273blrwvj6"]
+[gd_scene load_steps=25 format=3 uid="uid://cyd273blrwvj6"]
 
 [ext_resource type="StyleBox" uid="uid://dokg5hcv2e0km" path="res://resources/button_left_right.tres" id="1_7jfck"]
 [ext_resource type="PackedScene" uid="uid://birg8lypi8eb2" path="res://Scenes/hive_view.tscn" id="1_m3woj"]
@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://26h73byjc5s" path="res://Assets/Art/png/grass_tile.png" id="5_1648f"]
 [ext_resource type="Texture2D" uid="uid://3y7p3nuo7wix" path="res://Assets/Art/png/flag_tile.png" id="7_xap2s"]
 [ext_resource type="Texture2D" uid="uid://c6h2tc1207wda" path="res://Assets/Art/png/honey.png" id="10_m3woj"]
+[ext_resource type="Texture2D" uid="uid://clcts1a275vh5" path="res://Assets/Art/png/arrow.png" id="11_iuuak"]
+[ext_resource type="Texture2D" uid="uid://cpx0bnalv4b8n" path="res://Assets/Art/png/arrow_side.png" id="11_osvio"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m3woj"]
 
@@ -251,7 +253,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 5.0
-columns = 9
+columns = 4
 
 [node name="left" type="ColorRect" parent="HBox/RightScreen/Panel/Buttons/DanceButtons"]
 unique_name_in_owner = true
@@ -260,12 +262,32 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color(0.79607844, 0, 0.18431373, 1)
 
+[node name="TextureRect" type="TextureRect" parent="HBox/RightScreen/Panel/Buttons/DanceButtons/left"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_osvio")
+flip_h = true
+
 [node name="right" type="ColorRect" parent="HBox/RightScreen/Panel/Buttons/DanceButtons"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color(0.79607844, 0, 0.18431373, 1)
+
+[node name="TextureRect" type="TextureRect" parent="HBox/RightScreen/Panel/Buttons/DanceButtons/right"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_osvio")
+flip_v = true
 
 [node name="up" type="ColorRect" parent="HBox/RightScreen/Panel/Buttons/DanceButtons"]
 unique_name_in_owner = true
@@ -274,6 +296,15 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color(0.79607844, 0, 0.18431373, 1)
 
+[node name="TextureRect" type="TextureRect" parent="HBox/RightScreen/Panel/Buttons/DanceButtons/up"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_iuuak")
+
 [node name="down" type="ColorRect" parent="HBox/RightScreen/Panel/Buttons/DanceButtons"]
 unique_name_in_owner = true
 layout_mode = 2
@@ -281,40 +312,15 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color(0.79607844, 0, 0.18431373, 1)
 
-[node name="flap" type="ColorRect" parent="HBox/RightScreen/Panel/Buttons/DanceButtons"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.79607844, 0, 0.18431373, 1)
-
-[node name="shake" type="ColorRect" parent="HBox/RightScreen/Panel/Buttons/DanceButtons"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.79607844, 0, 0.18431373, 1)
-
-[node name="antenna" type="ColorRect" parent="HBox/RightScreen/Panel/Buttons/DanceButtons"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.79607844, 0, 0.18431373, 1)
-
-[node name="comb" type="ColorRect" parent="HBox/RightScreen/Panel/Buttons/DanceButtons"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.79607844, 0, 0.18431373, 1)
-
-[node name="elbow" type="ColorRect" parent="HBox/RightScreen/Panel/Buttons/DanceButtons"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.79607844, 0, 0.18431373, 1)
+[node name="TextureRect" type="TextureRect" parent="HBox/RightScreen/Panel/Buttons/DanceButtons/down"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_iuuak")
+flip_v = true
 
 [node name="Debug" type="Button" parent="HBox/RightScreen/Panel/Buttons"]
 layout_mode = 2
