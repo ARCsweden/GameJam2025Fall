@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://birg8lypi8eb2"]
+[gd_scene load_steps=11 format=3 uid="uid://birg8lypi8eb2"]
 
 [ext_resource type="Texture2D" uid="uid://bvmnnjcksuent" path="res://Assets/Art/hive_bg.jpg" id="1_a83n1"]
-[ext_resource type="Script" uid="uid://okmaa6snyyxk" path="res://Scripts/hive_view.gd" id="1_m3fw5"]
+
+[ext_resource type="Script" uid="uid://cqtmv407e5egp" path="res://Scripts/hive_view.gd" id="1_m3fw5"]
 [ext_resource type="PackedScene" uid="uid://4wyirpe2y2vd" path="res://Scenes/bee_dancer.tscn" id="2_m3fw5"]
 [ext_resource type="PackedScene" uid="uid://bwlwdt7ekok0k" path="res://Scenes/queen_bee.tscn" id="3_82udu"]
 
@@ -54,6 +55,18 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(0.28451276, 0.28451276)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("QueenBee/Minions:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -1919.0703)]
 }
 
 [sub_resource type="Animation" id="Animation_m3fw5"]
@@ -108,6 +121,21 @@ tracks/3/keys = {
 "values": [Vector2(0.28451276, 0.28451276)]
 }
 
+[sub_resource type="Animation" id="Animation_32wx0"]
+resource_name = "dismiss_minions"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("QueenBee/Minions:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Vector2(0, -80.839966), Vector2(0, -1919.0703)]
+}
+
 [sub_resource type="Animation" id="Animation_a83n1"]
 resource_name = "queen"
 length = 0.5
@@ -136,33 +164,53 @@ tracks/1/keys = {
 "values": [Vector2(235, 468), Vector2(235, -77)]
 }
 
+[sub_resource type="Animation" id="Animation_24cdj"]
+resource_name = "summon_minions"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("QueenBee/Minions:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(0, -1919.0703), Vector2(0, -80.839966)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_82udu"]
 _data = {
 &"RESET": SubResource("Animation_82udu"),
 &"dancers": SubResource("Animation_m3fw5"),
-&"queen": SubResource("Animation_a83n1")
+&"dismiss_minions": SubResource("Animation_32wx0"),
+&"queen": SubResource("Animation_a83n1"),
+&"summon_minions": SubResource("Animation_24cdj")
 }
 
 [node name="HiveView" type="Control"]
+custom_minimum_size = Vector2(500, 800)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("1_m3fw5")
 
 [node name="BG" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
-offset_left = -92.0
-offset_top = -21.0
-offset_right = 490.0
-offset_bottom = 12.898071
+offset_left = -67.0
+offset_top = -22.0
+offset_right = 506.0
+offset_bottom = 1.3532104
 grow_vertical = 2
 texture = ExtResource("1_a83n1")
-expand_mode = 1
+expand_mode = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -178,3 +226,22 @@ scale = Vector2(0.17904033, 0.17904033)
 [node name="QueenBee" parent="." instance=ExtResource("3_82udu")]
 position = Vector2(237, 480)
 scale = Vector2(0.28451276, 0.28451276)
+
+[node name="Minions" type="Node2D" parent="QueenBee"]
+position = Vector2(0, -1919.0703)
+
+[node name="BeeDancer" parent="QueenBee/Minions" instance=ExtResource("2_m3fw5")]
+position = Vector2(-720.53, -17.573975)
+scale = Vector2(0.34878632, 0.34878632)
+
+[node name="BeeDancer2" parent="QueenBee/Minions" instance=ExtResource("2_m3fw5")]
+position = Vector2(-534.2467, -340.93378)
+scale = Vector2(0.34878632, 0.34878632)
+
+[node name="BeeDancer4" parent="QueenBee/Minions" instance=ExtResource("2_m3fw5")]
+position = Vector2(442.86234, -439.3476)
+scale = Vector2(0.34878632, 0.34878632)
+
+[node name="BeeDancer3" parent="QueenBee/Minions" instance=ExtResource("2_m3fw5")]
+position = Vector2(653.74915, 14.059137)
+scale = Vector2(0.34878632, 0.34878632)

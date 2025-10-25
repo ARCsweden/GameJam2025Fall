@@ -12,6 +12,10 @@ allow_unpress = true
 
 [node name="UserInterface" parent="UI" instance=ExtResource("1_ro750")]
 
+[node name="HiveView" parent="UI/UserInterface/HBox/TheClub/DancingFloor" index="0"]
+clip_contents = true
+custom_minimum_size = Vector2(500, 520)
+
 [node name="FlowerTile" parent="UI/UserInterface/HBox/RightScreen/Panel/Buttons/TileChoosingButtons" index="0"]
 button_group = SubResource("ButtonGroup_q24h2")
 

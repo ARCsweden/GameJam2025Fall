@@ -31,11 +31,10 @@ threat_noise_tex = SubResource("NoiseTexture2D_p70al")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_enabled = false
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
 script = ExtResource("3_p70al")
 
 [node name="PlayerTileMapLayer" type="TileMapLayer" parent="."]
+texture_filter = 1
 tile_set = ExtResource("4_uqhvw")
 script = ExtResource("5_45d1s")
 pathfinding_enabled = true
@@ -43,12 +42,15 @@ pathfinding_enabled = true
 [node name="TileMapLayerDebug" parent="." instance=ExtResource("1_doo4g")]
 visible = false
 z_index = 1
+texture_filter = 1
 script = null
 
 [node name="DangerTileMapLayer" type="TileMapLayer" parent="."]
+texture_filter = 1
 tile_set = ExtResource("4_uqhvw")
 
 [node name="FlagTileMapLayer" type="TileMapLayer" parent="."]
+texture_filter = 1
 tile_set = ExtResource("4_uqhvw")
 
 [connection signal="hovering_changed" from="PlayerTileMapLayer" to="PlayerTileMapLayer" method="_on_hovering_changed"]
