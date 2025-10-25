@@ -68,7 +68,13 @@ func _unhandled_input(event: InputEvent):
 			hovering_changed.emit()
 			
 
-
+func get_hovering_tile_Vec2() -> Vector2i:
+	return cube_to_map(hovering_tile)
+	 
+func get_hovering_tile_cube() -> Vector3i:
+	return hovering_tile
+	
+	
 # RIGHT_SIDE  1
 # BOTTOM_RIGHT_SIDE 2
 # BOTTOM_LEFT_SIDE 3
