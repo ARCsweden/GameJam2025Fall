@@ -2,6 +2,10 @@
 extends HexagonTileMapLayer
 
 @export var hive_pos : Vector3i = Vector3i(0,0,0)
+var grass_atlas = Vector2i(3,0)
+var flower_atlas = Vector2i(2,0)
+var hive_atlas = Vector2i(0,0)
+var unexplored_atlas = Vector2i(4,0)
 
 var hovering_tile: Vector3i = Vector3i.ZERO
 signal hovering_changed
@@ -87,4 +91,19 @@ func _on_hovering_changed() -> void:
 	var test : WorldTile = $"..".get_world_tile(cube_to_map(hovering_tile))
 	if test != null:
 		print(hovering_tile, " ", test.honey_volume)
-		pass 
+		
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+		if cube_to_map(hovering_tile) == Vector2i(0,0):
+				return
+		set_cell(cube_to_map(hovering_tile),0,grass_atlas)
+	 
+		
+func _input(event: InputEvent):
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT:
+			if cube_to_map(hovering_tile) == Vector2i(0,0):
+				return
+			set_cell(cube_to_map(hovering_tile),0,grass_atlas)
+			
+			
+	

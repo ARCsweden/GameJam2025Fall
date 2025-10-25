@@ -12,12 +12,13 @@ var map_height : int = 32
 @export var max_flower_nectar : int = 100
 @export var min_flower_nectar : int = 30
 
-var world_tiles : Dictionary[Vector2i,WorldTile]
 var grass_atlas = Vector2i(3,0)
 var flower_atlas = Vector2i(2,0)
-var danger_atlas = Vector2i(5,1)
-var unexplored_atlas = Vector2i(4,0)
 var hive_atlas = Vector2i(0,0)
+var unexplored_atlas = Vector2i(4,0)
+var world_tiles : Dictionary[Vector2i,WorldTile]
+
+var danger_atlas = Vector2i(5,1)
 var flag_atlas = Vector2i(5,0)
 var noise : Noise
 var source_id = 0
