@@ -1,4 +1,5 @@
-extends GridContainer
+extends HBoxContainer
+
 enum Dance {
 	LEFT,
 	RIGHT,
@@ -7,6 +8,8 @@ enum Dance {
 	FLAP,
 	SHAKE,
 	ANTENNA,
+	COMB,
+	ELBOW,
 }
 
 var dance_actions = {
@@ -17,16 +20,21 @@ var dance_actions = {
 	Dance.FLAP: "flap",
 	Dance.SHAKE: "shake",
 	Dance.ANTENNA: "antenna",
+	Dance.COMB: "comb",
+	Dance.ELBOW: "elbow",
+	
 }
 
 @onready var dance_tiles = {
-	Dance.LEFT: %Dance1,
-	Dance.RIGHT: %Dance2,
-	Dance.UP: %Dance3,
-	Dance.DOWN: %Dance4,
-	Dance.FLAP: %Dance5,
-	Dance.SHAKE: %Dance6,
-	Dance.ANTENNA: %Dance7,
+	Dance.LEFT: %left,
+	Dance.RIGHT: %right,
+	Dance.UP: %up,
+	Dance.DOWN: %down,
+	Dance.FLAP: %flap,
+	Dance.SHAKE: %shake,
+	Dance.ANTENNA: %antenna,
+	Dance.COMB: %comb,
+	Dance.ELBOW: %elbow,
 }
 
 func _process(_delta):

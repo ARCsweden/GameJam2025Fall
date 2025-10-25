@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://v2205yjviyay" path="res://Assets/Art/png/flower_tile.png" id="1_v7dfl"]
 [ext_resource type="Texture2D" uid="uid://5otedv0rbqjb" path="res://Assets/Art/png/enemy_tile.png" id="2_4d574"]
 [ext_resource type="StyleBox" uid="uid://b41er46jirnl4" path="res://resources/base_button.tres" id="2_7jfck"]
-[ext_resource type="Script" uid="uid://dgc2eq1wqietw" path="res://Scenes/button_light_up.gd" id="2_doevo"]
+[ext_resource type="Script" uid="uid://uw2d736o4j0n" path="res://Scenes/buttons_handling.gd" id="2_doevo"]
 [ext_resource type="ButtonGroup" uid="uid://dkie4oyfhwcrp" path="res://resources/tile_buttons.tres" id="2_uf5wx"]
 [ext_resource type="Texture2D" uid="uid://d32jnsvpajsuy" path="res://Assets/Art/png/unexplored_tile.png" id="3_uf5wx"]
 [ext_resource type="Texture2D" uid="uid://26h73byjc5s" path="res://Assets/Art/png/grass_tile.png" id="5_1648f"]
@@ -113,16 +113,16 @@ layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 5.0
 
-[node name="Buttons" type="GridContainer" parent="HBox/RightScreen"]
+[node name="Buttons" type="HBoxContainer" parent="HBox/RightScreen"]
 layout_mode = 2
 size_flags_vertical = 3
-columns = 9
 script = ExtResource("2_doevo")
 
 [node name="TileChoosingButtons" type="GridContainer" parent="HBox/RightScreen/Buttons"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+size_flags_stretch_ratio = 5.0
 columns = 2
 
 [node name="FlowerTile" type="Button" parent="HBox/RightScreen/Buttons/TileChoosingButtons"]
@@ -203,49 +203,70 @@ toggle_mode = true
 button_group = ExtResource("2_uf5wx")
 icon_alignment = 1
 
-[node name="Dance1" type="ColorRect" parent="HBox/RightScreen/Buttons"]
+[node name="DanceButtons" type="GridContainer" parent="HBox/RightScreen/Buttons"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 5.0
+columns = 9
+
+[node name="left" type="ColorRect" parent="HBox/RightScreen/Buttons/DanceButtons"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color(0.79607844, 0, 0.18431373, 1)
 
-[node name="Dance2" type="ColorRect" parent="HBox/RightScreen/Buttons"]
+[node name="right" type="ColorRect" parent="HBox/RightScreen/Buttons/DanceButtons"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color(0.79607844, 0, 0.18431373, 1)
 
-[node name="Dance3" type="ColorRect" parent="HBox/RightScreen/Buttons"]
+[node name="up" type="ColorRect" parent="HBox/RightScreen/Buttons/DanceButtons"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color(0.79607844, 0, 0.18431373, 1)
 
-[node name="Dance4" type="ColorRect" parent="HBox/RightScreen/Buttons"]
+[node name="down" type="ColorRect" parent="HBox/RightScreen/Buttons/DanceButtons"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color(0.79607844, 0, 0.18431373, 1)
 
-[node name="Dance5" type="ColorRect" parent="HBox/RightScreen/Buttons"]
+[node name="flap" type="ColorRect" parent="HBox/RightScreen/Buttons/DanceButtons"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color(0.79607844, 0, 0.18431373, 1)
 
-[node name="Dance6" type="ColorRect" parent="HBox/RightScreen/Buttons"]
+[node name="shake" type="ColorRect" parent="HBox/RightScreen/Buttons/DanceButtons"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color(0.79607844, 0, 0.18431373, 1)
 
-[node name="Dance7" type="ColorRect" parent="HBox/RightScreen/Buttons"]
+[node name="antenna" type="ColorRect" parent="HBox/RightScreen/Buttons/DanceButtons"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.79607844, 0, 0.18431373, 1)
+
+[node name="comb" type="ColorRect" parent="HBox/RightScreen/Buttons/DanceButtons"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.79607844, 0, 0.18431373, 1)
+
+[node name="elbow" type="ColorRect" parent="HBox/RightScreen/Buttons/DanceButtons"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
