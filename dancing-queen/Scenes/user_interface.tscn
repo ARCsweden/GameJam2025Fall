@@ -1,11 +1,11 @@
 [gd_scene load_steps=12 format=3 uid="uid://cyd273blrwvj6"]
 
 [ext_resource type="StyleBox" uid="uid://dokg5hcv2e0km" path="res://resources/button_left_right.tres" id="1_7jfck"]
-[ext_resource type="Texture2D" uid="uid://bi4qgb34sapw0" path="res://Assets/Art/png/flower_tile.png" id="1_v7dfl"]
-[ext_resource type="Texture2D" uid="uid://waj32x5uqfrq" path="res://Assets/Art/png/enemy_tile.png" id="2_4d574"]
+[ext_resource type="Texture2D" uid="uid://v2205yjviyay" path="res://Assets/Art/png/flower_tile.png" id="1_v7dfl"]
+[ext_resource type="Texture2D" uid="uid://5otedv0rbqjb" path="res://Assets/Art/png/enemy_tile.png" id="2_4d574"]
 [ext_resource type="StyleBox" uid="uid://b41er46jirnl4" path="res://resources/base_button.tres" id="2_7jfck"]
 [ext_resource type="ButtonGroup" uid="uid://dkie4oyfhwcrp" path="res://resources/tile_buttons.tres" id="2_uf5wx"]
-[ext_resource type="Texture2D" uid="uid://cau5n42r6sphc" path="res://Assets/Art/png/unexplored_tile.png" id="3_uf5wx"]
+[ext_resource type="Texture2D" uid="uid://d32jnsvpajsuy" path="res://Assets/Art/png/unexplored_tile.png" id="3_uf5wx"]
 [ext_resource type="Texture2D" uid="uid://3y7p3nuo7wix" path="res://Assets/Art/png/flag_tile.png" id="7_xap2s"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xap2s"]
@@ -22,7 +22,6 @@ bg_color = Color(1.6364455e-06, 0.6430421, 0.24692357, 1)
 
 [node name="UserInterface" type="Control"]
 layout_mode = 3
-anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
@@ -31,7 +30,7 @@ grow_vertical = 2
 [node name="HBox" type="HBoxContainer" parent="."]
 texture_filter = 1
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
