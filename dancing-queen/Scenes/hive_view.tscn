@@ -1,7 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://birg8lypi8eb2"]
 
 [ext_resource type="Texture2D" uid="uid://bvmnnjcksuent" path="res://Assets/Art/hive_bg.jpg" id="1_a83n1"]
-
 [ext_resource type="Script" uid="uid://cqtmv407e5egp" path="res://Scripts/hive_view.gd" id="1_m3fw5"]
 [ext_resource type="PackedScene" uid="uid://4wyirpe2y2vd" path="res://Scenes/bee_dancer.tscn" id="2_m3fw5"]
 [ext_resource type="PackedScene" uid="uid://bwlwdt7ekok0k" path="res://Scenes/queen_bee.tscn" id="3_82udu"]
