@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6vwwgtorqwmu"]
+
+[ext_resource type="Script" uid="uid://rrqt533c8cmj" path="res://Scenes/bee_tracker.gd" id="1_jfs6o"]
+
+[node name="BeeTracker" type="Node2D"]
+script = ExtResource("1_jfs6o")

@@ -54,7 +54,7 @@ func get_dance_sequence(lineToTarget:Array[Vector3i], objectFound: int) -> Array
 		if found==false: dance.append([move,1]) 
 		found = false
 			
-	return dance
+	return dance #ex [[69,1],[4,5],[5,2]]
 
 func get_line_from_hive(target: Vector3):
 	var line = self.cube_linedraw(hive_pos,target)
