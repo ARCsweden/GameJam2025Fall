@@ -7,3 +7,8 @@ const DIR_SW = 3
 const DIR_W = 4
 const DIR_NW = 5
 const DIR_NE = 6
+
+
+# Command related
+const CMD_MAX_TIME = 1.2
+const CMD_MIN_TIME = 0.8

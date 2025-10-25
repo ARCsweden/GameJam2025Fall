@@ -25,9 +25,11 @@ const LEGS_IDLE = 0
 const LEGS_RAISE_LEFT = 1
 const LEGS_RAISE_RIGHT = 2
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+func do_a_wiggle() -> void:
+	anim_tree.set("parameters/Wiggle/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
+
+func set_flying() -> void:
+	set_wings(WINGS_FLAP)
 
 func set_wings(state: int) -> void:
 	if state == WINGS_FLAP:
