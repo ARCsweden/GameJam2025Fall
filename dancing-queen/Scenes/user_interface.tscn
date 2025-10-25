@@ -41,11 +41,10 @@ theme_override_constants/separation = 10
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="DancingFloor" type="ColorRect" parent="HBox/TheClub"]
+[node name="DancingFloor" type="BoxContainer" parent="HBox/TheClub"]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 5.0
-color = Color(1, 0, 1, 1)
 
 [node name="DanceControls" type="GridContainer" parent="HBox/TheClub"]
 layout_mode = 2
@@ -103,12 +102,6 @@ size_flags_stretch_ratio = 2.0
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 5.0
-
-[node name="WorldMap" type="ColorRect" parent="HBox/RightScreen/MapArea"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0, 0.5358119, 0.9992501, 1)
 
 [node name="Buttons" type="GridContainer" parent="HBox/RightScreen"]
 layout_mode = 2
