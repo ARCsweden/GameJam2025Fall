@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://03g35hljx7nw"]
+
+[ext_resource type="Script" uid="uid://kjhxq25puqff" path="res://generate_map.gd" id="1_ib3k8"]
+[ext_resource type="TileSet" uid="uid://hd1rspuns4n8" path="res://Assets/Tiles/hex_tiles.tres" id="1_ruj66"]
+
+[sub_resource type="Gradient" id="Gradient_ruj66"]
+offsets = PackedFloat32Array(0.09375, 0.6354167, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.42465752, 0.42465752, 0.42465752, 1, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_s41pq"]
+noise_type = 3
+seed = 2
+frequency = 0.3833
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_0sdh8"]
+width = 32
+height = 32
+noise = SubResource("FastNoiseLite_s41pq")
+color_ramp = SubResource("Gradient_ruj66")
+
+[node name="TileMapLayer" type="TileMapLayer"]
+tile_set = ExtResource("1_ruj66")
+script = ExtResource("1_ib3k8")
+noise_tex = SubResource("NoiseTexture2D_0sdh8")
