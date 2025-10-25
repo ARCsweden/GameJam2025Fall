@@ -1,11 +1,6 @@
 extends Node2D
 
-class WorldTile:
-	var honey_volume : float 
-	var threat_level : float #0-1
-	func _init(initial_honey,initial_threat):
-		honey_volume = initial_honey
-		threat_level = initial_threat
+
 	
 var map_width : int = 32
 var map_height : int = 32
@@ -17,7 +12,7 @@ var map_height : int = 32
 @export var max_flower_nectar : int = 100
 @export var min_flower_nectar : int = 30
 
-var world_tiles : Dictionary
+var world_tiles : Dictionary[Vector2i,WorldTile]
 var grass_atlas = Vector2i(3,0)
 var flower_atlas = Vector2i(2,0)
 var danger_atlas = Vector2i(5,1)
@@ -40,6 +35,7 @@ func generate_world():
 	for x in range(-map_width/2, map_width /2):
 		for y in range(-map_height/2, map_height/2):
 			if x == 0 and y == 0:
+				world_tiles[Vector2i(0,0)] = WorldTile.new(0,0)
 				continue
 			var noise_val :float = noise.get_noise_2d(x,y)
 			# placing ground

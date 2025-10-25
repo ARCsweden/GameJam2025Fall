@@ -1,7 +1,7 @@
 @tool
 extends HexagonTileMapLayer
 
-@export var hive_pos : Vector3 = Vector3(0,0,0)
+@export var hive_pos : Vector3i = Vector3i(0,0,0)
 
 var hovering_tile: Vector3i = Vector3i.ZERO
 signal hovering_changed
@@ -78,5 +78,6 @@ func _unhandled_input(event: InputEvent):
 
 
 func _on_hovering_changed() -> void:
-	print(hovering_tile)
+	#var test : WorldTile = $"..".world_tiles[cube_to_map(hovering_tile)]
+	#print(hovering_tile, " ", test.honey_volume)
 	pass 
