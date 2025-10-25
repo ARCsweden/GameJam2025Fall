@@ -60,6 +60,5 @@ func get_world_tile(tile_coords : Vector2i) -> WorldTile:
 		return world_tiles[tile_coords]
 	return null
 
-func _on_check_button_toggled(toggled_on: bool) -> void:
+func _on_debug_toggled(toggled_on: bool) -> void:
 	tileMapLayerDebug.visible = toggled_on
-	pass # Replace with function body.

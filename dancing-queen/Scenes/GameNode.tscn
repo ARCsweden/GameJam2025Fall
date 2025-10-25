@@ -1,14 +1,13 @@
+
 [gd_scene load_steps=7 format=3 uid="uid://d1exxolsljrsr"]
 
 [ext_resource type="PackedScene" uid="uid://cmo44rk3t4wbk" path="res://Scenes/World.tscn" id="1_q24h2"]
 [ext_resource type="PackedScene" uid="uid://cyd273blrwvj6" path="res://Scenes/user_interface.tscn" id="1_ro750"]
 [ext_resource type="PackedScene" uid="uid://sqmc2bdnet7a" path="res://Scenes/UI.tscn" id="2_ro750"]
 [ext_resource type="TileSet" uid="uid://hd1rspuns4n8" path="res://Assets/Tiles/hex_tiles.tres" id="3_hg0ag"]
+[ext_resource type="Script" uid="uid://dgc2eq1wqietw" path="res://Scenes/button_light_up.gd" id="2_ro750"]
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_ro750"]
-allow_unpress = true
-
-[sub_resource type="ButtonGroup" id="ButtonGroup_hg0ag"]
 allow_unpress = true
 
 [node name="GameNode" type="Node"]
@@ -17,17 +16,26 @@ allow_unpress = true
 
 [node name="UserInterface" parent="UI" instance=ExtResource("1_ro750")]
 
+[node name="TileChoosingButtons" parent="UI/UserInterface/HBox/RightScreen/Buttons" index="0"]
+script = ExtResource("2_ro750")
+
 [node name="FlowerTile" parent="UI/UserInterface/HBox/RightScreen/Buttons/TileChoosingButtons" index="0"]
 button_group = SubResource("ButtonGroup_ro750")
 
-[node name="DangerTile" parent="UI/UserInterface/HBox/RightScreen/Buttons/TileChoosingButtons" index="1"]
+[node name="GrassTile" parent="UI/UserInterface/HBox/RightScreen/Buttons/TileChoosingButtons" index="1"]
 button_group = SubResource("ButtonGroup_ro750")
 
-[node name="BlankTile" parent="UI/UserInterface/HBox/RightScreen/Buttons/TileChoosingButtons" index="2"]
+[node name="FlowerTile3" parent="UI/UserInterface/HBox/RightScreen/Buttons/TileChoosingButtons" index="2"]
 button_group = SubResource("ButtonGroup_ro750")
 
-[node name="FlagTile" parent="UI/UserInterface/HBox/RightScreen/Buttons/TileChoosingButtons" index="3"]
-button_group = SubResource("ButtonGroup_hg0ag")
+[node name="DangerTile" parent="UI/UserInterface/HBox/RightScreen/Buttons/TileChoosingButtons" index="3"]
+button_group = SubResource("ButtonGroup_ro750")
+
+[node name="BlankTile" parent="UI/UserInterface/HBox/RightScreen/Buttons/TileChoosingButtons" index="4"]
+button_group = SubResource("ButtonGroup_ro750")
+
+[node name="FlagTile" parent="UI/UserInterface/HBox/RightScreen/Buttons/TileChoosingButtons" index="5"]
+button_group = SubResource("ButtonGroup_ro750")
 
 [node name="World" parent="." instance=ExtResource("1_q24h2")]
 
@@ -57,7 +65,6 @@ offset_bottom = 24.0
 [connection signal="toggled" from="UI/UserInterface/HBox/RightScreen/Buttons/TileChoosingButtons/DangerTile" to="World/PlayerTileMapLayer" method="_on_danger_tile_toggled"]
 [connection signal="toggled" from="UI/UserInterface/HBox/RightScreen/Buttons/TileChoosingButtons/BlankTile" to="World/PlayerTileMapLayer" method="_on_blank_tile_toggled"]
 [connection signal="toggled" from="UI/UserInterface/HBox/RightScreen/Buttons/TileChoosingButtons/FlagTile" to="World/PlayerTileMapLayer" method="_on_flag_tile_toggled"]
-[connection signal="toggled" from="Ui/CheckButton" to="World" method="_on_check_button_toggled"]
+[connection signal="toggled" from="UI/UserInterface/HBox/RightScreen/Buttons/Debug" to="World" method="_on_debug_toggled"]
 
 [editable path="UI/UserInterface"]
-[editable path="World"]

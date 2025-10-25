@@ -1,0 +1,180 @@
+[gd_scene load_steps=9 format=3 uid="uid://birg8lypi8eb2"]
+
+[ext_resource type="Texture2D" uid="uid://bvmnnjcksuent" path="res://Assets/Art/hive_bg.jpg" id="1_a83n1"]
+[ext_resource type="Script" uid="uid://okmaa6snyyxk" path="res://Scripts/hive_view.gd" id="1_m3fw5"]
+[ext_resource type="PackedScene" uid="uid://4wyirpe2y2vd" path="res://Scenes/bee_dancer.tscn" id="2_m3fw5"]
+[ext_resource type="PackedScene" uid="uid://bwlwdt7ekok0k" path="res://Scenes/queen_bee.tscn" id="3_82udu"]
+
+[sub_resource type="Animation" id="Animation_a83n1"]
+resource_name = "queen"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("QueenBee:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 0.5),
+"update": 0,
+"values": [Vector2(-317.99994, 480), Vector2(235.99988, 482)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("bees:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 0.5),
+"update": 0,
+"values": [Vector2(235, 468), Vector2(235, -77)]
+}
+
+[sub_resource type="Animation" id="Animation_m3fw5"]
+resource_name = "dancers"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bees:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 0.5),
+"update": 0,
+"values": [Vector2(235, -59), Vector2(235, 468)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("QueenBee:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 0.5),
+"update": 0,
+"values": [Vector2(237, 480), Vector2(-317.99994, 480)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("bees:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.17904033, 0.17904033)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("QueenBee:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.28451276, 0.28451276)]
+}
+
+[sub_resource type="Animation" id="Animation_82udu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bees:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(235, -59)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("QueenBee:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(237, 480)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("bees:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.17904033, 0.17904033)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("QueenBee:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.28451276, 0.28451276)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_82udu"]
+_data = {
+&"RESET": SubResource("Animation_82udu"),
+&"dancers": SubResource("Animation_m3fw5"),
+&"queen": SubResource("Animation_a83n1")
+}
+
+[node name="HiveView" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_m3fw5")
+
+[node name="BG" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = -92.0
+offset_top = -21.0
+offset_right = 490.0
+offset_bottom = 12.898071
+grow_vertical = 2
+texture = ExtResource("1_a83n1")
+expand_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_82udu")
+}
+
+[node name="bees" type="Node2D" parent="."]
+position = Vector2(235, -59)
+scale = Vector2(0.17904033, 0.17904033)
+
+[node name="BeeDancer" parent="bees" instance=ExtResource("2_m3fw5")]
+
+[node name="QueenBee" parent="." instance=ExtResource("3_82udu")]
+position = Vector2(237, 480)
+scale = Vector2(0.28451276, 0.28451276)

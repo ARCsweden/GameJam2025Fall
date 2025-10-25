@@ -78,6 +78,12 @@ func _unhandled_input(event: InputEvent):
 		if cell_under_mouse.distance_squared_to(hovering_tile) != 0:
 			hovering_tile = cell_under_mouse
 			hovering_changed.emit()
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT:
+			if cube_to_map(hovering_tile) == Vector2i(0,0):
+				return
+			if current_atlas != no_atlas && $"..".get_world_tile(cube_to_map(hovering_tile)) != null: 
+				set_cell(cube_to_map(hovering_tile),0,current_atlas)
 			
 
 func get_hovering_tile_Vec2() -> Vector2i:
@@ -96,9 +102,9 @@ func get_hovering_tile_cube() -> Vector3i:
 
 
 func _on_hovering_changed() -> void:
-	var test : WorldTile = $"..".get_world_tile(cube_to_map(hovering_tile))
-	if test != null:
-		print(hovering_tile, " ", test.honey_volume)
+	var currentTileData : WorldTile = $"..".get_world_tile(cube_to_map(hovering_tile))
+	if currentTileData != null:
+		print(hovering_tile, " ", currentTileData.honey_volume)
 		
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		if cube_to_map(hovering_tile) == Vector2i(0,0):
@@ -119,6 +125,7 @@ func _input(event: InputEvent):
 				if current_atlas == unexplored_atlas:
 					danger_layer.set_cell(cube_to_map(hovering_tile),0,no_atlas)
 					flag_layer.set_cell(cube_to_map(hovering_tile),0,no_atlas)
+
 
 func _on_flower_tile_toggled(toggled_on: bool) -> void:
 	if toggled_on:
