@@ -1,23 +1,42 @@
-[gd_scene load_steps=5 format=3 uid="uid://cmo44rk3t4wbk"]
+[gd_scene load_steps=9 format=3 uid="uid://cmo44rk3t4wbk"]
 
 [ext_resource type="PackedScene" uid="uid://03g35hljx7nw" path="res://Assets/Tiles/tile_map_layer.tscn" id="1_doo4g"]
-[ext_resource type="Script" uid="uid://d2qdrjvbk1pyb" path="res://Assets/world.gd" id="1_iylpf"]
+[ext_resource type="Script" uid="uid://d2qdrjvbk1pyb" path="res://Scripts/world.gd" id="1_iylpf"]
 [ext_resource type="Texture2D" uid="uid://b0k8fgvyhu6cf" path="res://Assets/Tiles/new_noise_texture_2d.tres" id="2_kkxwm"]
+[ext_resource type="Script" uid="uid://bg8nx8pbuom1j" path="res://Scenes/camera_control.gd" id="3_p70al"]
 [ext_resource type="TileSet" uid="uid://hd1rspuns4n8" path="res://Assets/Tiles/hex_tiles.tres" id="4_uqhvw"]
+
+[sub_resource type="Gradient" id="Gradient_ruj66"]
+offsets = PackedFloat32Array(0.09375, 0.6354167, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.42465752, 0.42465752, 0.42465752, 1, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_s41pq"]
+noise_type = 3
+seed = 2
+frequency = 0.3833
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_p70al"]
+width = 32
+height = 32
+noise = SubResource("FastNoiseLite_s41pq")
+color_ramp = SubResource("Gradient_ruj66")
 
 [node name="World" type="Node2D" node_paths=PackedStringArray("tileMapLayerDebug", "tileMapLayerPlayer")]
 script = ExtResource("1_iylpf")
 tileMapLayerDebug = NodePath("TileMapLayerDebug")
 tileMapLayerPlayer = NodePath("PlayerTileMapLayer")
-noise_tex = ExtResource("2_kkxwm")
+nectar_noise_tex = ExtResource("2_kkxwm")
+threat_noise_tex = SubResource("NoiseTexture2D_p70al")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_enabled = false
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
+script = ExtResource("3_p70al")
 
 [node name="PlayerTileMapLayer" type="TileMapLayer" parent="."]
 tile_set = ExtResource("4_uqhvw")
 
 [node name="TileMapLayerDebug" parent="." instance=ExtResource("1_doo4g")]
+visible = false
 z_index = 1
