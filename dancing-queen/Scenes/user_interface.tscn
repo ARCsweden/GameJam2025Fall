@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cyd273blrwvj6"]
+[gd_scene load_steps=21 format=3 uid="uid://cyd273blrwvj6"]
 
 [ext_resource type="StyleBox" uid="uid://dokg5hcv2e0km" path="res://resources/button_left_right.tres" id="1_7jfck"]
 [ext_resource type="PackedScene" uid="uid://birg8lypi8eb2" path="res://Scenes/hive_view.tscn" id="1_m3woj"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://d32jnsvpajsuy" path="res://Assets/Art/png/unexplored_tile.png" id="3_uf5wx"]
 [ext_resource type="Texture2D" uid="uid://26h73byjc5s" path="res://Assets/Art/png/grass_tile.png" id="5_1648f"]
 [ext_resource type="Texture2D" uid="uid://3y7p3nuo7wix" path="res://Assets/Art/png/flag_tile.png" id="7_xap2s"]
+[ext_resource type="Texture2D" uid="uid://c6h2tc1207wda" path="res://Assets/Art/png/honey.png" id="10_m3woj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m3woj"]
 
@@ -32,6 +33,9 @@ bg_color = Color(0.7944067, 0, 0.11294835, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_doevo"]
 bg_color = Color(7.7731165e-06, 0.59024537, 0.11758796, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iuuak"]
+bg_color = Color(0.56078434, 0.26666668, 0, 1)
 
 [node name="UserInterface" type="Control"]
 layout_mode = 3
@@ -307,6 +311,7 @@ size_flags_vertical = 3
 color = Color(0.79607844, 0, 0.18431373, 1)
 
 [node name="Debug" type="Button" parent="HBox/RightScreen/Panel/Buttons"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -314,3 +319,39 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_1648f")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_doevo")
 toggle_mode = true
 text = "DEBUG!"
+
+[node name="HoneyDisplay" type="Panel" parent="HBox/RightScreen/Panel/Buttons"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_iuuak")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBox/RightScreen/Panel/Buttons/HoneyDisplay"]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -25.0
+offset_right = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBox/RightScreen/Panel/Buttons/HoneyDisplay/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("10_m3woj")
+expand_mode = 5
+stretch_mode = 3
+
+[node name="ProgressBar" type="ProgressBar" parent="HBox/RightScreen/Panel/Buttons/HoneyDisplay/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/outline_size = 5
+
+[node name="Label" type="Label" parent="HBox/RightScreen/Panel/Buttons/HoneyDisplay/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+text = "Honey"
+horizontal_alignment = 1
+vertical_alignment = 1
