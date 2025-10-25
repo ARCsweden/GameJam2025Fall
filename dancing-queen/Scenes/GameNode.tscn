@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://d1exxolsljrsr"]
+[gd_scene load_steps=4 format=3 uid="uid://d1exxolsljrsr"]
 
 [ext_resource type="PackedScene" uid="uid://cmo44rk3t4wbk" path="res://Scenes/World.tscn" id="1_q24h2"]
 [ext_resource type="PackedScene" uid="uid://cyd273blrwvj6" path="res://Scenes/user_interface.tscn" id="1_ro750"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_q24h2"]
+allow_unpress = true
 
 [node name="GameNode" type="Node"]
 
@@ -9,10 +12,35 @@
 
 [node name="UserInterface" parent="UI" instance=ExtResource("1_ro750")]
 
+[node name="FlowerTile" parent="UI/UserInterface/HBox/RightScreen/Panel/Buttons/TileChoosingButtons" index="0"]
+button_group = SubResource("ButtonGroup_q24h2")
+
+[node name="GrassTile" parent="UI/UserInterface/HBox/RightScreen/Panel/Buttons/TileChoosingButtons" index="1"]
+button_group = SubResource("ButtonGroup_q24h2")
+
+[node name="FlowerTile3" parent="UI/UserInterface/HBox/RightScreen/Panel/Buttons/TileChoosingButtons" index="2"]
+button_group = SubResource("ButtonGroup_q24h2")
+
+[node name="DangerTile" parent="UI/UserInterface/HBox/RightScreen/Panel/Buttons/TileChoosingButtons" index="3"]
+button_group = SubResource("ButtonGroup_q24h2")
+
+[node name="BlankTile" parent="UI/UserInterface/HBox/RightScreen/Panel/Buttons/TileChoosingButtons" index="4"]
+button_group = SubResource("ButtonGroup_q24h2")
+
+[node name="FlagTile" parent="UI/UserInterface/HBox/RightScreen/Panel/Buttons/TileChoosingButtons" index="5"]
+button_group = SubResource("ButtonGroup_q24h2")
+
 [node name="World" parent="." instance=ExtResource("1_q24h2")]
 
 [node name="PlayerTileMapLayer" parent="World" index="1" node_paths=PackedStringArray("danger_layer", "flag_layer")]
 danger_layer = NodePath("../DangerTileMapLayer")
 flag_layer = NodePath("../FlagTileMapLayer")
 
+[connection signal="toggled" from="UI/UserInterface/HBox/RightScreen/Panel/Buttons/TileChoosingButtons/FlowerTile" to="World/PlayerTileMapLayer" method="_on_flower_tile_toggled"]
+[connection signal="toggled" from="UI/UserInterface/HBox/RightScreen/Panel/Buttons/TileChoosingButtons/GrassTile" to="World/PlayerTileMapLayer" method="_on_grass_tile_toggled"]
+[connection signal="toggled" from="UI/UserInterface/HBox/RightScreen/Panel/Buttons/TileChoosingButtons/DangerTile" to="World/PlayerTileMapLayer" method="_on_danger_tile_toggled"]
+[connection signal="toggled" from="UI/UserInterface/HBox/RightScreen/Panel/Buttons/TileChoosingButtons/BlankTile" to="World/PlayerTileMapLayer" method="_on_blank_tile_toggled"]
+[connection signal="toggled" from="UI/UserInterface/HBox/RightScreen/Panel/Buttons/TileChoosingButtons/FlagTile" to="World/PlayerTileMapLayer" method="_on_flag_tile_toggled"]
+
+[editable path="UI/UserInterface"]
 [editable path="World"]
