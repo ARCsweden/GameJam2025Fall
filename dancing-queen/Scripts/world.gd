@@ -33,6 +33,7 @@ func _ready() -> void:
 
 func generate_world():
 	noise = nectar_noise_tex.noise
+	
 	for x in range(-map_width/2, map_width /2):
 		for y in range(-map_height/2, map_height/2):
 			if x == 0 and y == 0:
@@ -58,6 +59,11 @@ func fill_player_world():
 func get_world_tile(tile_coords : Vector2i) -> WorldTile:
 	if world_tiles.has(tile_coords):
 		return world_tiles[tile_coords]
+	return null
+	
+func empty_nectar(tile_coords : Vector2i):
+	if world_tiles.has(tile_coords):
+		world_tiles[tile_coords].honey_volume = 0
 	return null
 
 func _on_check_button_toggled(toggled_on: bool) -> void:
