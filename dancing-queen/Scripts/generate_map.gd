@@ -17,8 +17,8 @@ signal hovering_changed
 func _ready() -> void:
 	super._ready()
 	# Enable pathfinding
-	pathfinding_enabled = true				
-				
+	pathfinding_enabled = true
+
 func get_dance_sequence(lineToTarget:Array[Vector3i], objectFound: int) -> Array[Array]:
 	
 	var lasthex = lineToTarget[0]
@@ -27,29 +27,17 @@ func get_dance_sequence(lineToTarget:Array[Vector3i], objectFound: int) -> Array
 	var dance = [[objectFound,1]]
 	for hex in lineToTarget:
 		if hex == cube_neighbor(lasthex,TileSet.CELL_NEIGHBOR_RIGHT_SIDE):
-			moves.append(1)
-			
-			pass
-			
+			moves.append(Constants.DIR_E)
 		elif hex == cube_neighbor(lasthex,TileSet.CELL_NEIGHBOR_BOTTOM_RIGHT_SIDE):
-			moves.append(2)
-			pass
-			
+			moves.append(Constants.DIR_SE)
 		elif hex == cube_neighbor(lasthex,TileSet.CELL_NEIGHBOR_BOTTOM_LEFT_SIDE):
-			moves.append(3)
-			pass
-			
+			moves.append(Constants.DIR_SW)
 		elif hex == cube_neighbor(lasthex,TileSet.CELL_NEIGHBOR_LEFT_SIDE):
-			moves.append(4)
-			pass
-			
+			moves.append(Constants.DIR_W)
 		elif hex == cube_neighbor(lasthex,TileSet.CELL_NEIGHBOR_TOP_LEFT_SIDE):
-			moves.append(5)
-			pass
-			
+			moves.append(Constants.DIR_NW)
 		elif hex == cube_neighbor(lasthex,TileSet.CELL_NEIGHBOR_TOP_RIGHT_SIDE):
-			moves.append(6)
-			pass
+			moves.append(Constants.DIR_NE)
 		lasthex = hex
 	
 	for move in moves:
