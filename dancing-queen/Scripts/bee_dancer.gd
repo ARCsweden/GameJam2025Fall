@@ -2,15 +2,6 @@ extends Node2D
 
 @onready var anim_tree = $AnimationTree
 
-# Movement directions
-const DIR_NONE = 0
-const DIR_E = 1
-const DIR_SE = 2
-const DIR_SW = 3
-const DIR_W = 4
-const DIR_NW = 5
-const DIR_NE = 6
-
 const HEAD_IDLE = 0
 const HEAD_SHAKE = 1
 const HEAD_ANGRY = 2
@@ -86,29 +77,29 @@ func set_butt(state: int) -> void:
 
 
 func set_direction(dir: int) -> void:
-	if dir == DIR_NONE:
+	if dir == Constants.DIR_NONE:
 		set_legs(LEGS_IDLE)
 		set_butt(BUTT_IDLE)
 		set_arm_top(ARM_TOP_IDLE)
 		set_arm_mid(ARM_MID_IDLE)
 	else:
 		# Set Left/Right
-		if dir == DIR_E or dir == DIR_NE or dir == DIR_SE:
+		if dir == Constants.DIR_E or dir == Constants.DIR_NE or dir == Constants.DIR_SE:
 			set_legs(LEGS_RAISE_RIGHT)
 		else:
 			set_legs(LEGS_RAISE_LEFT)
 		# Set Up
-		if dir == DIR_NE or dir == DIR_NW:
+		if dir == Constants.DIR_NE or dir == Constants.DIR_NW:
 			set_arm_top(ARM_TOP_PUMP)
 		else:
 			set_arm_top(ARM_TOP_IDLE)
 		# Set Down
-		if dir == DIR_SE or dir == DIR_SW:
+		if dir == Constants.DIR_SE or dir == Constants.DIR_SW:
 			set_butt(BUTT_WIGGLE)
 		else:
 			set_butt(BUTT_IDLE)
 		# Set Sides
-		if dir == DIR_E or dir == DIR_W:
+		if dir == Constants.DIR_E or dir == Constants.DIR_W:
 			set_arm_mid(ARM_MID_STRETCH)
 		else:
 			set_arm_mid(ARM_MID_IDLE)
@@ -123,21 +114,21 @@ func _process(_delta: float) -> void:
 	
 	var dir_vec = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 
-	var dir = DIR_NONE
+	var dir = Constants.DIR_NONE
 	if dir_vec.x > 0.0: # right
 		if dir_vec.y > 0: # down
-			dir = DIR_SE
+			dir = Constants.DIR_SE
 		elif dir_vec.y < 0: # up
-			dir = DIR_NE
+			dir = Constants.DIR_NE
 		else:
-			dir = DIR_E
+			dir = Constants.DIR_E
 	elif dir_vec.x < 0.0: # left
 		if dir_vec.y > 0: # down
-			dir = DIR_SW
+			dir = Constants.DIR_SW
 		elif dir_vec.y < 0: # up
-			dir = DIR_NW
+			dir = Constants.DIR_NW
 		else:
-			dir = DIR_W
+			dir = Constants.DIR_W
 
 	set_direction(dir)
 	
