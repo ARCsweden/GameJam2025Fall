@@ -1,6 +1,6 @@
 [gd_scene load_steps=61 format=3 uid="uid://bwlwdt7ekok0k"]
 
-[ext_resource type="Script" uid="uid://bnrlb830qr02r" path="res://Scripts/bee_dancer.gd" id="1_7tshy"]
+[ext_resource type="Script" uid="uid://c5a0uue5oxgs5" path="res://Scenes/queen_bee.gd" id="1_yqjyy"]
 [ext_resource type="Texture2D" uid="uid://cyya543lxd8ec" path="res://Assets/QueenBee/butt.png" id="2_bmwvm"]
 [ext_resource type="Texture2D" uid="uid://or30scjmj7gc" path="res://Assets/BeeDancer/wing.png" id="2_cqaqt"]
 [ext_resource type="Texture2D" uid="uid://crcyweau27g5o" path="res://Assets/QueenBee/bod.png" id="3_b444c"]
@@ -2006,7 +2006,7 @@ nodes/Legs/position = Vector2(180, 3000)
 node_connections = [&"output", 0, &"Add2", &"Head", 0, &"Animation", &"Head", 1, &"Animation 2", &"Head", 2, &"Animation 3", &"Add2", 0, &"Add2 6", &"Add2", 1, &"Animation 4", &"Wings", 0, &"Animation 5", &"Wings", 1, &"Animation 6", &"Add2 2", 0, &"Head", &"Add2 2", 1, &"Wings", &"Butt", 0, &"Animation 7", &"Butt", 1, &"Animation 8", &"Butt", 2, &"Animation 9", &"Add2 3", 0, &"Add2 2", &"Add2 3", 1, &"Butt", &"ArmTop", 0, &"Animation 10", &"ArmTop", 1, &"Animation 11", &"ArmTop", 2, &"Animation 12", &"Add2 4", 0, &"Add2 3", &"Add2 4", 1, &"ArmTop", &"ArmMid", 0, &"Animation 13", &"ArmMid", 1, &"Animation 14", &"ArmMid", 2, &"Animation 15", &"Add2 5", 0, &"Add2 4", &"Add2 5", 1, &"ArmMid", &"Legs", 0, &"Animation 16", &"Legs", 1, &"Animation 17", &"Legs", 2, &"Animation 18", &"Add2 6", 0, &"Add2 5", &"Add2 6", 1, &"Legs"]
 
 [node name="QueenBee" type="Node2D"]
-script = ExtResource("1_7tshy")
+script = ExtResource("1_yqjyy")
 
 [node name="Sprite" type="Node2D" parent="."]
 position = Vector2(0, -607)
