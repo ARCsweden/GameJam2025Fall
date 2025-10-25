@@ -9,6 +9,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="HBox" type="HBoxContainer" parent="."]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -24,16 +25,83 @@ size_flags_horizontal = 3
 [node name="DancingFloor" type="ColorRect" parent="HBox/TheClub"]
 layout_mode = 2
 size_flags_vertical = 3
-size_flags_stretch_ratio = 2.0
+size_flags_stretch_ratio = 5.0
 color = Color(1, 0, 1, 1)
 
-[node name="DanceControls" type="ColorRect" parent="HBox/TheClub"]
+[node name="DanceControls" type="GridContainer" parent="HBox/TheClub"]
 layout_mode = 2
 size_flags_vertical = 3
-color = Color(0.83585006, 0.3823731, 7.70092e-07, 1)
+columns = 2
 
-[node name="WorldMap" type="ColorRect" parent="HBox"]
+[node name="LeftChangeDancingBee" type="Button" parent="HBox/TheClub/DanceControls"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/outline_size = 0
+theme_override_constants/h_separation = 0
+theme_override_font_sizes/font_size = 32
+text = "Left"
+
+[node name="RightChangeDancingBee2" type="Button" parent="HBox/TheClub/DanceControls"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/outline_size = 0
+theme_override_constants/h_separation = 0
+theme_override_font_sizes/font_size = 32
+text = "Right"
+
+[node name="Watch" type="Button" parent="HBox/TheClub/DanceControls"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/outline_size = 0
+theme_override_constants/h_separation = 0
+theme_override_font_sizes/font_size = 32
+text = "Watch"
+
+[node name="Order" type="Button" parent="HBox/TheClub/DanceControls"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/outline_size = 0
+theme_override_constants/h_separation = 0
+theme_override_font_sizes/font_size = 32
+text = "Order"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBox/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 10.0
+
+[node name="WorldMap" type="ColorRect" parent="HBox/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 10.0
 color = Color(0, 0.5358119, 0.9992501, 1)
+
+[node name="PaintButtons" type="GridContainer" parent="HBox/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect" type="ColorRect" parent="HBox/VBoxContainer/HBoxContainer/PaintButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.51159936, 0.26762724, 0.031918775, 1)
+
+[node name="GenericButtons" type="GridContainer" parent="HBox/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ColorRect" type="ColorRect" parent="HBox/VBoxContainer/GenericButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.8586494, 0.45397812, 0.09108616, 1)
