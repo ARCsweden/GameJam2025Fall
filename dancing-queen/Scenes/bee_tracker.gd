@@ -8,6 +8,7 @@ func _ready():
 	add_bee_group()
 	SignalBuss.connect("send_bee",send_a_bee)
 	SignalBuss.connect("bee_arrived_home",_on_bee_home)
+	SignalBuss.connect("create_new_bee",add_bee_group)
 	first_bee_search()
 	
 
