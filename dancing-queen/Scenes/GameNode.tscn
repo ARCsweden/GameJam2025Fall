@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://d1exxolsljrsr"]
+[gd_scene load_steps=5 format=3 uid="uid://d1exxolsljrsr"]
 
 [ext_resource type="PackedScene" uid="uid://cmo44rk3t4wbk" path="res://Scenes/World.tscn" id="1_q24h2"]
 [ext_resource type="PackedScene" uid="uid://cyd273blrwvj6" path="res://Scenes/user_interface.tscn" id="1_ro750"]
+[ext_resource type="AudioStream" uid="uid://cocnlyu14mde7" path="res://Assets/Sounds/bumble-bee-317782.mp3" id="3_ro750"]
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_q24h2"]
 allow_unpress = true
@@ -43,6 +44,13 @@ zoom = Vector2(4.06, 4.06)
 [node name="PlayerTileMapLayer" parent="World" index="1" node_paths=PackedStringArray("danger_layer", "flag_layer")]
 danger_layer = NodePath("../DangerTileMapLayer")
 flag_layer = NodePath("../FlagTileMapLayer")
+
+[node name="MusicPlayer" type="Node" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MusicPlayer"]
+stream = ExtResource("3_ro750")
+autoplay = true
+parameters/looping = false
 
 [connection signal="toggled" from="UI/UserInterface/HBox/RightScreen/Panel/Buttons/TileChoosingButtons/FlowerTile" to="World/PlayerTileMapLayer" method="_on_flower_tile_toggled"]
 [connection signal="toggled" from="UI/UserInterface/HBox/RightScreen/Panel/Buttons/TileChoosingButtons/GrassTile" to="World/PlayerTileMapLayer" method="_on_grass_tile_toggled"]

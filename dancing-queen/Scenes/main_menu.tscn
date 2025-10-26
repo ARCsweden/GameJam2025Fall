@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dvhyd4graqtw2"]
+[gd_scene load_steps=5 format=3 uid="uid://dvhyd4graqtw2"]
 
 [ext_resource type="Script" uid="uid://ub53ovom1hfn" path="res://Scripts/main_menu.gd" id="1_28flt"]
 [ext_resource type="Texture2D" uid="uid://bnodgpnyxovs6" path="res://Assets/Art/start_background.jpg" id="2_48xlc"]
+[ext_resource type="AudioStream" uid="uid://d3utdcgad3pcb" path="res://Assets/Sounds/7-soft-bee-pulse-315645.mp3" id="3_1ehe0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rhts7"]
 bg_color = Color(1, 1, 1, 1)
@@ -69,6 +70,13 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_rhts7")
 text = "Exit"
+
+[node name="MusicPlayer" type="Node" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MusicPlayer"]
+stream = ExtResource("3_1ehe0")
+autoplay = true
+parameters/looping = false
 
 [connection signal="button_down" from="VBoxContainer/Start" to="." method="_on_start_button_down"]
 [connection signal="button_down" from="VBoxContainer/Settings" to="." method="_on_settings_button_down"]
