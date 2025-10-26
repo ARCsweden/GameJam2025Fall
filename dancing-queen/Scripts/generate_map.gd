@@ -70,6 +70,10 @@ func _unhandled_input(event: InputEvent):
 		if event.button_index == MOUSE_BUTTON_LEFT:
 				if cube_to_map(hovering_tile) == Vector2i(0,0):
 					return
+				#var recent_atlas = current_paint_layer.get_cell_atlas_coords(cube_to_map(hovering_tile))
+				#if Input.is_action_just_released("mouse_click") && (recent_atlas == danger_atlas || recent_atlas == flag_atlas):
+					#current_paint_layer.set_cell(cube_to_map(hovering_tile),0,no_atlas)
+					#return
 				if current_atlas != no_atlas && $"..".get_world_tile(cube_to_map(hovering_tile)) != null: 
 					current_paint_layer.set_cell(cube_to_map(hovering_tile),0,current_atlas)
 					if current_atlas == unexplored_atlas:
@@ -100,7 +104,7 @@ func _on_hovering_changed() -> void:
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		if cube_to_map(hovering_tile) == Vector2i(0,0):
 				return
-		if current_atlas != no_atlas && currentTileData != null: 
+		if current_atlas != no_atlas && currentTileData != null && current_atlas != danger_atlas && current_atlas != flag_atlas: 
 			current_paint_layer.set_cell(cube_to_map(hovering_tile),0,current_atlas)
 			if current_atlas == unexplored_atlas:
 				danger_layer.set_cell(cube_to_map(hovering_tile),0,no_atlas)
