@@ -5,3 +5,4 @@ signal bee_arrived_home(bee : Beegroup)
 signal bee_idle(bee : Beegroup)
 
 signal create_new_bee
+signal get_honey
