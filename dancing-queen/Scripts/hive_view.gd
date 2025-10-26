@@ -119,9 +119,8 @@ func _process(delta: float) -> void:
 				print("Command: %d, %f" % [cmd.dir, cmd.duration])
 			anim.play("dismiss_minions")
 			
-			
-			command_bee(command_queue)
-			
+			if command_queue.size() > 0:
+				command_bee(command_queue)
 		else:
 			for child in $QueenBee/Minions.get_children():
 				child.set_direction(Constants.DIR_NONE)
