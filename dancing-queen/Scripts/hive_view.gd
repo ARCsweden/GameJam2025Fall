@@ -18,7 +18,7 @@ func _ready() -> void:
 
 class Command:
 	var dir : int
-	var modifiers : int
+	var honey : bool
 	var duration : float
 
 var command_queue : Array[Command] = []
@@ -64,7 +64,9 @@ func update_dancer_feedback(delta : float) -> void:
 			if feedback_queue_index == 0:
 				bee.set_direction(Constants.DIR_NONE)
 				bee.set_flying(true)
+				bee.indicate_honey(cmd.honey)
 			else:
+				bee.reset_honey_indication()
 				bee.set_direction(cmd.dir)
 				bee.set_flying(false)
 
@@ -159,5 +161,5 @@ func convert_dance_to_command(bee1 : Beegroup) -> Array[Command]:
 		newCommand.dir = move[0]
 		newCommand.duration = move[1]
 		commandlist.append(newCommand)
-	if len(commandlist) > 1 : commandlist.pop_front()
+#	if len(commandlist) > 1 : commandlist.pop_front()
 	return commandlist
