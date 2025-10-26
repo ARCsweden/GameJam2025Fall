@@ -23,7 +23,7 @@ func _init():
 
 func leave_home(destination : Vector3i, targetTile : WorldTile):
 	var flight_time = (get_line_distance_from_hive(destination) * time_per_hex) + gather_time
-	
+	bee_home = false
 	flight_timer.wait_time = flight_time
 	flight_timer.one_shot = true
 	flight_timer.start()
@@ -36,7 +36,7 @@ func set_information(destination: Vector3i, thing: int):
 func get_line_distance_from_hive(target: Vector3):
 	var dist = len(HexagonTileMapLayer.new().cube_linedraw(Vector3i(0,0,0), target))
 	return dist
-	
+
 func _on_timer_timeout():
 	bee_home = true
 	SignalBuss.bee_arrived_home.emit(self)
