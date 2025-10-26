@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://03g35hljx7nw" path="res://Assets/Tiles/tile_map_layer.tscn" id="1_doo4g"]
 [ext_resource type="Script" uid="uid://d2qdrjvbk1pyb" path="res://Scripts/world.gd" id="1_iylpf"]
 [ext_resource type="Texture2D" uid="uid://b0k8fgvyhu6cf" path="res://Assets/Tiles/new_noise_texture_2d.tres" id="2_kkxwm"]
-[ext_resource type="Script" path="res://Scenes/camera_control.gd" id="3_p70al"]
+[ext_resource type="Script" uid="uid://bg8nx8pbuom1j" path="res://Scenes/camera_control.gd" id="3_p70al"]
 [ext_resource type="TileSet" uid="uid://hd1rspuns4n8" path="res://Assets/Tiles/hex_tiles.tres" id="4_uqhvw"]
 [ext_resource type="Script" uid="uid://cve81w1muxhif" path="res://Scripts/generate_map.gd" id="5_45d1s"]
 [ext_resource type="PackedScene" uid="uid://c6vwwgtorqwmu" path="res://Scenes/bee_tracker.tscn" id="7_y7y61"]
@@ -47,7 +47,6 @@ z_index = 1
 texture_filter = 1
 script = null
 
-
 [node name="BeeTracker" parent="." instance=ExtResource("7_y7y61")]
 
 [node name="DangerTileMapLayer" type="TileMapLayer" parent="."]
@@ -57,6 +56,5 @@ tile_set = ExtResource("4_uqhvw")
 [node name="FlagTileMapLayer" type="TileMapLayer" parent="."]
 texture_filter = 1
 tile_set = ExtResource("4_uqhvw")
-
 
 [connection signal="hovering_changed" from="PlayerTileMapLayer" to="PlayerTileMapLayer" method="_on_hovering_changed"]
