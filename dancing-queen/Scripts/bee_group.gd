@@ -17,14 +17,14 @@ func _init():
 	time_per_hex = 2
 	gather_time = 5
 	nectar_count = 0
-	currentDance = [[0,0]]
+	currentDance = [[100,0]]
 	add_child(flight_timer)
+	flight_timer.connect("timeout", _on_timer_timeout)
 
 func leave_home(destination : Vector3i, targetTile : WorldTile):
 	var flight_time = (get_line_distance_from_hive(destination) * time_per_hex) + gather_time
 	
 	flight_timer.wait_time = flight_time
-	flight_timer.connect("timeout", _on_timer_timeout)
 	flight_timer.one_shot = true
 	flight_timer.start()
 	if targetTile.honey_volume < 0 :
@@ -34,7 +34,8 @@ func set_information(destination: Vector3i, thing: int):
 	info = [destination[0],destination[1],destination[2],thing]
 	
 func get_line_distance_from_hive(target: Vector3):
-	return len(HexagonTileMapLayer.new().cube_linedraw(Vector3i(0,0,0), target))
+	var dist = len(HexagonTileMapLayer.new().cube_linedraw(Vector3i(0,0,0), target))
+	return dist
 	
 func _on_timer_timeout():
 	bee_home = true
