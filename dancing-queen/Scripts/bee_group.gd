@@ -19,12 +19,12 @@ func _init():
 	nectar_count = 0
 	currentDance = [[100,0]]
 	add_child(flight_timer)
+	flight_timer.connect("timeout", _on_timer_timeout)
 
 func leave_home(destination : Vector3i, targetTile : WorldTile):
 	var flight_time = (get_line_distance_from_hive(destination) * time_per_hex) + gather_time
 	
 	flight_timer.wait_time = flight_time
-	flight_timer.connect("timeout", _on_timer_timeout)
 	flight_timer.one_shot = true
 	flight_timer.start()
 	if targetTile.honey_volume < 0 :
