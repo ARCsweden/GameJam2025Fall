@@ -1,6 +1,5 @@
-[gd_scene load_steps=12 format=3 uid="uid://birg8lypi8eb2"]
+[gd_scene load_steps=11 format=3 uid="uid://birg8lypi8eb2"]
 
-[ext_resource type="Texture2D" uid="uid://bvmnnjcksuent" path="res://Assets/Art/hive_bg.jpg" id="1_a83n1"]
 [ext_resource type="Script" uid="uid://cqtmv407e5egp" path="res://Scripts/hive_view.gd" id="1_m3fw5"]
 [ext_resource type="PackedScene" uid="uid://4wyirpe2y2vd" path="res://Scenes/bee_dancer.tscn" id="2_m3fw5"]
 [ext_resource type="PackedScene" uid="uid://bwlwdt7ekok0k" path="res://Scenes/queen_bee.tscn" id="3_82udu"]
@@ -199,18 +198,6 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_m3fw5")
-
-[node name="BG" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_left = -67.0
-offset_top = -22.0
-offset_right = 506.0
-offset_bottom = 1.3532104
-grow_vertical = 2
-texture = ExtResource("1_a83n1")
-expand_mode = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
