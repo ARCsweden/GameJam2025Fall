@@ -21,6 +21,12 @@ bg_color = Color(0.6718929, 0.32470697, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_piynm"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1648f"]
+bg_color = Color(0.7944067, 0, 0.11294835, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_doevo"]
+bg_color = Color(7.7731165e-06, 0.59024537, 0.11758796, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4d574"]
 bg_color = Color(0, 0.52694565, 0.1954858, 1)
 
@@ -29,12 +35,6 @@ bg_color = Color(0.9487085, 0.21745047, 1.92523e-07, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7jfck"]
 bg_color = Color(1.6364455e-06, 0.6430421, 0.24692357, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1648f"]
-bg_color = Color(0.7944067, 0, 0.11294835, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_doevo"]
-bg_color = Color(7.7731165e-06, 0.59024537, 0.11758796, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iuuak"]
 bg_color = Color(0.56078434, 0.26666668, 0, 1)
@@ -83,7 +83,87 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_m3woj")
 
+[node name="DanceButtons" type="GridContainer" parent="HBox/TheClub/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 5.0
+columns = 4
+
+[node name="left" type="ColorRect" parent="HBox/TheClub/Panel/DanceButtons"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.79607844, 0, 0.18431373, 1)
+
+[node name="TextureRect" type="TextureRect" parent="HBox/TheClub/Panel/DanceButtons/left"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_osvio")
+flip_h = true
+
+[node name="right" type="ColorRect" parent="HBox/TheClub/Panel/DanceButtons"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.79607844, 0, 0.18431373, 1)
+
+[node name="TextureRect" type="TextureRect" parent="HBox/TheClub/Panel/DanceButtons/right"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_osvio")
+flip_v = true
+
+[node name="up" type="ColorRect" parent="HBox/TheClub/Panel/DanceButtons"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.79607844, 0, 0.18431373, 1)
+
+[node name="TextureRect" type="TextureRect" parent="HBox/TheClub/Panel/DanceButtons/up"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_iuuak")
+
+[node name="down" type="ColorRect" parent="HBox/TheClub/Panel/DanceButtons"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.79607844, 0, 0.18431373, 1)
+
+[node name="TextureRect" type="TextureRect" parent="HBox/TheClub/Panel/DanceButtons/down"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_iuuak")
+flip_v = true
+
 [node name="BeeControls" type="GridContainer" parent="HBox/TheClub/Panel"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -161,14 +241,24 @@ size_flags_vertical = 3
 theme_override_constants/separation = 4
 script = ExtResource("2_doevo")
 
+[node name="Debug" type="Button" parent="HBox/RightScreen/Panel/Buttons"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_1648f")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_doevo")
+toggle_mode = true
+text = "DEBUG!"
+
 [node name="TileChoosingButtons" type="GridContainer" parent="HBox/RightScreen/Panel/Buttons"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-size_flags_stretch_ratio = 0.5
+size_flags_stretch_ratio = 3.0
 theme_override_constants/h_separation = 5
 theme_override_constants/v_separation = 5
-columns = 2
+columns = 3
 
 [node name="FlowerTile" type="Button" parent="HBox/RightScreen/Panel/Buttons/TileChoosingButtons"]
 layout_mode = 2
@@ -247,89 +337,6 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_7jfck")
 toggle_mode = true
 button_group = ExtResource("2_uf5wx")
 icon_alignment = 1
-
-[node name="DanceButtons" type="GridContainer" parent="HBox/RightScreen/Panel/Buttons"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-size_flags_stretch_ratio = 5.0
-columns = 4
-
-[node name="left" type="ColorRect" parent="HBox/RightScreen/Panel/Buttons/DanceButtons"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.79607844, 0, 0.18431373, 1)
-
-[node name="TextureRect" type="TextureRect" parent="HBox/RightScreen/Panel/Buttons/DanceButtons/left"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("11_osvio")
-flip_h = true
-
-[node name="right" type="ColorRect" parent="HBox/RightScreen/Panel/Buttons/DanceButtons"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.79607844, 0, 0.18431373, 1)
-
-[node name="TextureRect" type="TextureRect" parent="HBox/RightScreen/Panel/Buttons/DanceButtons/right"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("11_osvio")
-flip_v = true
-
-[node name="up" type="ColorRect" parent="HBox/RightScreen/Panel/Buttons/DanceButtons"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.79607844, 0, 0.18431373, 1)
-
-[node name="TextureRect" type="TextureRect" parent="HBox/RightScreen/Panel/Buttons/DanceButtons/up"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("11_iuuak")
-
-[node name="down" type="ColorRect" parent="HBox/RightScreen/Panel/Buttons/DanceButtons"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.79607844, 0, 0.18431373, 1)
-
-[node name="TextureRect" type="TextureRect" parent="HBox/RightScreen/Panel/Buttons/DanceButtons/down"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("11_iuuak")
-flip_v = true
-
-[node name="Debug" type="Button" parent="HBox/RightScreen/Panel/Buttons"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_styles/normal = SubResource("StyleBoxFlat_1648f")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_doevo")
-toggle_mode = true
-text = "DEBUG!"
 
 [node name="HoneyDisplay" type="Panel" parent="HBox/RightScreen/Panel/Buttons"]
 layout_mode = 2
