@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/bumble-bee.mp3-28ff549c3a7d8e105785ff7ca55eea
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0
