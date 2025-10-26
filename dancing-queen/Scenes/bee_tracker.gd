@@ -27,6 +27,8 @@ func add_bee_group():
 
 func _on_bee_home(bee : Beegroup):
 	print("BEEEEEEEEEEEEEEE HOOOOOOOOOOOOOME")
+	if bee.nectar_count > 0:
+		SignalBuss.get_honey.emit()
 	Utils.honey_stored += bee.nectar_count
 	bee.nectar_count=0
 	var beeInfoPos3 = Vector3i(bee.info[0],bee.info[1],bee.info[2])

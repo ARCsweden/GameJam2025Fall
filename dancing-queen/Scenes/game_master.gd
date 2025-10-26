@@ -4,12 +4,11 @@ extends Node
 
 @onready var sparkle = $UI/UserInterface/GPUParticles2D
 
-func _on_bee_arrived_home(bee):
-	if bee.nectar_count > 0:
-		sparkle.emitting = true
+func _on_get_honey():
+	sparkle.emitting = true
 
 func _ready() -> void:
-	SignalBuss.bee_arrived_home.connect(_on_bee_arrived_home)
+	SignalBuss.get_honey.connect(_on_get_honey)
 
 func _process(delta: float) -> void:
 	time_to_winter -= delta
