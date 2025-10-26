@@ -5,15 +5,16 @@
 [ext_resource type="PackedScene" uid="uid://cyd273blrwvj6" path="res://Scenes/user_interface.tscn" id="1_ro750"]
 [ext_resource type="Script" uid="uid://cjoqn18btts2h" path="res://Scenes/honey_progress.gd" id="3_hg0ag"]
 [ext_resource type="AudioStream" uid="uid://ljxj7l4mub5y" path="res://Assets/Sounds/beeckround.mp3" id="5_djosc"]
-[ext_resource type="Script" uid="uid://dgsy51m7xgknr" path="res://Scenes/audio_stream_player.gd" id="6_b6i6a"]
+[ext_resource type="Script" path="res://Scenes/audio_stream_player.gd" id="6_b6i6a"]
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_q24h2"]
 allow_unpress = true
 
-[node name="GameNode" type="Node" node_paths=PackedStringArray("time_label")]
+[node name="GameNode" type="Node" node_paths=PackedStringArray("time_label", "debug_map")]
 script = ExtResource("1_hg0ag")
 time_to_winter = 600.0
 time_label = NodePath("UI/UserInterface/HBox/RightScreen/HBoxContainer/MapArea/WinterCountdown")
+debug_map = NodePath("World/TileMapLayerDebug")
 
 [node name="UI_UserInterface_HBox_RightScreen_MapArea#Panel" type="Panel" parent="."]
 custom_minimum_size = Vector2(276.945, 32.39)
