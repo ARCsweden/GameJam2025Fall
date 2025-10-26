@@ -16,7 +16,7 @@ func add_bee_group():
 
 func _on_bee_home(bee : Beegroup):
 	print("BEEEEEEEEEEEEEEE HOOOOOOOOOOOOOME")
-	#TODO Add to Total Honey
+	Utils.honey_stored += bee.nectar_count
 	bee.nectar_count=0
 	var beeInfoPos3 = Vector3i(bee.info[0],bee.info[1],bee.info[2])
 	var new_dance = $"../PlayerTileMapLayer".get_dance_sequence($"../PlayerTileMapLayer".get_line_from_hive(beeInfoPos3),69)

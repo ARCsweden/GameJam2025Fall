@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dvhyd4graqtw2"]
+[gd_scene load_steps=5 format=3 uid="uid://dvhyd4graqtw2"]
 
 [ext_resource type="Script" uid="uid://ub53ovom1hfn" path="res://Scripts/main_menu.gd" id="1_28flt"]
 [ext_resource type="Texture2D" uid="uid://bnodgpnyxovs6" path="res://Assets/Art/start_background.jpg" id="2_48xlc"]
+[ext_resource type="Script" uid="uid://klicl7uurk2e" path="res://Scenes/info_panel.gd" id="3_1ehe0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rhts7"]
 bg_color = Color(1, 1, 1, 1)
@@ -42,6 +43,25 @@ offset_bottom = 112.625
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 25
+
+[node name="Panel" type="Panel" parent="VBoxContainer" node_paths=PackedStringArray("info_label")]
+visible = false
+custom_minimum_size = Vector2(0, 37.675)
+layout_mode = 2
+script = ExtResource("3_1ehe0")
+info_label = NodePath("info_label")
+
+[node name="info_label" type="Label" parent="VBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "The hive did not survive..."
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Start" type="Button" parent="VBoxContainer"]
 unique_name_in_owner = true
