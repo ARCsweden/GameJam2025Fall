@@ -52,7 +52,7 @@ func send_a_bee(destination : Vector3i):
 			bee.leave_home(destination, tileInfo)
 			$"..".empty_nectar($"../PlayerTileMapLayer".cube_to_map(destination))
 			
-			for hex in $"../PlayerTileMapLayer".cube_spiral(destination,2):
+			for hex in $"../PlayerTileMapLayer".cube_spiral(destination,1):
 				tileInfo = $"..".get_world_tile($"../PlayerTileMapLayer".cube_to_map(hex))
 				if tileInfo.honey_volume > 0 :
 					bee.set_information(hex,69)
