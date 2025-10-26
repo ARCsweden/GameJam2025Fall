@@ -18,12 +18,12 @@ func first_bee_search():
 		if tileInfo.honey_volume > 0 :
 			bees[0].set_information(hex,69)
 			break
-	SignalBuss.bee_home.emit(bees[0])
+	SignalBuss.bee_arrived_home.emit(bees[0])
 	
 func add_bee_group():
 	bees.append(Beegroup.new())
 	add_child(bees[len(bees)-1])
-	SignalBuss.bee_idle.emit(bees[0])
+	if len(bees) >1: SignalBuss.bee_idle.emit(bees[len(bees)-1])
 
 func _on_bee_home(bee : Beegroup):
 	print("BEEEEEEEEEEEEEEE HOOOOOOOOOOOOOME")
