@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://d1exxolsljrsr"]
 
 [ext_resource type="PackedScene" uid="uid://cmo44rk3t4wbk" path="res://Scenes/World.tscn" id="1_q24h2"]
-[ext_resource type="PackedScene" uid="uid://cyd273blrwvj6" path="res://Scenes/user_interface.tscn" id="1_ro750"]
+[ext_resource type="PackedScene" path="res://Scenes/user_interface.tscn" id="1_ro750"]
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_q24h2"]
 allow_unpress = true
