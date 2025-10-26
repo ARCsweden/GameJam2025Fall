@@ -6,7 +6,7 @@ func _process(delta: float) -> void:
 	time_to_winter -= delta
 	var minutes = floor(time_to_winter / 60)
 	var seconds = round(time_to_winter - minutes * 60)
-	time_label.text = "Winter arrives in: " + str(minutes)  + "m " + str(seconds) + "s"
+	time_label.text = "Winter arrives in: " + str(int(minutes))  + "m " + str(int(seconds)) + "s"
 	if time_to_winter <= 0:
 		end_game()
 
