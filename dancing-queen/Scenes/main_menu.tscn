@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dvhyd4graqtw2"]
+[gd_scene load_steps=6 format=3 uid="uid://dvhyd4graqtw2"]
 
 [ext_resource type="Script" uid="uid://ub53ovom1hfn" path="res://Scripts/main_menu.gd" id="1_28flt"]
 [ext_resource type="Texture2D" uid="uid://bnodgpnyxovs6" path="res://Assets/Art/start_background.jpg" id="2_48xlc"]
 [ext_resource type="AudioStream" uid="uid://d3utdcgad3pcb" path="res://Assets/Sounds/7-soft-bee-pulse-315645.mp3" id="3_1ehe0"]
+[ext_resource type="Script" uid="uid://klicl7uurk2e" path="res://Scenes/info_panel.gd" id="3_ce3w2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rhts7"]
 bg_color = Color(1, 1, 1, 1)
@@ -46,10 +47,12 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 25
 
-[node name="Panel" type="Panel" parent="VBoxContainer"]
+[node name="Panel" type="Panel" parent="VBoxContainer" node_paths=PackedStringArray("info_label")]
 visible = false
 custom_minimum_size = Vector2(0, 37.675)
 layout_mode = 2
+script = ExtResource("3_ce3w2")
+info_label = NodePath("info_label")
 
 [node name="info_label" type="Label" parent="VBoxContainer/Panel"]
 layout_mode = 1

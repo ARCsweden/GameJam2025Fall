@@ -26,3 +26,9 @@ func end_game():
 		Utils.info = "The hive did not survive..."
 	Utils.honey_stored = 0.0
 	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+
+func _input(event: InputEvent):
+	if Input.is_action_pressed("Quit"):
+		Utils.honey_stored = 0.0
+		Utils.info = "You left the hive to die..."
+		get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")

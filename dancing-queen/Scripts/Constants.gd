@@ -13,4 +13,4 @@ const DIR_NE = 6
 const CMD_MAX_TIME = 1.2
 const CMD_MIN_TIME = 0.8
 
-const STORE_GOAL = 300.0
+const STORE_GOAL = 600.0

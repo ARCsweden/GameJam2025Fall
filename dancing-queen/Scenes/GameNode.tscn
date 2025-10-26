@@ -11,7 +11,7 @@ allow_unpress = true
 
 [node name="GameNode" type="Node" node_paths=PackedStringArray("time_label")]
 script = ExtResource("1_hg0ag")
-time_to_winter = 180.0
+time_to_winter = 600.0
 time_label = NodePath("UI/UserInterface/HBox/RightScreen/HBoxContainer/MapArea/WinterCountdown")
 
 [node name="UI_UserInterface_HBox_RightScreen_MapArea#Panel" type="Panel" parent="."]
