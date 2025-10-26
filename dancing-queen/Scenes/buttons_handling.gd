@@ -5,6 +5,7 @@ enum Dance {
 	RIGHT,
 	UP,
 	DOWN,
+	SHAKE,
 }
 
 var dance_actions = {
@@ -12,6 +13,7 @@ var dance_actions = {
 	Dance.RIGHT: "right",
 	Dance.UP: "up",
 	Dance.DOWN: "down",
+	Dance.SHAKE: "shake"
 	
 }
 
@@ -20,6 +22,7 @@ var dance_actions = {
 	Dance.RIGHT: %right,
 	Dance.UP: %up,
 	Dance.DOWN: %down,
+	Dance.SHAKE: %shake,
 }
 
 func _process(_delta):
