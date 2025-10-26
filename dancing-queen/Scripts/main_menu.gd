@@ -2,7 +2,7 @@ extends Control
 
 
 func _on_start_button_down() -> void:
-	get_tree().change_scene_to_file("res://Assets/World.tscn")
+	get_tree().change_scene_to_file("res://Scenes/GameNode.tscn")
 
 
 func _on_settings_button_down() -> void:
