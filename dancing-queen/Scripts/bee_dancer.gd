@@ -28,6 +28,17 @@ const LEGS_RAISE_RIGHT = 2
 func do_a_wiggle() -> void:
 	anim_tree.set("parameters/Wiggle/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
 
+func reset_honey_indication() -> void:
+	set_head(HEAD_IDLE)
+	set_arm_top(ARM_TOP_IDLE)
+
+func indicate_honey(value: bool) -> void:
+	if value:
+		set_head(HEAD_ANGRY)
+		set_arm_top(ARM_TOP_COMB)
+	else:
+		set_head(HEAD_SHAKE)
+
 func set_flying(value: bool) -> void:
 	if value:
 		set_wings(WINGS_FLAP)
