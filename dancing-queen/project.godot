@@ -21,6 +21,11 @@ Constants="*res://Scripts/Constants.gd"
 SignalBuss="*res://Scripts/SIGNAL_BUSS.gd"
 Utils="*res://Scripts/utils.gd"
 
+[display]
+
+window/size/mode=3
+window/stretch/mode="canvas_items"
+
 [input]
 
 ui_focus_next={
