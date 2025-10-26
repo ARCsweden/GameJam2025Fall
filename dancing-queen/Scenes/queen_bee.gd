@@ -1,9 +1,18 @@
 extends "res://Scripts/bee_dancer.gd"
 
 var dir = Constants.DIR_NONE
+var breed_timer : float = 0.0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
+
+	if Input.is_action_pressed("shake"):
+		breed_timer += delta
+		if breed_timer >= Constants.BREED_TIME:
+			SignalBuss.breed.emit()
+			breed_timer = 0.0
+	else:
+		breed_timer = 0.0
 	
 	var dir_vec = Input.get_vector("left", "right", "up", "down")
 

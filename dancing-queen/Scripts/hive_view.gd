@@ -11,7 +11,8 @@ var beesInQueue : Array[Beegroup] = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	SignalBuss.connect("bee_idle",_on_bee_idle)
+	SignalBuss.connect("bee_idle", _on_bee_idle)
+	SignalBuss.connect("breed", _on_breed)
 	for child in $QueenBee/Minions.get_children():
 		child.set_flying(true)
 	bee_indicator.set_present(false)
@@ -27,6 +28,7 @@ var cur_command : Command = Command.new()
 func append_command() -> void:
 	if cur_command.dir != Constants.DIR_NONE:
 		for child in $QueenBee/Minions.get_children():
+			child.do_a_twerk(false)
 			child.do_a_wiggle()
 			child.set_direction(cur_command.dir)
 		
@@ -67,6 +69,24 @@ func update_dancer_feedback(delta : float) -> void:
 				bee.set_direction(cmd.dir)
 				bee.set_flying(false)
 
+
+func _on_breed() -> void:
+	var listening = queen_present and minions
+	if listening:
+		if Utils.honey_stored >= Constants.BEE_COST:
+			print("Buy new bee!")
+			Utils.honey_stored -= Constants.BEE_COST
+			SignalBuss.create_new_bee.emit()
+			for child in $QueenBee/Minions.get_children():
+				child.set_direction(Constants.DIR_NONE)
+				child.do_a_wiggle()
+				child.do_a_twerk(true)
+		else:
+			print("Can't afford bee!")
+			for child in $QueenBee/Minions.get_children():
+				child.do_a_wiggle()
+				child.indicate_honey(false) # Shake head
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	# Check if listening for commands
@@ -105,6 +125,7 @@ func _process(delta: float) -> void:
 		else:
 			for child in $QueenBee/Minions.get_children():
 				child.set_direction(Constants.DIR_NONE)
+				child.reset_honey_indication()
 			command_queue.clear()
 			anim.play("summon_minions")
 		minions = !minions
@@ -150,6 +171,7 @@ func command_bee(queue : Array[Command]):
 	var cords = Vector3i(q,r,s)
 	beesInQueue.pop_front()
 	if len(beesInQueue) > 0:
+		bee_indicator.set_present(true)
 		set_dancer_feedback(convert_dance_to_command(beesInQueue[0]))
 	else:
 		bee_indicator.set_present(false)

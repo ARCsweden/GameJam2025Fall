@@ -22,9 +22,11 @@ func first_bee_search():
 	SignalBuss.bee_arrived_home.emit(bees[0])
 	
 func add_bee_group():
-	bees.append(Beegroup.new())
-	add_child(bees[len(bees)-1])
-	if len(bees) >1: SignalBuss.bee_idle.emit(bees[len(bees)-1])
+	var new_bee = Beegroup.new()
+	bees.append(new_bee)
+	add_child(new_bee)
+	if len(bees) > 1:
+		SignalBuss.bee_idle.emit(new_bee)
 
 func _on_bee_home(bee : Beegroup):
 	print("BEEEEEEEEEEEEEEE HOOOOOOOOOOOOOME")
