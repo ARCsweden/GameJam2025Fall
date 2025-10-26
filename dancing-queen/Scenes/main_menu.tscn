@@ -47,11 +47,12 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 25
 
-[node name="Panel" type="Panel" parent="VBoxContainer"]
+[node name="Panel" type="Panel" parent="VBoxContainer" node_paths=PackedStringArray("info_label")]
 visible = false
 custom_minimum_size = Vector2(0, 37.675)
 layout_mode = 2
 script = ExtResource("3_ce3w2")
+info_label = NodePath("info_label")
 
 [node name="info_label" type="Label" parent="VBoxContainer/Panel"]
 layout_mode = 1
