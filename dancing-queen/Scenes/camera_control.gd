@@ -19,7 +19,8 @@ func _input(event):
 				#zoom_pos = get_global_mouse_position()
 				# call the zoom function
 				zoom -= Vector2(0.1,0.1)
-		
+			zoom.x = clamp(zoom.x,1,4.5)
+			zoom.y = clamp(zoom.y,1,4.5)
 			
 		#print("Mouse Click/Unclick at: ", event.position)
 	#elif event is InputEventMouseMotion:
