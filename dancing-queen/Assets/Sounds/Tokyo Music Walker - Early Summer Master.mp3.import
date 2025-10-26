@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bjqbe7lh1nw5i"
+path="res://.godot/imported/Tokyo Music Walker - Early Summer Master.mp3-9d77e5a29fd1f6b0f1cb5ad7a00f1d10.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/Tokyo Music Walker - Early Summer Master.mp3"
+dest_files=["res://.godot/imported/Tokyo Music Walker - Early Summer Master.mp3-9d77e5a29fd1f6b0f1cb5ad7a00f1d10.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

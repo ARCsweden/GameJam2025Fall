@@ -3,6 +3,7 @@ extends Control
 @onready var anim = $AnimationPlayer
 @onready var queen = $QueenBee
 @onready var bee = $bees/BeeDancer
+@onready var bee_indicator = $BeeIndicator
 
 var queen_present = true
 var minions = false
@@ -13,10 +14,11 @@ func _ready() -> void:
 	SignalBuss.connect("bee_idle",_on_bee_idle)
 	for child in $QueenBee/Minions.get_children():
 		child.set_flying(true)
+	bee_indicator.set_present(false)
 
 class Command:
 	var dir : int
-	var modifiers : int
+	var honey : bool
 	var duration : float
 
 var command_queue : Array[Command] = []
@@ -62,7 +64,9 @@ func update_dancer_feedback(delta : float) -> void:
 			if feedback_queue_index == 0:
 				bee.set_direction(Constants.DIR_NONE)
 				bee.set_flying(true)
+				bee.indicate_honey(cmd.honey)
 			else:
+				bee.reset_honey_indication()
 				bee.set_direction(cmd.dir)
 				bee.set_flying(false)
 
@@ -85,11 +89,12 @@ func _process(delta: float) -> void:
 	
 	
 	if Input.is_action_just_pressed("swap_view") and !anim.is_playing():
-		queen_present = !queen_present
-		if queen_present:
+		if !queen_present:
 			anim.play("queen")
-		else:
+			queen_present = true
+		elif len(beesInQueue) > 0:
 			anim.play("dancers")
+			queen_present = false
 	if Input.is_action_just_pressed("flap") and queen_present and !anim.is_playing():
 		if minions:
 			print("Execute command queue: ")
@@ -136,16 +141,18 @@ func command_bee(queue : Array[Command]):
 			q=q+1
 			s=s-1
 	var cords = Vector3i(q,r,s)
-	beesInQueue.pop_at(0)
-	if len(beesInQueue) < 0:
+	beesInQueue.pop_front()
+	if len(beesInQueue) > 0:
 		set_dancer_feedback(convert_dance_to_command(beesInQueue[0]))
+	else:
+		bee_indicator.set_present(false)
 	SignalBuss.send_bee.emit(cords)
 	
 func _on_bee_idle(new_bee : Beegroup):
 	beesInQueue.append(new_bee)
 	if len(beesInQueue) == 1:
 		set_dancer_feedback(convert_dance_to_command(beesInQueue[0]))
-		
+	bee_indicator.set_present(true)
 		
 func convert_dance_to_command(bee1 : Beegroup) -> Array[Command]:
 	var commandlist : Array[Command] = []
@@ -154,5 +161,5 @@ func convert_dance_to_command(bee1 : Beegroup) -> Array[Command]:
 		newCommand.dir = move[0]
 		newCommand.duration = move[1]
 		commandlist.append(newCommand)
-	if len(commandlist) > 1 : commandlist.pop_front()
+#	if len(commandlist) > 1 : commandlist.pop_front()
 	return commandlist
