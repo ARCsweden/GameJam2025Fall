@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cyd273blrwvj6"]
+[gd_scene load_steps=27 format=3 uid="uid://cyd273blrwvj6"]
 
 [ext_resource type="PackedScene" uid="uid://birg8lypi8eb2" path="res://Scenes/hive_view.tscn" id="1_m3woj"]
 [ext_resource type="Texture2D" uid="uid://v2205yjviyay" path="res://Assets/Art/png/flower_tile.png" id="1_v7dfl"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://c6h2tc1207wda" path="res://Assets/Art/png/honey.png" id="10_m3woj"]
 [ext_resource type="Texture2D" uid="uid://clcts1a275vh5" path="res://Assets/Art/png/arrow.png" id="11_iuuak"]
 [ext_resource type="Texture2D" uid="uid://cpx0bnalv4b8n" path="res://Assets/Art/png/arrow_side.png" id="11_osvio"]
+[ext_resource type="Texture2D" uid="uid://c4bjwt66avc83" path="res://Assets/Art/png/sparkle.png" id="14_5hmjc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m3woj"]
 
@@ -46,6 +47,13 @@ bg_color = Color(0.56078434, 0.26666668, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5hmjc"]
 bg_color = Color(0.56078434, 0.26666668, 0, 1)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5rnoj"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 29.43
+gravity = Vector3(0, 98, 0)
+scale_min = 0.5
 
 [node name="UserInterface" type="Control"]
 layout_mode = 3
@@ -437,3 +445,12 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.01
 color = Color(0.6, 0.6, 0.6, 1)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(1069, 572)
+emitting = false
+amount = 20
+texture = ExtResource("14_5hmjc")
+lifetime = 0.46
+one_shot = true
+process_material = SubResource("ParticleProcessMaterial_5rnoj")

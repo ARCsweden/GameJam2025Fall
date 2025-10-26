@@ -2,6 +2,14 @@ extends Node
 @export var time_to_winter : float = 10
 @export var time_label : Label
 
+@onready var sparkle = $UI/UserInterface/GPUParticles2D
+
+func _on_get_honey():
+	sparkle.emitting = true
+
+func _ready() -> void:
+	SignalBuss.get_honey.connect(_on_get_honey)
+
 func _process(delta: float) -> void:
 	time_to_winter -= delta
 	var minutes = floor(time_to_winter / 60)
