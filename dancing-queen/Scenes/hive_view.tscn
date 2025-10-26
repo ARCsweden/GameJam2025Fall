@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://birg8lypi8eb2"]
+[gd_scene load_steps=12 format=3 uid="uid://birg8lypi8eb2"]
 
 [ext_resource type="Texture2D" uid="uid://bvmnnjcksuent" path="res://Assets/Art/hive_bg.jpg" id="1_a83n1"]
 [ext_resource type="Script" uid="uid://cqtmv407e5egp" path="res://Scripts/hive_view.gd" id="1_m3fw5"]
 [ext_resource type="PackedScene" uid="uid://4wyirpe2y2vd" path="res://Scenes/bee_dancer.tscn" id="2_m3fw5"]
 [ext_resource type="PackedScene" uid="uid://bwlwdt7ekok0k" path="res://Scenes/queen_bee.tscn" id="3_82udu"]
+[ext_resource type="PackedScene" uid="uid://ccmwphtlwcbtl" path="res://Scenes/bee_indicator.tscn" id="5_82udu"]
 
 [sub_resource type="Animation" id="Animation_82udu"]
 length = 0.001
@@ -244,3 +245,7 @@ scale = Vector2(0.34878632, 0.34878632)
 [node name="BeeDancer3" parent="QueenBee/Minions" instance=ExtResource("2_m3fw5")]
 position = Vector2(653.74915, 14.059137)
 scale = Vector2(0.34878632, 0.34878632)
+
+[node name="BeeIndicator" parent="." instance=ExtResource("5_82udu")]
+position = Vector2(419.00003, 65)
+scale = Vector2(0.3, 0.3)
