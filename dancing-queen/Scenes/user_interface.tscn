@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cyd273blrwvj6"]
+[gd_scene load_steps=25 format=3 uid="uid://cyd273blrwvj6"]
 
 [ext_resource type="PackedScene" uid="uid://birg8lypi8eb2" path="res://Scenes/hive_view.tscn" id="1_m3woj"]
 [ext_resource type="Texture2D" uid="uid://v2205yjviyay" path="res://Assets/Art/png/flower_tile.png" id="1_v7dfl"]
@@ -15,6 +15,11 @@
 [ext_resource type="Texture2D" uid="uid://cpx0bnalv4b8n" path="res://Assets/Art/png/arrow_side.png" id="11_osvio"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m3woj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5rnoj"]
+bg_color = Color(0.56078434, 0.26666668, 0, 1)
+border_width_bottom = 5
+border_color = Color(0.6, 0.6, 0.6, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_piynm"]
 
@@ -235,11 +240,22 @@ size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.04
 color = Color(0.6, 0.6, 0.6, 1)
 
-[node name="MapArea" type="HBoxContainer" parent="HBox/RightScreen/HBoxContainer"]
+[node name="MapArea" type="BoxContainer" parent="HBox/RightScreen/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 5.0
+
+[node name="WinterCountdown" type="Label" parent="HBox/RightScreen/HBoxContainer/MapArea"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_5rnoj")
+text = "Time:"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="RightSeperator" type="ColorRect" parent="HBox/RightScreen/HBoxContainer"]
 layout_mode = 2
@@ -399,6 +415,7 @@ stretch_mode = 3
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 32
 theme_override_styles/background = SubResource("StyleBoxFlat_osvio")
 theme_override_styles/fill = SubResource("StyleBoxFlat_5hmjc")
 
