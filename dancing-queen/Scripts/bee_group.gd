@@ -27,7 +27,7 @@ func leave_home(destination : Vector3i, targetTile : WorldTile):
 	flight_timer.wait_time = flight_time
 	flight_timer.one_shot = true
 	flight_timer.start()
-	if targetTile.honey_volume > 0 :
+	if targetTile != null and targetTile.honey_volume > 0 :
 		nectar_count = nectar_count + (targetTile.honey_volume)
 	
 func set_information(destination: Vector3i, thing: int):

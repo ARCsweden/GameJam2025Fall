@@ -56,7 +56,7 @@ func send_a_bee(destination : Vector3i):
 			
 			for hex in $"../PlayerTileMapLayer".cube_spiral(destination,1):
 				tileInfo = $"..".get_world_tile($"../PlayerTileMapLayer".cube_to_map(hex))
-				if tileInfo.honey_volume > 0 :
+				if tileInfo != null and tileInfo.honey_volume > 0 :
 					bee.set_information(hex,69)
 			break
 				
