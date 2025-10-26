@@ -3,10 +3,9 @@
 [ext_resource type="Script" uid="uid://1cjae6tmmx0" path="res://Scenes/game_master.gd" id="1_hg0ag"]
 [ext_resource type="PackedScene" uid="uid://cmo44rk3t4wbk" path="res://Scenes/World.tscn" id="1_q24h2"]
 [ext_resource type="PackedScene" uid="uid://cyd273blrwvj6" path="res://Scenes/user_interface.tscn" id="1_ro750"]
+[ext_resource type="Script" path="res://Scenes/honey_progress.gd" id="3_hg0ag"]
 [ext_resource type="AudioStream" uid="uid://ljxj7l4mub5y" path="res://Assets/Sounds/beeckround.mp3" id="5_djosc"]
 [ext_resource type="Script" uid="uid://dgsy51m7xgknr" path="res://Scenes/audio_stream_player.gd" id="6_b6i6a"]
-[ext_resource type="Script" uid="uid://cjoqn18btts2h" path="res://Scenes/honey_progress.gd" id="3_hg0ag"]
-
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_q24h2"]
 allow_unpress = true
@@ -76,7 +75,7 @@ flag_layer = NodePath("../FlagTileMapLayer")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MusicPlayer"]
 stream = ExtResource("5_djosc")
 autoplay = true
-parameters/looping = false
+parameters/looping = true
 script = ExtResource("6_b6i6a")
 
 [connection signal="toggled" from="UI/UserInterface/HBox/RightScreen/Panel/Buttons/Debug" to="World" method="_on_debug_toggled"]
