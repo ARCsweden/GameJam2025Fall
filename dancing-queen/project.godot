@@ -18,6 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 Constants="*res://Scripts/Constants.gd"
+SignalBuss="*res://Scripts/SIGNAL_BUSS.gd"
+Utils="*res://Scripts/utils.gd"
 
 [input]
 

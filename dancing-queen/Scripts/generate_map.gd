@@ -24,7 +24,7 @@ func _ready() -> void:
 	# Enable pathfinding
 	pathfinding_enabled = true
 
-func get_dance_sequence(lineToTarget:Array[Vector3i], objectFound: int) -> Array[Array]:
+func get_dance_sequence(lineToTarget:Array[Vector3i], objectFound: int) -> Array:
 	
 	var lasthex = lineToTarget[0]
 	lineToTarget.remove_at(0)

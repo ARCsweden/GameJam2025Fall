@@ -7,8 +7,7 @@ var info : Array[int]
 var time_per_hex
 var gather_time
 var nectar_count
-
-signal bee_arrived_home(bee: Beegroup)
+var currentDance
 
 func _init():
 	size = 10
@@ -18,6 +17,7 @@ func _init():
 	time_per_hex = 2
 	gather_time = 5
 	nectar_count = 0
+	currentDance = [[0,0]]
 
 func leave_home(destination : Vector3i, targetTile : WorldTile):
 	var flight_time = (get_line_distance_from_hive(destination) * time_per_hex) + gather_time
@@ -25,6 +25,7 @@ func leave_home(destination : Vector3i, targetTile : WorldTile):
 	flight_timer.wait_time = flight_time
 	add_child(flight_timer)
 	flight_timer.connect("timeout", _on_timer_timeout)
+	flight_timer.one_shot = true
 	flight_timer.start()
 	if targetTile.honey_volume < 0 :
 		nectar_count = nectar_count + (targetTile.honey_volume)
@@ -37,5 +38,5 @@ func get_line_distance_from_hive(target: Vector3):
 	
 func _on_timer_timeout():
 	bee_home = true
-	bee_arrived_home.emit(self)
+	SignalBuss.bee_arrived_home.emit(self)
 	
