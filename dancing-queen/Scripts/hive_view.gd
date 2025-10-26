@@ -117,26 +117,36 @@ func command_bee(queue : Array[Command]):
 	var r :int #See plugin docs
 	var s :int #See plugin docs
 	
-	#Quick and Stinky custom cordinate convertor
+	#0, 0, 0) 0.0
+#(1, 0, -1) 0.0 --e
+#(0, 1, -1) 0.0 --se
+#(-1, 1, 0) 0.0 --sw
+#(-1, 0, 1) -- w
+#(0, -1, 1) --nw
+#(1, -1, 0) --ne
+#(0, 0, 0) 0.0
+
+	
+	#Quick and Stinky custom cordinate convertor (q,r,s)
 	for com in queueCOPY:
 		if com.dir==Constants.DIR_E : 
 			q=q+1
-			r=r-1
+			s=s-1
 		elif com.dir==Constants.DIR_SE:
 			r=r+1
 			s=s-1
 		elif com.dir==Constants.DIR_SW:
 			q=q-1
-			s=s+1
+			r=r+1
 		elif com.dir==Constants.DIR_W:
 			q=q-1
-			r=r+1
+			s=s+1
 		elif com.dir==Constants.DIR_NW:
 			r=r-1
 			s=s+1
 		elif com.dir==Constants.DIR_NE:
 			q=q+1
-			s=s-1
+			r=r-1
 	var cords = Vector3i(q,r,s)
 	beesInQueue.pop_front()
 	if len(beesInQueue) > 0:
