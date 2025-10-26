@@ -10,7 +10,10 @@ const DIR_NE = 6
 
 
 # Command related
-const CMD_MAX_TIME = 1.2
+const CMD_MAX_TIME = 1.0
 const CMD_MIN_TIME = 0.8
 
 const STORE_GOAL = 600.0
+const BEE_COST = 50.0
+
+const BREED_TIME = 2.0

@@ -83,6 +83,12 @@ func set_legs(state: int) -> void:
 	else:
 		anim_tree.set("parameters/Legs/transition_request", "idle")
 
+func do_a_twerk(value: bool) -> void:
+	if value:
+		set_butt(BUTT_TWERK)
+	else:
+		set_butt(BUTT_IDLE)
+
 func set_butt(state: int) -> void:
 	if state == BUTT_WIGGLE:
 		anim_tree.set("parameters/Butt/transition_request", "wiggle")

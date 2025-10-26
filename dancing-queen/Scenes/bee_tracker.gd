@@ -8,6 +8,7 @@ func _ready():
 	add_bee_group()
 	SignalBuss.connect("send_bee",send_a_bee)
 	SignalBuss.connect("bee_arrived_home",_on_bee_home)
+	SignalBuss.connect("create_new_bee",add_bee_group)
 	first_bee_search()
 	
 
@@ -21,9 +22,11 @@ func first_bee_search():
 	SignalBuss.bee_arrived_home.emit(bees[0])
 	
 func add_bee_group():
-	bees.append(Beegroup.new())
-	add_child(bees[len(bees)-1])
-	if len(bees) >1: SignalBuss.bee_idle.emit(bees[len(bees)-1])
+	var new_bee = Beegroup.new()
+	bees.append(new_bee)
+	add_child(new_bee)
+	if len(bees) > 1:
+		SignalBuss.bee_idle.emit(new_bee)
 
 func _on_bee_home(bee : Beegroup):
 	print("BEEEEEEEEEEEEEEE HOOOOOOOOOOOOOME")
@@ -51,7 +54,7 @@ func send_a_bee(destination : Vector3i):
 			bee.leave_home(destination, tileInfo)
 			$"..".empty_nectar($"../PlayerTileMapLayer".cube_to_map(destination))
 			
-			for hex in $"../PlayerTileMapLayer".cube_spiral(destination,2):
+			for hex in $"../PlayerTileMapLayer".cube_spiral(destination,1):
 				tileInfo = $"..".get_world_tile($"../PlayerTileMapLayer".cube_to_map(hex))
 				if tileInfo.honey_volume > 0 :
 					bee.set_information(hex,69)
