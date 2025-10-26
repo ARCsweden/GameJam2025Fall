@@ -35,8 +35,8 @@ func generate_world():
 	noise = nectar_noise_tex.noise
 
 	noise.seed = randi() % 500
-	for x in range(-map_width/2, map_width /2):
-		for y in range(-map_height/2, map_height/2):
+	for x in range(int(-map_width/2.0), int(map_width/2.0)):
+		for y in range(int(-map_height/2.0), int(map_height/2.0)):
 			if x == 0 and y == 0:
 				world_tiles[Vector2i(0,0)] = WorldTile.new(0,0)
 				continue
@@ -51,8 +51,8 @@ func generate_world():
 	tileMapLayerPlayer.set_cell(Vector2i(0,0),source_id,hive_atlas)
 	
 func fill_player_world():
-	for x in range(-map_width/2, map_width /2):
-		for y in range(-map_height/2, map_height/2):
+	for x in range(int(-map_width/2.0), int(map_width/2.0)):
+		for y in range(int(-map_height/2.0), int(map_height/2.0)):
 			# placing ground
 			tileMapLayerPlayer.set_cell(Vector2i(x,y), source_id, unexplored_atlas)
 	tileMapLayerPlayer.set_cell(Vector2i(0,0),source_id,hive_atlas)
